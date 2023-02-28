@@ -1,0 +1,11 @@
+name: cma
+dependencies:
+  - conda-forge::r-tidyverse
+  - conda-forge::r-sf
+  - conda-forge::r-terra
+  - conda-forge::r-tmap
+  - conda-forge::r-zoo
+  - conda-forge::r-patchwork
+  - conda-forge::r-data.tree
+  - r::rstudio
+

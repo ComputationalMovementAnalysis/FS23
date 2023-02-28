@@ -1,0 +1,17 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.bash_history
+.cache
+.config
+.local
+.passphrase
+*.rds
+**/*_hide.R
+patterns-and-trends.Rmd
+_bookdown_files/
+*.md
+docs/
+libs/
+!README.md
