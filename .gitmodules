@@ -1,0 +1,7 @@
+[submodule "datasets"]
+	path = datasets
+	url = https://github.com/ComputationalMovementAnalysis/datasets
+
+[submodule "solutions"]
+	path = solutions
+	url = https://github.com/ComputationalMovementAnalysis/solutions

@@ -1,0 +1,14 @@
+{
+  "hash": "296661e3c5e09afeceb7d86e241dfb58",
+  "result": {
+    "markdown": "## Slides\n\nSlides for Nils' and Nikos' Input:\n\n\n::: {.cell}\n\n:::\n\n\n<div class=\"shareagain\" style=\"min-width:300px;margin:1em auto;max-width:800px;\">\n  <iframe src=\"https://computationalmovementanalysis.github.io/Slides/feedback_e2.html\" width=\"800\" height=\"450\" style=\"border:2px solid currentColor;\" loading=\"lazy\" allowfullscreen></iframe>\n  <script>fitvids('.shareagain', {players: 'iframe'});</script>\n</div>\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

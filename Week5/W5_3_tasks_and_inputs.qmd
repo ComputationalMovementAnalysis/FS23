@@ -1,0 +1,98 @@
+## Tasks and Inputs
+
+```{r}
+# include: false
+
+source('01_R_Files/helperfunctions.R')
+```
+
+Open your RStudio Project [which you prepared](#w5-preperation) from this week. Create a new RScript and import the libraries we need for this week. Import your wildboar dataset `r download_url("wildschwein_BE_2056.csv","datasets")` as an `sf` object
+
+```{r}
+#| echo: true
+#| results: "hide"
+
+library(readr)
+library(sf)
+library(terra)
+library(dplyr)
+library(lubridate)
+library(ggplot2)
+library(tmap)
+
+wildschwein_BE <- read_delim("datasets/wildschwein_BE_2056.csv",",") |>
+  st_as_sf(coords = c("E", "N"), crs = 2056, remove = FALSE)
+```
+
+Download the dataset `r download_url("Feldaufnahmen_Fanel.gpkg","datasets")` and save it to your project folder. This is a vector dataset stored in the filetype *Geopackage*, which is similar to a *Shapefile*, with some advantages (see the website [shapefile must die](http://switchfromshapefile.org/)).
+
+Also download the dataset `r download_url("vegetationshoehe_LFI.tif","datasets")`. This is a "raster" dataset stored in a Geotiff, similar to the map we imported in [week 1](#w1-importing-raster). Also store this file in your project folder and commit these to your repo.
+
+### Tasks 1: Import and visualize spatial data
+
+Since `Feldaufnahmen_Fanel.gpkg` is a vector dataset, you can import it using `read_sf()`. Explore this dataset in R to answer the following questions: 
+
+- What information does the dataset contain? 
+- What is the geometry type of the dataset (possible types are: Point, Lines and Polygons)?
+- What are the data types of the other columns?
+- What is the coordinate system of the dataset?
+
+```{r}
+#| file: "../solutions/week5/task_1.R"
+#| echo: false
+#| include: false
+
+```
+
+### Task 2: Annotate Trajectories from vector data {#w5-annotate-vector}
+
+We would like to know what crop was visited by which wild boar, and at what time. Since the crop data is most relevant in summer, filter your wildboar data to the months **may to june** first and save the output to a new variable. Overlay the filtered dataset with your `fanel` data to verify the spatial overlap.
+
+To sematically annotate each wildboar location with crop information, you can use a *spatial join* with the function `st_join()`. Do this and explore your annotated dataset. 
+
+
+```{r}
+#| file: "../solutions/week5/task_2.R"
+#| echo: false
+#| include: false
+
+```
+
+### Task 3: Explore annotated trajectories
+
+Think of ways you could visually explore the spatio-temporal patterns of wild boar in relation to the crops. In our example below we visualize the percentage of samples in a given crop per hour.
+
+```{r}
+#| file: "../solutions/week5/task_3.R"
+#| echo: false
+#| include: false
+
+```
+
+### Task 4: Import and visualize vegetationindex (raster data)
+
+You have already downloaded the dataset `vegetationshoehe_LFI.tif`. Import this dataset 
+
+In terms of raster data, we have prepared the [Vegetation Height Model](https://map.geo.admin.ch/index.html?zoom=7&lang=en&topic=ech&bgLayer=ch.swisstopo.pixelkarte-grau&layers_opacity=0.5&layers=ch.bafu.landesforstinventar-vegetationshoehenmodell&E=2570723.63&N=1205388.11) provided by the Swiss National Forest Inventory (NFI). This dataset contains high resolution information (1x1 Meter) on the vegetation height, which is determined from the difference between the digital surface models DSM and the digital terrain model by swisstopo (swissAlti3D). Buildings are eliminated using a combination of the ground areas of the swisstopo topographic landscape model (TLM) and spectral information from the stereo aerial photos. 
+
+Import the dataset just like you imported the raster map in [week 1](#w1-importing-raster) (using `terra::rast()`). Visualize the raster data using `tmap` (`ggplot` is very slow with raster data).
+
+```{r}
+#| file: "../solutions/week5/task_4.R"
+#| echo: false
+#| include: false
+
+```
+
+### Task 5: Annotate Trajectories from raster data
+
+Semantically annotate your wildboar locations with the vegetation index (similar as you did with the crop data in [Task 2](#w5-annotate-vector)). Since you are annotating a vector dataset with information from a raster dataset, you cannot use `st_join` but need the function `extract` from the `terra` package. Read the help on the `extract` function to see what the function expects. The output should look something like this:
+
+```{r}
+#| file: "../solutions/week5/task_5.R"
+#| echo: false
+#| include: false
+
+```
+
+You can now explore the spatiotemporal patterns of this new data.

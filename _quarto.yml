@@ -1,0 +1,71 @@
+project: 
+  type: book
+  preview: 
+      port: 5678
+  execute-dir: project
+
+lang: de
+
+format: 
+  html:
+    theme:
+      dark: [darkly, custom-dark.scss]
+      light: [flatly, custom-light.scss]
+    css: 
+      - custom.css
+      - theme-custom.scss
+    bibliography: 00_Admin/bibliography.bib
+    number-sections: false
+    code-tools:
+      source: false
+    include-after-body: 90_misc/utterances.html
+
+execute:
+  freeze: true
+  error: true
+  message: false
+  warning: false
+
+book:
+  title: "Computational Movement Analysis: Patterns and Trends in Environmental Data"
+  sidebar: 
+    logo: 02_Images/zhaw_sw_neg.png
+    collapse-level: 2
+    style: floating
+  reader-mode: true
+  chapters:
+    - index.qmd
+    - Intro/W0_1_preparations.qmd
+    - part: Week1/W1_1_exercise.qmd
+      chapters:
+      # Week1/W1_3_Slides.qmd
+      - Week1/W1_4_preparation.qmd
+      - Week1/W1_5_tasks_and_inputs.qmd
+      - Week1/W1_6_solutions.qmd
+    - part: Week2/W2_1_exercise.qmd
+      chapters:
+      - Week2/W2_4_demo_tidyverse.qmd
+      - Week2/W2_4b_demo_tidyverse_code.qmd
+      - Week2/W2_3_preparation.qmd
+      - Week2/W2_5_tasks_and_inputs.qmd
+      - Week2/W2_6_solutions.qmd
+    - part: Week3/W3_1_exercise.qmd
+      chapters:
+      #- Week3/W3_2_Slides.qmd
+      - Week3/W3_3_preparation.qmd
+      - Week3/W3_4_tasks_and_inputs.qmd
+      - Week3/W3_5_peer_feedback.qmd
+      - Week3/W3_5_solutions.qmd
+    - part: Week4/W4_1_exercise.qmd
+      chapters:
+      - Week4/W4_2_Slides.qmd
+      - Week4/W4_3_preparation.qmd
+      - Week4/W4_4_tasks_and_inputs.qmd
+      - Week4/W4_6_solutions.qmd
+    - part: Week5/W5_1_exercise.qmd
+      chapters:
+      - Week5/W5_2_preparation.qmd
+      - Week5/W5_3_tasks_and_inputs.qmd
+      - Week5/W5_4_solutions.qmd
+    - 90_references.qmd
+
