@@ -45,7 +45,6 @@ book:
     - part: Week2/W2_1_exercise.qmd
       chapters:
       - Week2/W2_4_demo_tidyverse.qmd
-      - Week2/W2_4b_demo_tidyverse_code.qmd
       - Week2/W2_3_preparation.qmd
       - Week2/W2_5_tasks_and_inputs.qmd
       - Week2/W2_6_solutions.qmd

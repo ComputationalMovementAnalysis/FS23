@@ -32,7 +32,7 @@ sabi <- wildschwein |>
 
 ```{r}
 #| echo: false
-#| fig.cap: paste0("Movement of the wildboar 'Sabi' in the timespan ", strftime(min(sabi$DatetimeUTC), "%d"), "-",strftime(max(sabi$DatetimeUTC), "%d.%m.%Y"), ". The circle highlingts possible 'static points'")
+#| fig.cap: "Movement of the wildboar 'Sabi' in the timespan 01 - 02.07.2015. The circle highlingts possible 'static points'"
 
 ggplot(sabi, aes(E, N, color = DatetimeUTC))  +
   geom_point() +

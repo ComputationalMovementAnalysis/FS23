@@ -38,7 +38,7 @@ Note:
 
 - that this dataset is already converted to EPSG 2056
 - the coordinates are stored in the columns (`E`/`N`)
-- setting `remove =  FALSE` preserves the original (`E`/`N`) columns, which come in handy later on
+- setting `remove = FALSE` preserves the original (`E`/`N`) columns, which come in handy later on
 
 ### Task 2: Getting an overview
 
@@ -110,6 +110,7 @@ You should now have  4 datasets with different number of rows:
 
 ```{r}
 #| echo: true
+#| collapse: true
 
 nrow(caro)
 nrow(caro_3)
@@ -137,8 +138,8 @@ A different approach would be to *smoothen* the derived parameters using a [movi
 library(zoo)
 
 example <- rnorm(10)
-rollmean(example,k = 3,fill = NA,align = "left")
-rollmean(example,k = 4,fill = NA,align = "left")
+rollmean(example, k = 3, fill = NA, align = "left")
+rollmean(example, k = 4, fill = NA, align = "left")
 ```
 
 Now run `rollmean`on the `speed` variable of the subset (`caro`). Visualize the output from your moving windows and compare different window sizes (`k = `).

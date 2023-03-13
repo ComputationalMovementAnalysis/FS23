@@ -71,7 +71,7 @@ If we want any of our parameters to have default value, we can assign an initial
 #| echo: true
 
 my_age <- function(birthday, units = "days"){
-  difftime(Sys.time(),birthday, units = units)
+  difftime(Sys.time(), birthday, units = units)
   }
 
 # if not stated otherwise, our function uses the unit "days"

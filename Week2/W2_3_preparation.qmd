@@ -47,20 +47,12 @@ Then, store your PAT in you local Git
 
 Now you can create a repository on Github that you can afterwards connect to your RStudio project from this week (which you will create in the next step). To do this, go to [github.com](https://github.com) and click on the plus sign in the top right corner, then fill in the following information:
 
-```{r}
-#| echo: false
-rootdir <- "C:/Users/yourname/semester2/Modul_CMA"
-reponame <- "cma-Week2"
-repourl <- paste0("https://github.com/YOUR-GITHUB-USERNAME/", reponame)
-repourl_git <- paste0(repourl, ".git")
-```
-
-- Repository name: Give a meaningful name, e.g.  ``r reponame``
+- Repository name: Give a meaningful name, e.g.  `cma-week2`
 - Description: Give a meaningful description, e.g. `Solving exercise 2 of the course "Computational Movement Analysis"`
 - Make the repo public, not private
 - Choose `Add a README file`
 
-Click on `Create repository`, then on the green button "Code". Select HTTPS (it might already be selected) and then copy the URL by clicking on the clipboard symbol. The URL should look something list this ``r repourl_git``. 
+Click on `Create repository`, then on the green button "Code". Select HTTPS (it might already be selected) and then copy the URL by clicking on the clipboard symbol. The URL should look something list this `https://github.com/YOUR-GITHUB-USERNAME/cma-week2.git`. 
 
 :::{.callout-warning}
 Report this URL back to us via Moodle (under *L2 Data Issues > R Exercises E2 > Exercise 2 (Github URL)*)
@@ -74,7 +66,7 @@ You will now create a new RStudio Project for week 2. Unlike last week, we will 
 
 - In the repository URL, paste the URL you copied in the last step
 - Change "Project directory name" to `week2-rexercise` (if you are following [the convention we proposed last week](#folder-structure))
-- Change the parent directory (`Create project as a subdirectory of`) to your equivalent of ``r file.path(rootdir, "week2")``
+- Change the parent directory (`Create project as a subdirectory of`) to your equivalent of `C:/Users/yourname/semester2/Modul_CMA/week2`
 
 Click on "Create Project". You are now all set and can start with this week's tasks!
 

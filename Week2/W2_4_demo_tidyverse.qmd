@@ -1,6 +1,13 @@
+---
+format:
+  html:
+    code-tools:
+      source: true
+---
+
 ## Demo Tidyverse
 
-[Download the code as an Rmd-File](W2_4_demo_tidyverse.qmd)
+Download this Demoscript via "\</\>Code" (top right)
 
 Depending on your knowledge of `R`, getting an overview of the data we imported last week might have been quite a challenge. Surprisingly enough, importing, cleaning and exploring your data can be the most challenging, time consuming part of a project. RStudio and the tidyverse offer many helpful tools to make this part easier (and more fun). You have read chapters on `dplyr` and `magrittr` as a preparation for this exercise. Before we start with the exercise however, this demo illustrates a simple approach offered by tidyverse which is applicable to sf-objects.
 
@@ -17,26 +24,18 @@ later <- now + 10000
 
 later
 
-time_difference <- difftime(later,now)
+time_difference <- difftime(later, now)
 
-time_difference
-```
-
-
-```{r}
 time_difference
 ```
 
 You can also specify the unit of the output.
 
 ```{r}
-time_difference <- difftime(later,now,units = "mins")
-```
+time_difference <- difftime(later, now, units = "mins")
 
-```{r}
 time_difference
 ```
-
 
 `difftime` returns an object of the Class `difftime`. However in our case, numeric values would be more handy than the Class `difftime`. So we'll wrap the command in `as.numeric()`:
 ```{r}
@@ -45,17 +44,14 @@ class(time_difference)
 str(time_difference)
 ```
 
-
-
 ```{r}
-time_difference <- as.numeric(difftime(later,now,units = "mins"))
+time_difference <- as.numeric(difftime(later, now, units = "mins"))
 
 str(time_difference)
 class(time_difference)
 ```
 
 ### `lead()` / `lag()`
-
 
 `lead()` and `lag()` return a vector of the same length as the input, just offset by a specific number of values (default is 1). Consider the following sequence:
 
@@ -72,13 +68,13 @@ library(dplyr)
 
 lead(numbers)
 
-lead(numbers,n = 2)
+lead(numbers, n = 2)
 
 lag(numbers)
 
-lag(numbers,n = 5)
+lag(numbers, n = 5)
 
-lag(numbers,n = 5, default = 0)
+lag(numbers, n = 5, default = 0)
 ```
 
 ### `mutate()`
@@ -87,8 +83,8 @@ Using the above functions (`difftime()` and `lead()`), we can calculate the time
 
 ```{r}
 wildschwein <- tibble(
-  TierID = c(rep("Hans",5),rep("Klara",5)),
-  DatetimeUTC = rep(as.POSIXct("2015-01-01 00:00:00",tz = "UTC")+0:4*15*60, 2)
+  TierID = c(rep("Hans", 5), rep("Klara", 5)),
+  DatetimeUTC = rep(as.POSIXct("2015-01-01 00:00:00", tz = "UTC")+0:4*15*60, 2)
   )
 
 wildschwein
@@ -104,7 +100,7 @@ wildschwein$timelag  <- as.numeric(difftime(lead(wildschwein$DatetimeUTC), wilds
 Using `mutate()` we can simplify this operation slightly:
 
 ```{r}
-wildschwein <- mutate(wildschwein,timelag = as.numeric(difftime(lead(DatetimeUTC),DatetimeUTC)))
+wildschwein <- mutate(wildschwein,timelag = as.numeric(difftime(lead(DatetimeUTC), DatetimeUTC)))
 
 wildschwein
 ```
@@ -115,13 +111,13 @@ You might have noticed that `timelag` is calculated across different individuals
 To avoid this, we need to specify that `timelag` should just be calculated between consecutive rows *of the same individual*. We can implement this by using `group_by()`. 
 
 ```{r}
-wildschwein <- group_by(wildschwein,TierID)
+wildschwein <- group_by(wildschwein, TierID)
 ```
 
 After adding this grouping variable, calculating the `timelag` automatically accounts for the individual trajectories.
 
 ```{r}
-wildschwein <- mutate(wildschwein,timelag = as.numeric(difftime(lead(DatetimeUTC),DatetimeUTC)))
+wildschwein <- mutate(wildschwein, timelag = as.numeric(difftime(lead(DatetimeUTC), DatetimeUTC)))
 
 wildschwein
 ```
@@ -141,10 +137,10 @@ Note: You can do `mutate()` and `summarise()` on `sf` objects as well. However, 
 The code above may be a bit hard to read, since it has so many nested functions which need to be read from the inside out. In order to make code readable in a more human-friendly way, we can use the piping command `|>` from `magrittr`, which is included in `dplyr` and the `tidyverse`. The above code then looks like this:
 
 ```{r}
-wildschwein |>                           # Take wildschwein...
-  group_by(TierID) |>                    # ...group it by TierID
-  summarise(                              # Summarise the data...
-    mean_timelag = mean(timelag,na.rm = T)# ...by calculating the mean timelag
+wildschwein |>                              # Take wildschwein...
+  group_by(TierID) |>                       # ...group it by TierID
+  summarise(                                # Summarise the data...
+    mean_timelag = mean(timelag, na.rm = T) # ...by calculating the mean timelag
   )
 ```
 
@@ -174,7 +170,7 @@ pigs |>
   )
 
 pigs |>
-  group_by(sex,age) |>
+  group_by(sex, age) |>
   summarise(         
     mean_weight = mean(weight)
   )

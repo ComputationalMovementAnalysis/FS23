@@ -2,18 +2,7 @@
 
 ### Folder structure for this course {#folder-structure}
 
-```{r}
-#| echo: false
-
-library(dplyr)
-
-rootdir <- "C:/Users/yourname/semester2/Modul_CMA"
-week_folders <- paste(c("Week",1:7))
-week_rootdir <- file.path(rootdir, week_folders[0])
-rprojfolder <- "week1-rexercise"
-```
-
-By this point, you probably have created a folder for this course somewhere on your computer. In our example, we assume this folder is located here: ``r rootdir`` (mentally replace this with your actual path). Before we dive into the exercises, take a minute to think about how you are going to structure your files in this folder. This course will take place over 6 weeks, and in each week you will receive or produce various files. We recommend creating a separate folder for each week, and one folder for the semester project, like so:
+By this point, you probably have created a folder for this course somewhere on your computer. In our example, we assume this folder is located here: `C:/Users/yourname/semester2/Modul_CMA` (mentally replace this with your actual path). Before we dive into the exercises, take a minute to think about how you are going to structure your files in this folder. This course will take place over 6 weeks, and in each week you will receive or produce various files. We recommend creating a separate folder for each week, and one folder for the semester project, like so:
 
 ```
 Course Folder (C:\\Users\\yourname\\semester2\\Modul_CMA)
@@ -33,16 +22,16 @@ Folder Week 1 (C:\\Users\\yourname\\semester2\\Modul_CMA\\week1)
  ¦--slides.pdf                                                  
  ¦--my_notes.docx                                               
  ¦--seminar_screenshot.jpg                                      
- °--week0-rexercise                                             
-     ¦--week0-rexercise.Rproj                                   
+ °--week1-rexercise                                             
+     ¦--week1-rexercise.Rproj                                   
      ¦--wildschwein_BE.csv                                      
      °--my_solution.Rmd   
 ```
 
 Note: 
 
-- the RStudio Project is located in a subfolder of ``r week_rootdir`` and named ``r rprojfolder``.
-- ``r rprojfolder`` is the project's *directory name* and the *project name*
+- the RStudio Project is located in a subfolder of `C:/Users/yourname/semester1/Modul_CMA/week1` and named `week1-rexercise`.
+- `week1-rexercise` is the project's *directory name* and the *project name*
 - we realize that that the week number is redundant, there is a reason[^redundancy] for this
 - this means each week is a fresh start (which has pros and cons)
 
@@ -52,8 +41,8 @@ Note:
 
 Create a new *RStudio Project* (File > New Project > New Directory > New Project). 
 
-1. Click on "Browse" and switch to *your equivalent* of the folder ``r week_rootdir`` (the project we are about to initiate will be be created in a subdirectory of this folder). Click on "open" to confirm the selection
-2. In the field "Directory name", type ``r rprojfolder``. This will be the name of your RStudio project and it's parent directory.
+1. Click on "Browse" and switch to *your equivalent* of the folder `C:/Users/yourname/semester1/Modul_CMA/week1` (the project we are about to initiate will be be created in a subdirectory of this folder). Click on "open" to confirm the selection
+2. In the field "Directory name", type `week1-rexercise`. This will be the name of your RStudio project and it's parent directory.
 3. Check the option "Create a git repository"
 4. Click on "Create Project"
 
