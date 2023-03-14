@@ -6,8 +6,6 @@
 .config/
 .local/
 
-datasets/
-solutions/
 /.quarto/
 /_site/
 _book/
