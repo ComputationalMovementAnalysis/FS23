@@ -56,12 +56,5 @@ get_github <- function(type, quarto_yaml = "_quarto.yml") {
   str_remove(stringr::str_replace(github_edit, "/edit/", paste0("/", type, "/")), "%s")
 }
 
-# given a filename, a folder and a github_url (raw) it returns an url that allows downloading said file
-download_url <- function(filename, folder) {
-  require(glue)
-  github_raw <- get_github("raw")
-  glue("[{filename}]({github_raw}{folder}/{filename})")
-}
-
 # Some additional stuff added so the whole workflow complies with the K-M approach
 week_folders <- paste0("Week", 1:7)
