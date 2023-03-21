@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Computational Movement Analysis: Patterns and Trends in Environmental Data - 11&nbsp; Preparation</title>
+<title>Computational Movement Analysis: Patterns and Trends in Environmental Data - 2&nbsp; Preparation Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../Week4/W4_4_tasks_and_inputs.html" rel="next">
-<link href="../Week4/W4_2_Slides.html" rel="prev">
+<link href="../Week1/W1_1_exercise.html" rel="next">
+<link href="../Intro/W0_1_preparations_course.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-title">Preparation</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-title">Preparation Project</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -120,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Intro/W0_2_preparations_project.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preparation Project</span></a>
+  <a href="../Intro/W0_2_preparations_project.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Preparation Project</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -203,7 +203,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Week4/W4_3_preparation.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Preparation</span></a>
+  <a href="../Week4/W4_3_preparation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preparation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -243,14 +243,21 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#option-1-tracking-app-posmo" id="toc-option-1-tracking-app-posmo" class="nav-link active" data-scroll-target="#option-1-tracking-app-posmo">Option 1: Tracking App Posmo</a></li>
+  <li><a href="#option-2-gps-tracker" id="toc-option-2-gps-tracker" class="nav-link" data-scroll-target="#option-2-gps-tracker">Option 2: GPS Tracker</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-title">Preparation</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-title">Preparation Project</span></h1>
 </div>
 
 
@@ -265,10 +272,41 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Create a new RStudio Project and a new Github Repo for this week’s exercises. Do this either the simple way we used in Exercise 2 (<a href="../Week2/W2_3_preparation.html#create-github-repo">Step 3</a> and then <a href="../Week2/W2_3_preparation.html#w2-project">Step 4</a>) or the more sophisticated way we suggested in <a href="../Week3/W3_3_preparation.html">Exercise 3</a>.</p>
-<p>If you want to publish your Report as a website (to share with others), activate Github Pages by going to your repo on Github, clicking on <em>Settings &gt; Pages</em>, and under <em>Source</em> switch from <em>None</em> to your Main branch. <strong>You can do this only after pushing your first commit</strong>.</p>
+<p>As your course assignment (Leistungsnachweis) you will develop a semester project, in groups of two. In this semester project you will analyze trajectory data of cyclists.</p>
+<p>In fact, we give you the opportunity to track your own movement behavior, generating trajectory data you’ll subsequently analyze yourself. Ideally you start right now collecting your movement data, so once the course starts, you’ll have enough data for your semester project. There are two ways for you to generate your own trajectory data.</p>
+<p>During the course, we will give you the opportunity to share your data with the other students in the course, so that the shared data pool for all can grow.</p>
+<p>Please let us know which option you choose by filling out the following <a href="https://moodle.zhaw.ch/mod/choice/view.php?id=833486">survey</a> on Moodle.</p>
+<section id="option-1-tracking-app-posmo" class="level2">
+<h2 class="anchored" data-anchor-id="option-1-tracking-app-posmo">Option 1: Tracking App Posmo</h2>
+<p>You use the tracking app <a href="https://posmo.coop/produkte/posmo-project-tracking-fuer-gruppen">Posmo</a>, and as a side effect become part of an experiment we currently conduct in one of our research projects.</p>
+<p>The Posmo app will continuously track your daily movements and will automatically detemine your kind of transportation. You will then filter for the relevant cycling data. Find more information on how the app works in their <a href="https://posmo.coop/produkte/faq">FAQ</a>.</p>
+<p>In order to join our research project just follow the instructions on the following flyer.</p>
+<div id="fig-elephants" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="../02_Images/bikeability_1.PNG" class="img-fluid figure-img"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="../02_Images/bikeability_2.PNG" class="img-fluid figure-img"></p>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Abbildung&nbsp;2.1: Flyer Project Bikeability</figcaption><p></p>
+</figure>
+</div>
+<p>If you have any issues during installation or you are not able to track yourself after the installtion please get in contact with <a href="mailto:rata@zhaw.ch">Nils</a> or <a href="mailto:luoe@zhaw.ch">Dominic</a></p>
+<p><strong><em>If, however, for privacy reasons, you prefer not to contribute to our study, we can hand out a GPS tracker to you.</em></strong></p>
+</section>
+<section id="option-2-gps-tracker" class="level2">
+<h2 class="anchored" data-anchor-id="option-2-gps-tracker">Option 2: GPS Tracker</h2>
+<p>You can use a GPS tracker, provided by our research group. By using a GPS tracker all your data will stay with you locally.</p>
+<p>You can get the tracker in our office GC 134 at the <a href="https://goo.gl/maps/xDvGFMBEvwBMdWiz7">Campus Grüental, Wädenswil</a>.</p>
+<p>Please send us a quick <a href="mailto:luoe@zhaw.ch">E-Mail</a> so we can arrange the handover of the GPS tracker.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script src="https://utteranc.es/client.js" repo="ComputationalMovementAnalysis/utterances" issue-term="pathname" theme="github-dark-orange" crossorigin="anonymous" async="">
@@ -574,13 +612,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../Week4/W4_2_Slides.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Slides</span></span>
+      <a href="../Intro/W0_1_preparations_course.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Preparation Course</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Week4/W4_4_tasks_and_inputs.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Tasks and inputs</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../Week1/W1_1_exercise.html" class="pagination-link">
+        <span class="nav-page-text">Exercise 1</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
