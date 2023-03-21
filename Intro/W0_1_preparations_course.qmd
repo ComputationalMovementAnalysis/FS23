@@ -1,4 +1,4 @@
-# Preparation {#w0-preparation}
+# Preparation Course {#w0-preparation}
 
 In this course we will be using R, RStudio and Git. We ask you to install and/or update these programs *before* the start of the course, so that we do not loose time once the course starts. In this chapter, we cover the course requirements and some tips on how you should change your RStudio settings. 
 

@@ -35,7 +35,8 @@ book:
   reader-mode: true
   chapters:
     - index.qmd
-    - Intro/W0_1_preparations.qmd
+    - Intro/W0_1_preparations_course.qmd
+    - Intro/W0_2_preparations_project.qmd
     - part: Week1/W1_1_exercise.qmd
       chapters:
       #- Week1/W1_3_Slides.qmd
@@ -53,7 +54,7 @@ book:
       #- Week3/W3_2_Slides.qmd
       - Week3/W3_3_preparation.qmd
       - Week3/W3_4_tasks_and_inputs.qmd
-      - Week3/W3_5_peer_feedback.qmd
+      #- Week3/W3_5_peer_feedback.qmd
       #- Week3/W3_5_solutions.qmd
     - part: Week4/W4_1_exercise.qmd
       chapters:
