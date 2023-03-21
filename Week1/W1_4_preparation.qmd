@@ -25,7 +25,7 @@ Folder Week 1 (C:\\Users\\yourname\\semester2\\Modul_CMA\\week1)
  °--week1-rexercise                                             
      ¦--week1-rexercise.Rproj                                   
      ¦--wildschwein_BE.csv                                      
-     °--my_solution.Rmd   
+     °--my_solution.qmd   
 ```
 
 Note: 

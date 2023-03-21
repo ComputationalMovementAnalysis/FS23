@@ -31,20 +31,7 @@ You should get a message, saying `Initialized empty Git repository in C:/path/to
 
 To see the "Git" Pane in RStudio, reload RStudio either by restarting it or clicking on the name of your RStudio project in the top right corner of RStudio and selecting your project from the project list). 
 
-### Step 3: Rename branch
-
-In your Git pane, you will see that you do not have a branch yet, it says `(no branch)` in the top right corner. But what is  branch?
-
-Branches are a way to have multiple versions of your project, which is especially useful if you want to do experiments that you are unsure about. We will not cover branches in this course, but it's important that you have heard of the term, since its considered to be Git's "Killer feature".
-
-Once you make your first commit, Git will automatically create a branch named `master`. Test this by committing the`.gitignore` and `...*.Rproj`-File. 
-`master` is just a convention for the main (and maybe only) version of your project. Since 2020, there are efforts to avoid offensive jargon in tech, including the term "master". In this effort, Github has switched to using `main` as the name for the main branch, while Git still uses `master`. We can rename our `master` branch to `main` with the following line of code (note that you must have committed something first):
-
-```
-git branch -M main
-```
-
-### Step 4: Create a Github Repository {#create-github-repo-2}
+### Step 3: Create a Github Repository {#create-github-repo-2}
 
 Now create a Github Repository following the instructions from [last week](#create-github-repo). This time however, don't check `Add a README file`.
 Copy the https URL to your Github repo, which should look something like this: `https://github.com/YOUR-GITHUB-USERNAME/cma-week3.git`
@@ -53,7 +40,7 @@ Copy the https URL to your Github repo, which should look something like this: `
 Report the URL of your new repo back to us via Moodle!
 :::
 
-### Step 5: Connect to Github
+### Step 4: Connect to Github
 
 To connect your (local) RStudio Project to Github, we have to set up our Github repo to be our so called "*remote*" repository. We could have multiple *remotes*, which is why we need to name it, and the convention is to call it `origin`. To create a *remote* named `origin`, type the following command in your shell terminal:
 
