@@ -249,9 +249,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#step-1-create-a-normal-rstudio-project" id="toc-step-1-create-a-normal-rstudio-project" class="nav-link active" data-scroll-target="#step-1-create-a-normal-rstudio-project">Step 1: Create a “normal” RStudio Project</a></li>
   <li><a href="#step-2-activate-git-version-control" id="toc-step-2-activate-git-version-control" class="nav-link" data-scroll-target="#step-2-activate-git-version-control">Step 2: Activate Git Version Control</a></li>
-  <li><a href="#step-3-rename-branch" id="toc-step-3-rename-branch" class="nav-link" data-scroll-target="#step-3-rename-branch">Step 3: Rename branch</a></li>
-  <li><a href="#create-github-repo-2" id="toc-create-github-repo-2" class="nav-link" data-scroll-target="#create-github-repo-2">Step 4: Create a Github Repository</a></li>
-  <li><a href="#step-5-connect-to-github" id="toc-step-5-connect-to-github" class="nav-link" data-scroll-target="#step-5-connect-to-github">Step 5: Connect to Github</a></li>
+  <li><a href="#create-github-repo-2" id="toc-create-github-repo-2" class="nav-link" data-scroll-target="#create-github-repo-2">Step 3: Create a Github Repository</a></li>
+  <li><a href="#step-4-connect-to-github" id="toc-step-4-connect-to-github" class="nav-link" data-scroll-target="#step-4-connect-to-github">Step 4: Connect to Github</a></li>
   </ul>
 </nav>
     </div>
@@ -299,15 +298,8 @@ ul.task-list li input[type="checkbox"] {
 <p>You should get a message, saying <code>Initialized empty Git repository in C:/path/to/your/directory/.git/</code>. You will see this folder (named <code>.git</code>) in your project’s root directory (check your “Files” pane ). If you don’t see it there, click <em>Refresh file listing</em> (refresh symbol to the very right of the files pane). If you still don’t see it, make hidden files visible (<em>Files pane &gt; More &gt; Show hidden files</em>)</p>
 <p>To see the “Git” Pane in RStudio, reload RStudio either by restarting it or clicking on the name of your RStudio project in the top right corner of RStudio and selecting your project from the project list).</p>
 </section>
-<section id="step-3-rename-branch" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-rename-branch">Step 3: Rename branch</h3>
-<p>In your Git pane, you will see that you do not have a branch yet, it says <code>(no branch)</code> in the top right corner. But what is branch?</p>
-<p>Branches are a way to have multiple versions of your project, which is especially useful if you want to do experiments that you are unsure about. We will not cover branches in this course, but it’s important that you have heard of the term, since its considered to be Git’s “Killer feature”.</p>
-<p>Once you make your first commit, Git will automatically create a branch named <code>master</code>. Test this by committing the<code>.gitignore</code> and <code>...*.Rproj</code>-File. <code>master</code> is just a convention for the main (and maybe only) version of your project. Since 2020, there are efforts to avoid offensive jargon in tech, including the term “master”. In this effort, Github has switched to using <code>main</code> as the name for the main branch, while Git still uses <code>master</code>. We can rename our <code>master</code> branch to <code>main</code> with the following line of code (note that you must have committed something first):</p>
-<pre><code>git branch -M main</code></pre>
-</section>
 <section id="create-github-repo-2" class="level3">
-<h3 class="anchored" data-anchor-id="create-github-repo-2">Step 4: Create a Github Repository</h3>
+<h3 class="anchored" data-anchor-id="create-github-repo-2">Step 3: Create a Github Repository</h3>
 <p>Now create a Github Repository following the instructions from <a href="../Week2/W2_3_preparation.html#create-github-repo">last week</a>. This time however, don’t check <code>Add a README file</code>. Copy the https URL to your Github repo, which should look something like this: <code>https://github.com/YOUR-GITHUB-USERNAME/cma-week3.git</code></p>
 <div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -323,8 +315,8 @@ Warnung
 </div>
 </div>
 </section>
-<section id="step-5-connect-to-github" class="level3">
-<h3 class="anchored" data-anchor-id="step-5-connect-to-github">Step 5: Connect to Github</h3>
+<section id="step-4-connect-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-connect-to-github">Step 4: Connect to Github</h3>
 <p>To connect your (local) RStudio Project to Github, we have to set up our Github repo to be our so called “<em>remote</em>” repository. We could have multiple <em>remotes</em>, which is why we need to name it, and the convention is to call it <code>origin</code>. To create a <em>remote</em> named <code>origin</code>, type the following command in your shell terminal:</p>
 <pre><code>git remote add origin https://github.com/YOUR-GITHUB-USERNAME/cma-week3.git</code></pre>
 <p>The first time we push to this <em>remote</em> repository, we need to specify the an upstream, so that future <code>git push</code> will be directed to the correct remote branch. We can to this with the <code>--set-upstream</code> (or <code>-u</code>)</p>
