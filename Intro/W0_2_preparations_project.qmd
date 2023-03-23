@@ -2,7 +2,7 @@
 
 As your course assignment (Leistungsnachweis) you will develop a semester project, in groups of two. In this semester project you will analyze trajectory data of cyclists. 
 
-In fact, we give you the opportunity to track your own movement behavior, generating trajectory data you’ll subsequently analyze yourself. Ideally you start right now collecting your movement data, so once the course starts, you’ll have enough data for your semester project. There are two ways for you to generate your own trajectory data. 
+In fact, we give you the opportunity to track your own movement behavior, generating trajectory data you’ll subsequently analyze yourself. <span style="color:red;">Ideally you start right now collecting your movement data, so once the course starts, you’ll have enough data for your semester project.</span> There are two ways for you to generate your own trajectory data. 
 
 During the course, we will give you the opportunity to share your data with the other students in the course, so that the shared data pool for all can grow.
 
