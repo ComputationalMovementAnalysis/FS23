@@ -3,7 +3,7 @@
 ```{r}
 #| include: false
 
-source('01_R_Files/helperfunctions.R')
+source("01_R_Files/helperfunctions.R")
 ```
 
 - Open the RStudio Project you created for week 2 in [the preparation](#w2-preparation)
@@ -147,7 +147,7 @@ After completing the task, commit your changes to git using a good commit messag
 
 ```{r}
 #| file: "../solutions/week2/task_4.R"
-#| echo: false 
+#| echo: false
 #| include: false
 
 ```

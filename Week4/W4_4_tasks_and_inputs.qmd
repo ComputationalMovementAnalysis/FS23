@@ -3,7 +3,7 @@
 ```{r}
 #| include: false
 
-source('01_R_Files/helperfunctions.R')
+source("01_R_Files/helperfunctions.R")
 ```
 
 Up to now, we have used a variety of different functions designed by other developers. Sometimes we need to execute an operation multiple times, and most often it is reasonable to write a function to do so. Whenever you have copied and pasted a block of code more than twice, you should consider writing a function [@wickham2017]. 
@@ -15,7 +15,7 @@ The first step in writing a function, is picking a name and assigning `<- functi
 ```{r}
 #| echo: true
 
-testfun <- function(){}
+testfun <- function() {}
 ```
 
 To run the function, we have to call the assigned name with the brackets. This function gives no output, which is why we get `NULL` back. 
@@ -32,7 +32,9 @@ To make the function actually *do* something, we need to specify *what* should b
 ```{r}
 #| echo: true
 
-testfun <- function(){print("this function does nothing")}
+testfun <- function() {
+    print("this function does nothing")
+}
 
 testfun()
 ```
@@ -42,7 +44,9 @@ If we want the function to accept some input values, we have to define them with
 ```{r}
 #| echo: true
 
-testfun <- function(sometext){print(sometext)}
+testfun <- function(sometext) {
+    print(sometext)
+}
 
 testfun(sometext = "this function does slightly more, but still not much")
 ```
@@ -52,9 +56,9 @@ Let's take a more practical example. Say we want a function that calculates our 
 ```{r}
 #| echo: true
 
-my_age <- function(birthday, units){
-  difftime(Sys.time(),birthday, units = units)
-  }
+my_age <- function(birthday, units) {
+    difftime(Sys.time(), birthday, units = units)
+}
 
 my_age(birthday = "1997-04-23", units = "days")
 ```
@@ -70,9 +74,9 @@ If we want any of our parameters to have default value, we can assign an initial
 ```{r}
 #| echo: true
 
-my_age <- function(birthday, units = "days"){
-  difftime(Sys.time(), birthday, units = units)
-  }
+my_age <- function(birthday, units = "days") {
+    difftime(Sys.time(), birthday, units = units)
+}
 
 # if not stated otherwise, our function uses the unit "days"
 my_age("1997-04-23")
@@ -106,9 +110,9 @@ Remember to load the necessary libraries first! We propose the following:
 #| echo: true
 #| results: "hide"
 
-library(readr)        
-library(dplyr)        
-library(ggplot2)      
+library(readr)
+library(dplyr)
+library(ggplot2)
 library(lubridate)
 ```
 
