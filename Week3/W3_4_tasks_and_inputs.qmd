@@ -120,7 +120,7 @@ The sampling interval for this dataset is 1 minute. Use a temporal window $v$ of
 Once you have completed the task, commit your changes with a meaningful commit message and test your connection to Github by pushing your changes to your remote repository.
 
 ```{r}
-#| file: "../solutions/week3/task_1.R"
+#| file: "solutions/week3/task_1.R"
 #| echo: false
 #| include: false
 
@@ -135,7 +135,7 @@ Store the new information (boolean to differentiate between stops (`TRUE`) and m
 Commit your changes with a meaningful commit message. 
 
 ```{r}
-#| file: "../solutions/week3/task_2.R"
+#| file: "solutions/week3/task_2.R"
 #| echo: false
 #| include: false
 
@@ -148,7 +148,7 @@ Now visualize the segmented trajectory spatially. Just like last week, you can u
 Commit your changes with a meaningful commit message. 
 
 ```{r}
-#| file: "../solutions/week3/task_3.R"
+#| file: "solutions/week3/task_3.R"
 #| echo: false
 
 ```
@@ -177,7 +177,7 @@ caro60
 ```
 
 ```{r}
-#| file: "../solutions/week3/task_4.R"
+#| file: "solutions/week3/task_4.R"
 #| echo: false
 #| include: false
 
@@ -199,7 +199,7 @@ For this task, explore the trajectories first and get an idea on how the pedestr
 Commit your changes with a meaningful commit message. 
 
 ```{r}
-#| file: "../solutions/week3/task_5.R"
+#| file: "solutions/week3/task_5.R"
 #| echo: false
 
 ```
@@ -218,7 +218,7 @@ Note:
 Commit your changes with a meaningful commit message. Now push all your changes to Github.
 
 ```{r}
-#| file: "../solutions/week3/task_6.R"
+#| file: "solutions/week3/task_6.R"
 #| echo: false
 
 ```

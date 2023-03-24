@@ -28,7 +28,7 @@ To push your changes from our local repo on your computer to the remote repo on 
 Create a new R- (or RMarkdown/Quarto-) file and begin with the following lines of code (adjust the path to your csv file accordingly).
 
 ```{r}
-#| file: "../solutions/week2/task_0.R"
+#| file: "solutions/week2/task_0.R"
 #| echo: true
 #| results: "hide"
 
@@ -60,7 +60,7 @@ Here are some exemplary visualisation you could produce to answer these question
 After completing the task, commit your changes to git using a good commit message (e.g. `completed task 1`).
 
 ```{r}
-#| file: "../solutions/week2/task_1.R"
+#| file: "solutions/week2/task_1.R"
 #| echo: false
 
 ```
@@ -81,7 +81,7 @@ Now calculate the animals' speed between consecutive locations based on `steplen
 After completing the task, commit your changes to git using a good commit message.
 
 ```{r}
-#| file: "../solutions/week2/task_2.R"
+#| file: "solutions/week2/task_2.R"
 #| echo: false
 #| include: false
 
@@ -100,7 +100,7 @@ Now manually reduce the granularity of our sampling interval by selecting every 
 Tip: There are many ways to go about this, we recommend using `seq()` where `from = 1`, `to = ` the length of the dataset and `by = n` (i.e. `3`, `6` or `9`). This creates an integer vector that can either used in `dplyr::slice()` or in row subsetting (type `?slice()` or `?"[.data.frame"` to get help on either of these methods). 
 
 ```{r}
-#| file: "../solutions/week2/task_3.R"
+#| file: "solutions/week2/task_3.R"
 #| echo: false
 #| include: false
 
@@ -123,7 +123,7 @@ Now calculate `timelag`, `steplength` and `speed` for these data sets, just as y
 After completing the task, commit your changes to git using a good commit message.
 
 ```{r}
-#| file: "../solutions/week2/task_3.R"
+#| file: "solutions/week2/task_3.R"
 #| echo: false
 
 ```
@@ -146,7 +146,7 @@ Now run `rollmean`on the `speed` variable of the subset (`caro`). Visualize the 
 After completing the task, commit your changes to git using a good commit message. **Additionally**, push all your commits to your remote repository on Github by clicking the green upwards pointing arrow in the Git pane in RStudio.
 
 ```{r}
-#| file: "../solutions/week2/task_4.R"
+#| file: "solutions/week2/task_4.R"
 #| echo: false
 #| include: false
 

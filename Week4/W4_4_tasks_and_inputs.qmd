@@ -94,7 +94,7 @@ Create a function for our Euclidean distance calculation.
 Note: if you treat your input variables as vectors, they will work in `dplyr`s `mutate()` and `summarise()` operations. 
 
 ```{r}
-#| file: "../solutions/week4/task_1.R"
+#| file: "solutions/week4/task_1.R"
 #| echo: false
 #| include: false
 
@@ -117,7 +117,7 @@ library(lubridate)
 ```
 
 ```{r}
-#| file: "../solutions/week4/task_2.R"
+#| file: "solutions/week4/task_2.R"
 #| echo: false
 
 ```
@@ -135,7 +135,7 @@ The task is therfore to round the minutes of `DatetimeUTC` to a multiple of 15 (
 Your new dataset should look something like this (note the additional column): 
 
 ```{r}
-#| file: "../solutions/week4/task_3.R"
+#| file: "solutions/week4/task_3.R"
 #| echo: false
 
 ```
@@ -152,7 +152,7 @@ To measure the distance between concurrent locations, we need to follow the foll
 \* We recommend using one `dplyr`s join methods (`inner_join()`, `left_join()`, `right_join()` or `full_join()`), which one is appropriate? Tip: specify `suffix` to prevent column names ending in `.x` or `.y`.
 
 ```{r}
-#| file: "../solutions/week4/task_4.R"
+#| file: "solutions/week4/task_4.R"
 #| echo: false
 
 ```
@@ -166,7 +166,7 @@ Now, visualize the *meets* spatially in a way that you think reasonable. For exa
 - Manually changed the x and y axis limits
 
 ```{r}
-#| file: "../solutions/week4/task_5.R"
+#| file: "solutions/week4/task_5.R"
 #| echo: false
 
 ```
@@ -178,7 +178,7 @@ Finally, you can nicely visualize the meeting patterns and trajectories in a Spa
 ![](../02_Images/space_time_cube.jpg)
 
 ```{r}
-#| file: "../solutions/week4/task_6.R"
+#| file: "solutions/week4/task_6.R"
 #| echo: false
 #| include: false
 
