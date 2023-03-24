@@ -384,7 +384,7 @@ Tipp
 <section id="task-1-import-your-data" class="level3">
 <h3 class="anchored" data-anchor-id="task-1-import-your-data">Task 1: Import your data</h3>
 <p>Create a new R- (or RMarkdown/Quarto-) file and begin with the following lines of code (adjust the path to your csv file accordingly).</p>
-<div class="cell" data-file="../solutions/week2/task_0.R">
+<div class="cell" data-file="solutions/week2/task_0.R">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># task 1 ########################################################################</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Load the necessary libraries ################################################</span></span>
@@ -426,7 +426,7 @@ Tipp
 </ul>
 <p>Here are some exemplary visualisation you could produce to answer these questions. Can you now answer the above questions?</p>
 <p>After completing the task, commit your changes to git using a good commit message (e.g.&nbsp;<code>completed task 1</code>).</p>
-<div class="cell" data-file="../solutions/week2/task_1.R">
+<div class="cell" data-file="solutions/week2/task_1.R">
 <div class="cell-output-display">
 <p><img src="W2_5_tasks_and_inputs_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -476,7 +476,7 @@ Tipp
 </div>
 <p>Now calculate <code>timelag</code>, <code>steplength</code> and <code>speed</code> for these data sets, just as you did in the <a href="#w2-task2">last task</a>. To finish the task, compare the speeds visually in a line plot and also visualize the trajectories in a map (see examples below). Interpret the line plot, what do the different lines for the different temporal granularities tell you?</p>
 <p>After completing the task, commit your changes to git using a good commit message.</p>
-<div class="cell" data-file="../solutions/week2/task_3.R">
+<div class="cell" data-file="solutions/week2/task_3.R">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 67 × 6
    TierID TierName CollarID DatetimeUTC                E        N
@@ -516,13 +516,13 @@ Tipp
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rollmean</span>(example, <span class="at">k =</span> <span class="dv">3</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> <span class="st">"left"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0.1424400 0.3269290 0.9981644 0.7110233 0.4571079 0.3539772 0.2598778
- [8] 0.7750294        NA        NA</code></pre>
+<pre><code> [1]  0.2689028 -0.1104872  0.5094440 -0.3405220 -0.3149122 -0.9269667
+ [7] -0.3261759 -1.0088333         NA         NA</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rollmean</span>(example, <span class="at">k =</span> <span class="dv">4</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> <span class="st">"left"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0.2950934 0.6002580 0.7385661 0.5310942 0.6205442 0.1848512 0.5790989
- [8]        NA        NA        NA</code></pre>
+<pre><code> [1]  0.10765954  0.07479481  0.06304880 -0.33020170 -0.53756476 -0.56366609
+ [7] -0.83143519          NA          NA          NA</code></pre>
 </div>
 </div>
 <p>Now run <code>rollmean</code>on the <code>speed</code> variable of the subset (<code>caro</code>). Visualize the output from your moving windows and compare different window sizes (<code>k =</code>). After completing the task, commit your changes to git using a good commit message. <strong>Additionally</strong>, push all your commits to your remote repository on Github by clicking the green upwards pointing arrow in the Git pane in RStudio.</p>
