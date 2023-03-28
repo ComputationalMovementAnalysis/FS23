@@ -83,9 +83,9 @@ Using the above functions (`difftime()` and `lead()`), we can calculate the time
 
 ```{r}
 wildschwein <- tibble(
-  TierID = c(rep("Hans", 5), rep("Klara", 5)),
-  DatetimeUTC = rep(as.POSIXct("2015-01-01 00:00:00", tz = "UTC")+0:4*15*60, 2)
-  )
+    TierID = c(rep("Hans", 5), rep("Klara", 5)),
+    DatetimeUTC = rep(as.POSIXct("2015-01-01 00:00:00", tz = "UTC") + 0:4 * 15 * 60, 2)
+)
 
 wildschwein
 ```
@@ -94,13 +94,13 @@ wildschwein
 To calculate the `timelag` with base-R, we need to mention `wildschwein` three times 
 
 ```{r}
-wildschwein$timelag  <- as.numeric(difftime(lead(wildschwein$DatetimeUTC), wildschwein$DatetimeUTC))
+wildschwein$timelag <- as.numeric(difftime(lead(wildschwein$DatetimeUTC), wildschwein$DatetimeUTC))
 ```
 
 Using `mutate()` we can simplify this operation slightly:
 
 ```{r}
-wildschwein <- mutate(wildschwein,timelag = as.numeric(difftime(lead(DatetimeUTC), DatetimeUTC)))
+wildschwein <- mutate(wildschwein, timelag = as.numeric(difftime(lead(DatetimeUTC), DatetimeUTC)))
 
 wildschwein
 ```
@@ -137,11 +137,11 @@ Note: You can do `mutate()` and `summarise()` on `sf` objects as well. However, 
 The code above may be a bit hard to read, since it has so many nested functions which need to be read from the inside out. In order to make code readable in a more human-friendly way, we can use the piping command `|>` from `magrittr`, which is included in `dplyr` and the `tidyverse`. The above code then looks like this:
 
 ```{r}
-wildschwein |>                              # Take wildschwein...
-  group_by(TierID) |>                       # ...group it by TierID
-  summarise(                                # Summarise the data...
-    mean_timelag = mean(timelag, na.rm = T) # ...by calculating the mean timelag
-  )
+wildschwein |> # Take wildschwein...
+    group_by(TierID) |> # ...group it by TierID
+    summarise( # Summarise the data...
+        mean_timelag = mean(timelag, na.rm = T) # ...by calculating the mean timelag
+    )
 ```
 
 ### Bring it all together...
@@ -150,28 +150,28 @@ Here is the same approach with a different dataset:
 
 ```{r}
 pigs <- tibble(
-  TierID = c(8001,8003,8004,8005,8800,8820,3000,3001,3002,3003,8330,7222),
-  sex = c("M","M","M","F","M","M","F","F","M","F","M","F"),
-  age= c ("A","A","J","A","J","J","J","A","J","J","A","A"),
-  weight = c(50.755,43.409,12.000,16.787,20.987,25.765,22.0122,21.343,12.532,54.32,11.027,88.08)
+    TierID = c(8001, 8003, 8004, 8005, 8800, 8820, 3000, 3001, 3002, 3003, 8330, 7222),
+    sex = c("M", "M", "M", "F", "M", "M", "F", "F", "M", "F", "M", "F"),
+    age = c("A", "A", "J", "A", "J", "J", "J", "A", "J", "J", "A", "A"),
+    weight = c(50.755, 43.409, 12.000, 16.787, 20.987, 25.765, 22.0122, 21.343, 12.532, 54.32, 11.027, 88.08)
 )
 
 pigs
 
 pigs |>
-    summarise(         
-      mean_weight = mean(weight)
+    summarise(
+        mean_weight = mean(weight)
     )
 
 pigs |>
-  group_by(sex) |>
-  summarise(         
-    mean_weight = mean(weight)
-  )
+    group_by(sex) |>
+    summarise(
+        mean_weight = mean(weight)
+    )
 
 pigs |>
-  group_by(sex, age) |>
-  summarise(         
-    mean_weight = mean(weight)
-  )
+    group_by(sex, age) |>
+    summarise(
+        mean_weight = mean(weight)
+    )
 ```

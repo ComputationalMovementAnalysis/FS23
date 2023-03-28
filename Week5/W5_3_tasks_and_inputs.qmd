@@ -1,12 +1,12 @@
 ## Tasks and Inputs
 
 ```{r}
-# include: false
+#| include: false
 
-source('01_R_Files/helperfunctions.R')
+source("01_R_Files/helperfunctions.R")
 ```
 
-Open your RStudio Project [which you prepared](#w5-preperation) from this week. Create a new RScript and import the libraries we need for this week. Import your wildboar dataset `r download_url("wildschwein_BE_2056.csv","datasets")` as an `sf` object
+Open your RStudio Project [which you prepared](#w5-preperation) from this week. Create a new RScript and import the libraries we need for this week. Import your wildboar dataset [wildschwein_BE_2056.csv](https://moodle.zhaw.ch/pluginfile.php/1168373/mod_folder/content/0/wildschwein_BE_2056.csv?forcedownload=1) as an `sf` object
 
 ```{r}
 #| echo: true
@@ -21,12 +21,12 @@ library(ggplot2)
 library(tmap)
 
 wildschwein_BE <- read_delim("datasets/wildschwein_BE_2056.csv", ",") |>
-  st_as_sf(coords = c("E", "N"), crs = 2056, remove = FALSE)
+    st_as_sf(coords = c("E", "N"), crs = 2056, remove = FALSE)
 ```
 
-Download the dataset `r download_url("Feldaufnahmen_Fanel.gpkg","datasets")` and save it to your project folder. This is a vector dataset stored in the filetype *Geopackage*, which is similar to a *Shapefile*, with some advantages (see the website [shapefile must die](http://switchfromshapefile.org/)).
+Download the dataset [Feldaufnahmen_Fanel.gpkg](https://moodle.zhaw.ch/pluginfile.php/1168373/mod_folder/content/0/Feldaufnahmen_Fanel.gpkg?forcedownload=1) and save it to your project folder. This is a vector dataset stored in the filetype *Geopackage*, which is similar to a *Shapefile*, with some advantages (see the website [shapefile must die](http://switchfromshapefile.org/)).
 
-Also download the dataset `r download_url("vegetationshoehe_LFI.tif","datasets")`. This is a "raster" dataset stored in a Geotiff, similar to the map we imported in [week 1](#w1-importing-raster). Also store this file in your project folder and commit these to your repo.
+Also download the dataset [vegetationshoehe_LFI.tif](https://moodle.zhaw.ch/pluginfile.php/1168373/mod_folder/content/0/vegetationshoehe_LFI.tif?forcedownload=1). This is a "raster" dataset stored in a Geotiff, similar to the map we imported in [week 1](#w1-importing-raster). Also store this file in your project folder and commit these to your repo.
 
 ### Tasks 1: Import and visualize spatial data
 
@@ -38,7 +38,7 @@ Since `Feldaufnahmen_Fanel.gpkg` is a vector dataset, you can import it using `r
 - What is the coordinate system of the dataset?
 
 ```{r}
-#| file: "../solutions/week5/task_1.R"
+#| file: "solutions/week5/task_1.R"
 #| echo: false
 #| include: false
 
@@ -52,7 +52,7 @@ To sematically annotate each wildboar location with crop information, you can us
 
 
 ```{r}
-#| file: "../solutions/week5/task_2.R"
+#| file: "solutions/week5/task_2.R"
 #| echo: false
 #| include: false
 
@@ -63,7 +63,7 @@ To sematically annotate each wildboar location with crop information, you can us
 Think of ways you could visually explore the spatio-temporal patterns of wild boar in relation to the crops. In our example below we visualize the percentage of samples in a given crop per hour.
 
 ```{r}
-#| file: "../solutions/week5/task_3.R"
+#| file: "solutions/week5/task_3.R"
 #| echo: false
 #| include: false
 
@@ -78,7 +78,7 @@ In terms of raster data, we have prepared the [Vegetation Height Model](https://
 Import the dataset just like you imported the raster map in [week 1](#w1-importing-raster) (using `terra::rast()`). Visualize the raster data using `tmap` (`ggplot` is very slow with raster data).
 
 ```{r}
-#| file: "../solutions/week5/task_4.R"
+#| file: "solutions/week5/task_4.R"
 #| echo: false
 #| include: false
 
@@ -89,7 +89,7 @@ Import the dataset just like you imported the raster map in [week 1](#w1-importi
 Semantically annotate your wildboar locations with the vegetation index (similar as you did with the crop data in [Task 2](#w5-annotate-vector)). Since you are annotating a vector dataset with information from a raster dataset, you cannot use `st_join` but need the function `extract` from the `terra` package. Read the help on the `extract` function to see what the function expects. The output should look something like this:
 
 ```{r}
-#| file: "../solutions/week5/task_5.R"
+#| file: "solutions/week5/task_5.R"
 #| echo: false
 #| include: false
 

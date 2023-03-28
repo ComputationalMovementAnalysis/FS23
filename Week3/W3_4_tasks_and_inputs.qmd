@@ -3,7 +3,7 @@
 ```{r}
 #| include: false
 
-source('01_R_Files/helperfunctions.R')
+source("01_R_Files/helperfunctions.R")
 ```
 
 You've read @laube2011 about segmenting trajectories. In the paper, the authors define "*static*" fixes as "*those whose average Euclidean distance to other fixes inside a temporal window v is less than some threshold d*", as illustrated in the following figure:
@@ -24,24 +24,24 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
-wildschwein <- read_delim("datasets/wildschwein_BE_2056.csv",",")
+wildschwein <- read_delim("datasets/wildschwein_BE_2056.csv", ",")
 
 sabi <- wildschwein |>
-  filter(TierName == "Sabi", DatetimeUTC >= "2015-07-01", DatetimeUTC < "2015-07-03")
+    filter(TierName == "Sabi", DatetimeUTC >= "2015-07-01", DatetimeUTC < "2015-07-03")
 ```
 
 ```{r}
 #| echo: false
 #| fig.cap: "Movement of the wildboar 'Sabi' in the timespan 01 - 02.07.2015. The circle highlingts possible 'static points'"
 
-ggplot(sabi, aes(E, N, color = DatetimeUTC))  +
-  geom_point() +
-  geom_path() +
-  coord_fixed() +
-  scale_color_datetime(low = "blue", high = "red") +
-  guides(color = guide_colorbar(title.position = 'top', title.hjust = .5, barwidth = unit(20, 'lines'), barheight = unit(.5, 'lines'))) +
-  theme(legend.position = "bottom") +
-  geom_point(y = 1205120, x = 2570470, size = 20, pch = 21, color = "black", stroke = 4)
+ggplot(sabi, aes(E, N, color = DatetimeUTC)) +
+    geom_point() +
+    geom_path() +
+    coord_fixed() +
+    scale_color_datetime(low = "blue", high = "red") +
+    guides(color = guide_colorbar(title.position = "top", title.hjust = .5, barwidth = unit(20, "lines"), barheight = unit(.5, "lines"))) +
+    theme(legend.position = "bottom") +
+    geom_point(y = 1205120, x = 2570470, size = 20, pch = 21, color = "black", stroke = 4)
 ```
 
 #### Step a): Specify a temporal window $v$
@@ -61,12 +61,12 @@ Just like last week, we use the formula for calculating the Euclidean distance i
 #| echo: true
 
 sabi <- sabi |>
-  mutate(
-    nMinus2 = sqrt((lag(E,2)-E)^2+(lag(N,2)-N)^2),   # distance to pos -30 minutes
-    nMinus1 = sqrt((lag(E,1)-E)^2+(lag(N,1)-N)^2),   # distance to pos -15 minutes
-    nPlus1  = sqrt((E-lead(E,1))^2+(N-lead(N,1))^2), # distance to pos +15 mintues
-    nPlus2  = sqrt((E-lead(E,2))^2+(N-lead(N,2))^2)  # distance to pos +30 minutes
-  )
+    mutate(
+        nMinus2 = sqrt((lag(E, 2) - E)^2 + (lag(N, 2) - N)^2), # distance to pos -30 minutes
+        nMinus1 = sqrt((lag(E, 1) - E)^2 + (lag(N, 1) - N)^2), # distance to pos -15 minutes
+        nPlus1  = sqrt((E - lead(E, 1))^2 + (N - lead(N, 1))^2), # distance to pos +15 mintues
+        nPlus2  = sqrt((E - lead(E, 2))^2 + (N - lead(N, 2))^2) # distance to pos +30 minutes
+    )
 ```
 
 Now we want to calculate the mean distance of `nMinus2`, `nMinus1`, `nPlus1`, `nPlus2` for each row. Since we want the mean value *per Row*, we have to explicitly specify this before `mutate()` with the function `rowwise()`. To remove this rowwise-grouping, we end the operation with `ungroup()`. 
@@ -77,11 +77,11 @@ Note that for the first two positions, we cannot calculate a `stepMean` since th
 #| echo: true
 
 sabi <- sabi |>
-  rowwise() |>
-  mutate(
-    stepMean = mean(c(nMinus2, nMinus1, nPlus1, nPlus2))
-  ) |>
-  ungroup() 
+    rowwise() |>
+    mutate(
+        stepMean = mean(c(nMinus2, nMinus1, nPlus1, nPlus2))
+    ) |>
+    ungroup()
 
 sabi
 ```
@@ -94,33 +94,33 @@ We can now determine if an animal is moving or not by specifying a threshold dis
 #| echo: true
 #| fig.cap: "The trajectory of sabi, filtered to the positions where the animal was not static"
 
-sabi <- sabi |> 
-  ungroup() |>
-  mutate(static = stepMean < mean(stepMean, na.rm = TRUE))
+sabi <- sabi |>
+    ungroup() |>
+    mutate(static = stepMean < mean(stepMean, na.rm = TRUE))
 
 sabi_filter <- sabi |>
-  filter(!static)
+    filter(!static)
 
-sabi_filter|>
-  ggplot(aes(E, N))  +
-  geom_path() +
-  geom_point() +
-  coord_fixed() +
-  theme(legend.position = "bottom")
+sabi_filter |>
+    ggplot(aes(E, N)) +
+    geom_path() +
+    geom_point() +
+    coord_fixed() +
+    theme(legend.position = "bottom")
 ```
 
 ### Task 1: Segmentation
 
 If you haven't already done so open the RStudio Project [you have prepared](#w3-preparation) for this week.
 
-With the skills from the input above you can now implement the segmentation algorithm described in @laube2011 on the dataset `r download_url("caro60.csv","datasets")`. Download this dataset (right click > save target as...) and import it as a simple `data.frame` or `tibble` (you don't need an `sf`-object for today's task).
+With the skills from the input above you can now implement the segmentation algorithm described in @laube2011 on the dataset [caro60.csv](https://moodle.zhaw.ch/pluginfile.php/1168373/mod_folder/content/0/caro60.csv?forcedownload=1). Download this dataset (right click > save target as...) and import it as a simple `data.frame` or `tibble` (you don't need an `sf`-object for today's task).
 
 The sampling interval for this dataset is 1 minute. Use a temporal window $v$ of 6 minutes, i.e. a window size of 6 positions (`n±3`). 
 
 Once you have completed the task, commit your changes with a meaningful commit message and test your connection to Github by pushing your changes to your remote repository.
 
 ```{r}
-#| file: "../solutions/week3/task_1.R"
+#| file: "solutions/week3/task_1.R"
 #| echo: false
 #| include: false
 
@@ -135,9 +135,10 @@ Store the new information (boolean to differentiate between stops (`TRUE`) and m
 Commit your changes with a meaningful commit message. 
 
 ```{r}
-#| file: "../solutions/week3/task_2.R"
+#| file: "solutions/week3/task_2.R"
 #| echo: false
 #| include: false
+
 ```
 
 ### Task 3: Visualize segmented trajectories
@@ -147,7 +148,7 @@ Now visualize the segmented trajectory spatially. Just like last week, you can u
 Commit your changes with a meaningful commit message. 
 
 ```{r}
-#| file: "../solutions/week3/task_3.R"
+#| file: "solutions/week3/task_3.R"
 #| echo: false
 
 ```
@@ -157,10 +158,10 @@ Commit your changes with a meaningful commit message.
 In applying @laube2011, we've come as far as steps b in figure \@ref(fig:laubeimg). In order to complete the last steps (c and d), we need a *unique* ID for each segment that we can use as a grouping variable. The following function does just that (it assigns unique IDs based on the column `static` which you created in Task 2). You will learn about functions next week. For now, just copy the following code chunk into your script and run it.
 
 ```{r}
-rle_id <- function(vec){
-  x <- rle(vec)$lengths
-  as.factor(rep(seq_along(x), times=x))
-  }
+rle_id <- function(vec) {
+    x <- rle(vec)$lengths
+    as.factor(rep(seq_along(x), times = x))
+}
 ```
 
 You can use the newly created function `rle_id` to assign unique IDs to subtrajectories (as shown below). Visualize the *moving* segments by colourizing them by `segment_ID`. 
@@ -170,13 +171,13 @@ Commit your changes with a meaningful commit message.
 
 ```{r}
 caro60 <- caro60 |>
-  mutate(segment_id = rle_id(static))
+    mutate(segment_id = rle_id(static))
 
 caro60
 ```
 
 ```{r}
-#| file: "../solutions/week3/task_4.R"
+#| file: "solutions/week3/task_4.R"
 #| echo: false
 #| include: false
 
@@ -191,14 +192,14 @@ p1 + p2 + patchwork::plot_annotation(title = "Moving segments coloured by segmen
 
 ### Task 5: Similarity measures 
 
-We will now leave the wild boar data and turn our attentian to human movement. You will use the dataset  `r download_url("pedestrian.csv","datasets")` (right click > save target as..) for this (and the following) task. Download an import this dataset as a `data.frame`  or `tibble`. It it a set of six different but similar trajectories from pedestrians walking on a path. 
+We will now leave the wild boar data and turn our attentian to human movement. You will use the dataset  [pedestrian.csv](https://moodle.zhaw.ch/pluginfile.php/1168373/mod_folder/content/0/pedestrian.csv?forcedownload=1) for this (and the following) task. Download an import this dataset as a `data.frame` or `tibble`. It it a set of six different but similar trajectories from pedestrians walking on a path. 
 
 For this task, explore the trajectories first and get an idea on how the pedestrians moved. We step away from using the wild boar data for this task because our animals don't express the type of similarity we want to illustrate here. Also, using the constructed pedestrian data allows us illustrating very typical similarity issues, that are picked-up in different ways by the different similarity measures. In later exercises we will get back to our wild boar!
 
 Commit your changes with a meaningful commit message. 
 
 ```{r}
-#| file: "../solutions/week3/task_5.R"
+#| file: "solutions/week3/task_5.R"
 #| echo: false
 
 ```
@@ -217,7 +218,7 @@ Note:
 Commit your changes with a meaningful commit message. Now push all your changes to Github.
 
 ```{r}
-#| file: "../solutions/week3/task_6.R"
+#| file: "solutions/week3/task_6.R"
 #| echo: false
 
 ```

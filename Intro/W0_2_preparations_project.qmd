@@ -1,0 +1,38 @@
+# Preparation Project
+
+As your course assignment (Leistungsnachweis) you will develop a semester project, in groups of two. In this semester project you will analyze trajectory data of cyclists. 
+
+In fact, we give you the opportunity to track your own movement behavior, generating trajectory data you’ll subsequently analyze yourself. <span style="color:red;">Ideally you start right now collecting your movement data, so once the course starts, you’ll have enough data for your semester project.</span> There are two ways for you to generate your own trajectory data. 
+
+During the course, we will give you the opportunity to share your data with the other students in the course, so that the shared data pool for all can grow.
+
+Please let us know which option you choose by filling out the following [survey](https://moodle.zhaw.ch/mod/choice/view.php?id=833486) on Moodle.
+
+## Option 1: Tracking App Posmo
+
+You use the tracking app [Posmo](https://posmo.coop/produkte/posmo-project-tracking-fuer-gruppen), and as a side effect become part of an experiment we currently conduct in one of our research projects. 
+
+The Posmo app will continuously track your daily movements and will automatically determine your kind of transportation. You will then filter for the relevant cycling data. Find more information on how the app works in their [FAQ](https://posmo.coop/produkte/faq). 
+
+In order to join our research project just follow the instructions on the following flyer.
+
+::: {#fig-elephants layout-ncol=1}
+
+![](../02_Images/bikeability_1.PNG)
+
+![](../02_Images/bikeability_2.PNG)
+
+Flyer Project Bikeability
+:::
+
+If you have any issues during installation or you are not able to track yourself after the installtion please get in contact with [Nils](mailto:rata@zhaw.ch) or [Dominic](mailto:luoe@zhaw.ch).
+
+***If, however, for privacy reasons, you prefer not to contribute to our study, we can hand out a GPS tracker to you.***
+
+## Option 2: GPS Tracker 
+
+You can use a GPS tracker, provided by our research group. By using a GPS tracker all your data will stay with you locally. 
+
+You can get the tracker in our office GC 134 at the [Campus Grüental, Wädenswil](https://goo.gl/maps/xDvGFMBEvwBMdWiz7).
+
+Please send us a quick [E-Mail](mailto:luoe@zhaw.ch) so we can arrange the handover of the GPS tracker.
