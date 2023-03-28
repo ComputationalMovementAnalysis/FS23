@@ -36,7 +36,7 @@ First, create a personal access token (PAT) on Github
 Then, store your PAT in you local Git
 
 - In R, install the `gitcreds` package (`install.packages("gitcreds")`)
-- Load this library (`library(gitcreds)`)
+- Load this library (`library("gitcreds")`)
 - Call the function `gitcreds_set()`
 - Respond to the prompt with your PAT from the last step
 - Check that you have stored a credential with `gitcreds_get()`

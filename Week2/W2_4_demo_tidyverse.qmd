@@ -64,7 +64,7 @@ numbers
 We can now run `lead()` and `lag()` on this sequence to illustrate the output. `n =` specifies the offset, `default =` specifies the default value used to "fill" the emerging "empty spaces" of the vector. This helps us performing operations on subsequent values in a vector (or rows in a table).
 
 ```{r}
-library(dplyr)
+library("dplyr")
 
 lead(numbers)
 

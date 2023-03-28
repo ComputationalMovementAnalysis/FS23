@@ -135,7 +135,7 @@ A different approach would be to *smoothen* the derived parameters using a [movi
 ```{r}
 #| echo: true
 
-library(zoo)
+library("zoo")
 
 example <- rnorm(10)
 rollmean(example, k = 3, fill = NA, align = "left")

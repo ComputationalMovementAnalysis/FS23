@@ -20,9 +20,9 @@ We will **demonstrate** implementing this method on the wild boar "Sabi", restri
 ```{r}
 #| echo: false
 
-library(readr)
-library(dplyr)
-library(ggplot2)
+library("readr")
+library("dplyr")
+library("ggplot2")
 
 wildschwein <- read_delim("datasets/wildschwein_BE_2056.csv", ",")
 
@@ -186,7 +186,7 @@ caro60
 ```{r}
 #| echo: false
 
-library(patchwork)
+library("patchwork")
 p1 + p2 + patchwork::plot_annotation(title = "Moving segments coloured by segment ID")
 ```
 

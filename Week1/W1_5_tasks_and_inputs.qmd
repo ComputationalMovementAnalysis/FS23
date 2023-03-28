@@ -31,9 +31,9 @@ Create a new R- (or qmd) file and begin by loading the following packages:
 #| echo: true
 #| results: "hide"
 
-library(readr) # to import tabular data (e.g. csv)
-library(dplyr) # to manipulate (tabular) data
-library(ggplot2) # to visualize data
+library("readr") # to import tabular data (e.g. csv)
+library("dplyr") # to manipulate (tabular) data
+library("ggplot2") # to visualize data
 ```
 
 Move the file `wildschwein_BE.csv` into your project directory and import it into `r` as a `data.frame`.  Assign correct column types as necessary and make sure the time zone is set correctly for the date/time column.
@@ -78,7 +78,7 @@ We will largely rely on `sf`when working with vector data in `R`. In order to tr
 ```{r}
 #| echo: true
 
-library(sf)
+library("sf")
 
 wildschwein_BE_sf <- st_as_sf(wildschwein_BE,
     coords = c("Long", "Lat"),
@@ -219,7 +219,7 @@ To import the file into `R`, we use the package `terra` with the function `rast`
 ```{r}
 #| echo: true
 
-library(terra)
+library("terra")
 
 pk100_BE <- terra::rast("datasets/pk100_BE.tif")
 
@@ -247,7 +247,7 @@ There are multiple ways to add a background map in `ggplot`, many require additi
 ```{r}
 #| echo: true
 
-library(tmap)
+library("tmap")
 
 tm_shape(pk100_BE) +
     tm_rgb()

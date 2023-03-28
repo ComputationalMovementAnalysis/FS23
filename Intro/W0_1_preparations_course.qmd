@@ -12,7 +12,7 @@ source("01_R_Files/helperfunctions.R")
 #| echo: false
 #| include: false
 
-library(rversions)
+library("rversions")
 
 rversion_current <- rversions::r_release()
 rversion_current
@@ -50,7 +50,7 @@ We recommend updating RStudio to the newest version before the course: check if 
 
 ## Install the necessary packages
 
-In the course, we will be needing the following packages (amongst others). Save time during the course by installing these upfront! Check if you can load the packages by calling `library(dplyr)` (note the missing `"`). 
+In the course, we will be needing the following packages (amongst others). Save time during the course by installing these upfront! Check if you can load the packages by calling `library("dplyr")`. 
 
 ```{r}
 #| eval: false 

@@ -110,10 +110,10 @@ Remember to load the necessary libraries first! We propose the following:
 #| echo: true
 #| results: "hide"
 
-library(readr)
-library(dplyr)
-library(ggplot2)
-library(lubridate)
+library("readr")
+library("dplyr")
+library("ggplot2")
+library("lubridate")
 ```
 
 ```{r}
