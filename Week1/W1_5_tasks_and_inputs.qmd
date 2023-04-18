@@ -14,7 +14,10 @@ Before starting with the task:
 
 Once you have set everything up, commit your file to your git repo in the following manner:
 
-:::{.callout-tip}
+:::{.callout-note}
+
+## Committing files with git
+
 1. Save your (R/RMarkdown/Quarto) file
 2. Switch to the "Git"-Tab in the pane in the top right corner
 3. Click "commit" to open the "commit-Window"
