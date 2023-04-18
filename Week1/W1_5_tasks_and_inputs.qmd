@@ -41,7 +41,20 @@ library("ggplot2") # to visualize data
 
 Move the file `wildschwein_BE.csv` into your project directory and import it into `r` as a `data.frame`.  Assign correct column types as necessary and make sure the time zone is set correctly for the date/time column.
 
-Note: We recommend using the `readr` package to import your data (they all begin with `read_*`, note the underscore). These functions are less error prone than the base `R` functions (`read.*`, note the period). Specifically for the wild boar data, we recommend `read_delim()`.
+Note: We recommend using the `readr` package to import data[^readr]. These functions have an underscore in their name, e.g. `read_csv` in oppose to the base `R` functions, which have a period (e.g. `read.csv`). Specifically for the wild boar data, we recommend `read_delim()`.
+
+
+[^readr]: Our reasons for preferring `readr` over base-R import functions:
+
+    1. ~~base `R` imports strings as factors by default~~ (since R 4.0.0, this is not the case anymore)
+    2. `readr` is generally faster (which only matters if you have a large dataset)
+    3. `readr` makes safer assumptins about your data (e.g. the default timezone for datetime columns is UTC)
+    4. `data.frames` created by `readr` are prettier when printed to the console and contain more information using less characters
+
+    HOWEVER: Using external libraries (such as `readr`) creates additional dependencies which has it's own downsides. 
+
+
+
 
 ```{r}
 #| file: "solutions/week1/task_1.R"
