@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -360,39 +360,32 @@ div.csl-indent {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>R.version.string</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "R version 4.2.2 (2022-10-31 ucrt)"</code></pre>
+<pre><code>[1] "R version 4.2.1 (2022-06-23)"</code></pre>
 </div>
 </div>
-<p>This returns the version number of your R installation, whereas the first digit (<code>4</code>) indicates the number of the <em>major release</em>, the second digit (<code>2</code>) indicates the <em>minor release</em> and the last digit (<code>2</code>) refers to the <em>patch release</em>. As a general rule of thumb, you will want to update R if you</p>
+<p>This returns the version number of your R installation, whereas the first digit (<code>4</code>) indicates the number of the <em>major release</em>, the second digit (<code>2</code>) indicates the <em>minor release</em> and the last digit (<code>1</code>) refers to the <em>patch release</em>. As a general rule of thumb, you will want to update R if you</p>
 <ul>
 <li>don’t have the current <em>major</em> version or</li>
 <li>are lagging two (or more) versions behind the current <em>minor release</em></li>
 </ul>
-<p>In the time of writing (März, 2023), the current <code>R</code> Version is 4.2.3 (released on 2023-03-15 08:06:01, see <a href="https://cran.r-project.org/">cran.r-project.org</a>). Your installation should therefore not be older than 4.1.0. If it is, make sure that you have updated R before the course. Check <a href="https://www.linkedin.com/pulse/3-methods-update-r-rstudio-windows-mac-woratana-ngarmtrakulchol/">these instructions on how to update R</a></p>
+<p>In the time of writing (April, 2023), the current <code>R</code> Version is 4.2.3 (released on 15.03.2023, see <a href="https://cran.r-project.org/">cran.r-project.org</a>). Your installation should therefore not be older than 4.1.0. If it is, make sure that you have updated R before the course. Check <a href="https://www.linkedin.com/pulse/3-methods-update-r-rstudio-windows-mac-woratana-ngarmtrakulchol/">these instructions on how to update R</a></p>
 </section>
 <section id="install-or-update-rstudio" class="level2">
 <h2 class="anchored" data-anchor-id="install-or-update-rstudio">Install or update RStudio</h2>
 <p>RStudio is the IDE (integrated development environment) we use in our course to interact with R. There are good alternatives you can use, RStudio simply seems to be <a href="https://twitter.com/mdancho84/status/1502237075550392323">the most popular choice</a>. If you want to use your own IDE, please feel free to do so. However, we don’t recommend this if you are a beginner.</p>
 <p>We recommend updating RStudio to the newest version before the course: check if this is the case by clicking on <em>help &gt; check for updates</em>.</p>
-<blockquote class="twitter-tweet blockquote">
-<p lang="en" dir="ltr">
-Hey <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> community. I’m doing research - what is your favorite way to code in <a href="https://twitter.com/hashtag/R?src=hash&amp;ref_src=twsrc%5Etfw">#R</a>?
-</p>
-— Matt Dancho (Business Science) (<span class="citation" data-cites="mdancho84">(<a href="../90_references.html#ref-mdancho84" role="doc-biblioref"><strong>mdancho84?</strong></a>)</span>) <a href="https://twitter.com/mdancho84/status/1502237075550392323?ref_src=twsrc%5Etfw">March 11, 2022</a>
-</blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </section>
 <section id="install-the-necessary-packages" class="level2">
 <h2 class="anchored" data-anchor-id="install-the-necessary-packages">Install the necessary packages</h2>
-<p>In the course, we will be needing the following packages (amongst others). Save time during the course by installing these upfront! Check if you can load the packages by calling <code>library(dplyr)</code> (note the missing <code>"</code>).</p>
+<p>In the course, we will be needing the following packages (amongst others). Save time during the course by installing these upfront! Check if you can load the packages by calling <code>library("dplyr")</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"quarto"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readr"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyr"</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"sf"</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"terra"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readr"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyr"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"sf"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"terra"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"quarto"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="install-git" class="level2">
@@ -430,6 +423,14 @@ Hey <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw
 <li>Deactivate the option “Restore .RData into workspace at startup”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
 <li>Set “Save workspace to .RData on exit” to “Never”<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
 </ul></li>
+<li><strong>Code</strong>
+<ul>
+<li>Activate the option “Use native pipe operator, |&gt; (requires R 4.1+)”</li>
+</ul></li>
+<li><strong>R Markdown</strong>
+<ul>
+<li>Deactivate the option “Show output inline for all R Markdown documents”</li>
+</ul></li>
 <li><strong>Git / SVN</strong>
 <ul>
 <li>Activate the option “Enable version control interface for RStudio projects”</li>
@@ -454,14 +455,25 @@ Hey <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw
 <p>Now use the terminal in RStudio to introduce yourself:</p>
 <pre><code>  git config --global user.name "Maria Nusslinger"
   git config --global user.email "nussmar@email.com"</code></pre>
-<p>Of course, replace the name and address with your credentials. Use the email address that you will use to create your Git<em>hub</em> account (which we will do next week).</p>
-<p><strong>Note to users who already have a Github account:</strong></p>
+<p>Of course, replace the name and address with your credentials. <strong>Use the email address that you will use to create your Git<em>hub</em> account (which we will do next week).</strong></p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note to users who already have a Github account
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>If you already have a Github account and don’t want to associate the work you do in this course with said account, we recommend the following approach:</p>
 <ol type="1">
 <li>Create a new Github account with a different mailaddress (e.g.&nbsp;your student mail address)</li>
 <li>Override your <code>user.name</code> and <code>user.email</code> on a per project basis (by omitting the <code>--global</code> flag)</li>
 </ol>
 <p>Please feel free to contact us if you have questions about this.</p>
+</div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
