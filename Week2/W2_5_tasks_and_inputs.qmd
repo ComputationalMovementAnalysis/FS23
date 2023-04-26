@@ -28,12 +28,12 @@ To push your changes from our local repo on your computer to the remote repo on 
 
 **Note**: You do not need to push your changes to your remote repo after every commit. It's enough if you do this every few commits.
 
-### Task 1: Import your data
+### Task 1: Import your data {#sec-w2-task1}
 
 Create a new R- (or RMarkdown/Quarto-) file and begin with the following lines of code (adjust the path to your csv file accordingly).
 
 ```{r}
-#| file: "solutions/week2/task_0.R"
+#| file: "solutions/week2/task_1.R"
 #| echo: true
 #| results: "hide"
 
@@ -45,7 +45,7 @@ Note:
 - the coordinates are stored in the columns (`E`/`N`)
 - setting `remove = FALSE` preserves the original (`E`/`N`) columns, which come in handy later on
 
-### Task 2: Getting an overview
+### Task 2: Getting an overview {#sec-w2-task2}
 
 Calculate the time difference between subsequent rows as described in the demo. You can calculate the time difference using the function `difftime()` in combination with `lead()`. 
 
@@ -65,14 +65,20 @@ Here are some exemplary visualisation you could produce to answer these question
 After completing the task, commit your changes to git using a good commit message (e.g. `completed task 1`).
 
 ```{r}
-#| file: "solutions/week2/task_1.R"
+#| file: "solutions/week2/task_2.R"
 #| echo: false
 
 ```
 
-### Task 3: Deriving movement parameters I: Speed {#w2-task2}
+### Task 3: Deriving movement parameters I: Speed {#sec-w2-task3}
 
-In this task we will derive some additional movement parameters from our trajectories. So far our trajectories only consist of a list of time-stamped spatial locations. So let's calculate the animal's steplength based on the Euclidean distance between two subsequent locations. 
+In this task we will derive some additional movement parameters from our trajectories. So far our trajectories only consist of a list of time-stamped spatial locations. So let's calculate the animal's steplength based on the Euclidean distance between subsequent locations.
+
+:::{.callout-note}
+Since our wildboar data is an `sf` object, we *could* use the function `st_distance` to calulate the distance between locations. However, `st_distance` is not designed for movement data, and using it with our split-apply-combine paradigm turns out to be a bit complicated (checkout the answers to [my Stackoverflow question](https://stackoverflow.com/q/49853696/4139249) posted in 2018).
+
+Luckily, we are working with cartesian coordinates and so can create our own distance function more suited to our use case. If one day you work with geodetic coordinates and need to do something similar, please use one of the solutions provided in the linked stackoverflow questions instead!
+:::
 
 You can calculate the Euclidean distance with the following formula: $$\text{distance} = \sqrt{(\text{E1} - \text{E2})^{2}+(\text{N1} - \text{N2})^{2}}$$
 
@@ -86,13 +92,13 @@ Now calculate the animals' speed between consecutive locations based on `steplen
 After completing the task, commit your changes to git using a good commit message.
 
 ```{r}
-#| file: "solutions/week2/task_2.R"
+#| file: "solutions/week2/task_3.R"
 #| echo: false
 #| include: false
 
 ```
 
-### Task 4: Cross-scale movement analysis
+### Task 4: Cross-scale movement analysis {#sec-w2-task4}
 
 @laube2011 analyse animal movement across different scales (see below). In their paper, the authors suggest reducing the granularity of the data by subsetting the data to every n^th^ element. We will do the same on a dataset that includes 200 locations of a single wild boar with a constant sampling interval of 60 seconds. 
 
@@ -105,7 +111,7 @@ Now manually reduce the granularity of our sampling interval by selecting every 
 Tip: There are many ways to go about this, we recommend using `seq()` where `from = 1`, `to = ` the length of the dataset and `by = n` (i.e. `3`, `6` or `9`). This creates an integer vector that can either used in `dplyr::slice()` or in row subsetting (type `?slice()` or `?"[.data.frame"` to get help on either of these methods). 
 
 ```{r}
-#| file: "solutions/week2/task_3.R"
+#| file: "solutions/week2/task_4.R"
 #| echo: false
 #| include: false
 
@@ -123,17 +129,17 @@ nrow(caro_6)
 nrow(caro_9)
 ```
 
-Now calculate `timelag`, `steplength` and `speed` for these data sets, just as you did in the [last task](#w2-task2). To finish the task, compare the speeds visually in a line plot and also visualize the trajectories in a map (see examples below). Interpret the line plot, what do the different lines for the different temporal granularities tell you?
+Now calculate `timelag`, `steplength` and `speed` for these data sets, just as you did in the [last task](#sec-w2-task3). To finish the task, compare the speeds visually in a line plot and also visualize the trajectories in a map (see examples below). Interpret the line plot, what do the different lines for the different temporal granularities tell you?
 
 After completing the task, commit your changes to git using a good commit message.
 
 ```{r}
-#| file: "solutions/week2/task_3.R"
+#| file: "solutions/week2/task_4.R"
 #| echo: false
 
 ```
 
-### Task 5: Deriving movement parameters II: Rolling window functions
+### Task 5: Deriving movement parameters II: Rolling window functions {#sec-w2-task5}
 
 A different approach would be to *smoothen* the derived parameters using a [moving window function](https://docs.wavefront.com/images/5sec_moving_window.png). The `zoo` package offers a variate of moving window functions (`roll_*`). Install this package, load it into the session and use the function `roll_mean()` to smooth the calculated speed. Familiarise yourself with this function by working on some dummy data, for example:
 
@@ -151,11 +157,48 @@ Now run `rollmean`on the `speed` variable of the subset (`caro`). Visualize the 
 After completing the task, commit your changes to git using a good commit message. **Additionally**, push all your commits to your remote repository on Github by clicking the green upwards pointing arrow in the Git pane in RStudio.
 
 ```{r}
-#| file: "solutions/week2/task_4.R"
+#| file: "solutions/week2/task_5.R"
 #| echo: false
 #| include: false
 
 ```
+
+
+### Task 6: Add your movement data to your repository {#sec-w2-task6}
+
+In the semester project, you will analyse your own movement data, either collected with the Posmo App or with the GPS Tracker (see @sec-preperation-project). Acquire this data and save it to a subfolder of your current R Project named `data`. To acquire it, proceed as follows:
+
+- Posmo App Users
+  1. Go to [posmo.datamap.io](https://posmo.datamap.io) and choose "Posmo Project"
+  2. Click on the download button in the top right corner
+  3. Choose an appropriate start and end date for which you want to download the data. Since you want all the data, you can choose 1. January until today
+  4. Click on download
+  5. Move the file from your downloads folder to the subfolder `data` in your current RStudio Project
+- GPS Logger Users: Bring us your logger, we will extract your data and send it to you.
+
+
+:::{.callout-important}
+
+**DO NOT COMMIT ANYTHING YET**. Since your movement data is sensitive, personal information, we do not recommend pushing it to a public GitHub repo. 
+
+First, check if Git recognized your added file by having a look at the Git Pane in RStudio. Do you see your file there? If you do, good. If you don't, get in touch with us.
+
+Now, to prevent Git from publishing your data to GitHub, create a new text file in RStudio (click on File → New File → Text File). In this file, add the name of your data-folder (e.g. `data/`), then save the file with the name `.gitignore` in your project folder. Git will ignore all files and folders listed in this file.
+
+To make sure it worked, check the Git Pane of Rstudio. Do you see your movement data listed here? If not, it worked! If you still see it there, get in touch wih us. 
+:::
+
+
+
+### Task 7: Explore your movement data {#sec-w2-task7}
+
+Now, import your data in the same way you imported the the wild boar data in [task 1](#sec-w2-task1). Next, start exploring your data, similarly as you did in [task 2](#sec-w2-task2). At a minimum:
+
+- Import your data as a data frame and convert it to an `sf` object, using the correct CRS information
+- Convert your data to `CH1903+ LV95`
+- Make a map of your data using `ggplot2` or `tmap`.
+
+
 
 ### Submission
 

@@ -9,9 +9,7 @@ Hover over the code and copy the content by clicking on the clipboard icon on th
 #| warning: false
 #| class-output: "sourceCode r"
 
-cat(readLines("solutions/week2/task_0.R"), sep = "\n")
-cat(readLines("solutions/week2/task_1.R"), sep = "\n")
-cat(readLines("solutions/week2/task_2.R"), sep = "\n")
-cat(readLines("solutions/week2/task_3.R"), sep = "\n")
-cat(readLines("solutions/week2/task_4.R"), sep = "\n")
+source("01_R_Files/helperfunctions.R")
+paste_solutions(list.files("solutions/week2/", full.names = TRUE))
+
 ```
