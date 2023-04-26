@@ -5,7 +5,7 @@ In this course we will be using R, RStudio and Git. We ask you to install and/or
 ```{r}
 #| include: false
 
-source("01_R_Files/helperfunctions.R")
+# source("01_R_Files/helperfunctions.R")
 ```
 
 ```{r}

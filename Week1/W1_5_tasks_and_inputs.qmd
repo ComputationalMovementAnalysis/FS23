@@ -3,7 +3,7 @@
 ```{r}
 #| include: false
 
-source("01_R_Files/helperfunctions.R")
+# source("01_R_Files/helperfunctions.R")
 ```
 
 Before starting with the task:

@@ -3,7 +3,7 @@
 ```{r}
 #| include: false
 
-source("01_R_Files/helperfunctions.R")
+# source("01_R_Files/helperfunctions.R")
 ```
 
 You've read @laube2011 about segmenting trajectories. In the paper, the authors define "*static*" fixes as "*those whose average Euclidean distance to other fixes inside a temporal window v is less than some threshold d*", as illustrated in the following figure:

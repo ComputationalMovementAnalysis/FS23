@@ -3,7 +3,7 @@
 ```{r}
 #| include: false
 
-source("01_R_Files/helperfunctions.R")
+# source("01_R_Files/helperfunctions.R")
 ```
 
 Up to now, we have used a variety of different functions designed by other developers. Sometimes we need to execute an operation multiple times, and most often it is reasonable to write a function to do so. Whenever you have copied and pasted a block of code more than twice, you should consider writing a function [@wickham2017]. 
