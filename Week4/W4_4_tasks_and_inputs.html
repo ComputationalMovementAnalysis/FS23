@@ -115,14 +115,14 @@ div.csl-indent {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script src="../site_libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-<script src="../site_libs/plotly-binding-4.10.1/plotly.js"></script>
+<script src="../site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="../site_libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="../site_libs/typedarray-0.1/typedarray.min.js"></script>
 <script src="../site_libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="../site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
 <script src="../site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="../site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="../site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<link href="../site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="../site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
 <link rel="stylesheet" href="../custom.css">
@@ -389,42 +389,85 @@ div.csl-indent {
 <pre><code>[1] "this function does slightly more, but still not much"</code></pre>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>testfun <span class="ot">&lt;-</span> <span class="cf">function</span>(sometext) {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(sometext)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Note that since R Version 4.1, the above syntax can also be written as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>testfun <span class="ot">&lt;-</span> \(sometext){</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(sometext)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>or even more compact:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>testfun <span class="ot">&lt;-</span> \(sometext) <span class="fu">print</span>(sometext)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
 <p>Let’s take a more practical example. Say we want a function that calculates our age if provided with the date of our birthday. We can use <code>Sys.time()</code> to provide today’s date and <code>difftime()</code> to calculate the time difference between today and our birthday.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>my_age <span class="ot">&lt;-</span> <span class="cf">function</span>(birthday, units) {</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">difftime</span>(<span class="fu">Sys.time</span>(), birthday, <span class="at">units =</span> units)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">my_age</span>(<span class="at">birthday =</span> <span class="st">"1997-04-23"</span>, <span class="at">units =</span> <span class="st">"days"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>my_age <span class="ot">&lt;-</span> <span class="cf">function</span>(birthday, units) {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">difftime</span>(<span class="fu">Sys.time</span>(), birthday, <span class="at">units =</span> units)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">my_age</span>(<span class="at">birthday =</span> <span class="st">"1997-04-23"</span>, <span class="at">units =</span> <span class="st">"days"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 9466.689 days</code></pre>
+<pre><code>Time difference of 9499.425 days</code></pre>
 </div>
 </div>
 <p>As we already know from using other functions, if we declare our variables in the order that we initially listed them, we do not need to specify the parameters (no need of <code>birthday =</code> and <code>units =</code>).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">my_age</span>(<span class="st">"1997-04-23"</span>, <span class="st">"days"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">my_age</span>(<span class="st">"1997-04-23"</span>, <span class="st">"days"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 9466.689 days</code></pre>
+<pre><code>Time difference of 9499.425 days</code></pre>
 </div>
 </div>
 <p>If we want any of our parameters to have default value, we can assign an initial value to the parameter when declaring the variables within the round brackets.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>my_age <span class="ot">&lt;-</span> <span class="cf">function</span>(birthday, <span class="at">units =</span> <span class="st">"days"</span>) {</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">difftime</span>(<span class="fu">Sys.time</span>(), birthday, <span class="at">units =</span> units)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># if not stated otherwise, our function uses the unit "days"</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">my_age</span>(<span class="st">"1997-04-23"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>my_age <span class="ot">&lt;-</span> <span class="cf">function</span>(birthday, <span class="at">units =</span> <span class="st">"days"</span>) {</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">difftime</span>(<span class="fu">Sys.time</span>(), birthday, <span class="at">units =</span> units)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># if not stated otherwise, our function uses the unit "days"</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">my_age</span>(<span class="st">"1997-04-23"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 9466.689 days</code></pre>
+<pre><code>Time difference of 9499.425 days</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can still overwrite units</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">my_age</span>(<span class="st">"1997-04-23"</span>, <span class="st">"hours"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can still overwrite units</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">my_age</span>(<span class="st">"1997-04-23"</span>, <span class="st">"hours"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 227200.5 hours</code></pre>
+<pre><code>Time difference of 227986.2 hours</code></pre>
 </div>
 </div>
-<p>All you need to do now is run execute the function deceleration (<code>myage &lt;- function...</code> etc.) at the beginning of your script, and you can use the function for your entire R session. Tip: Always try to make your function self sufficient: Don’t call variables that were created outside the function call.</p>
+<p>All you need to do now is run execute the function deceleration (<code>myage &lt;- function...</code> etc.) at the beginning of your script, and you can use the function for your entire R session.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Always try to make your function self sufficient: Only use objects within your function that are either passed as function arguments or created within the funtion. See more on this topic <a href="https://raps-with-r.dev/fprog.html#referentially-transparent-and-pure-functions">here</a>, in the online version of the book by <span class="citation" data-cites="rodrigues2023">Rodrigues (<a href="../90_references.html#ref-rodrigues2023" role="doc-biblioref">2023</a>)</span>.</p>
+</div>
+</div>
 <section id="task-1-write-your-own-functions" class="level3">
 <h3 class="anchored" data-anchor-id="task-1-write-your-own-functions">Task 1: Write your own functions</h3>
 <p>Create a function for our Euclidean distance calculation.</p>
@@ -435,10 +478,10 @@ div.csl-indent {
 <p>In the next tasks we will look for “meet” patterns in our wildboar data. To simplify this, we will only use a subset of our wildboar data: The individuals <em>Rosa</em> and <em>Sabi</em> for the timespan <em>01.04.2015 - 15.04.2015</em>. You can download the dataset here <a href="https://moodle.zhaw.ch/pluginfile.php/1168373/mod_folder/content/0/wildschwein_BE_2056.csv?forcedownload=1">wildschwein_BE_2056.csv</a> and filter it with the aforementioned criteria.</p>
 <p>Remember to load the necessary libraries first! We propose the following:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"readr"</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"dplyr"</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"lubridate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="task-3-create-join-key" class="level3">
@@ -453,12 +496,12 @@ div.csl-indent {
 # Groups:   TierID [1]
   TierID TierName CollarID DatetimeUTC              E      N DatetimeRound      
   &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt; &lt;dttm&gt;               &lt;dbl&gt;  &lt;dbl&gt; &lt;dttm&gt;             
-1 002A   Sabi        12275 2015-03-31 22:00:28 2.57e6 1.21e6 2015-03-31 22:00:00
-2 002A   Sabi        12275 2015-03-31 22:15:44 2.57e6 1.21e6 2015-03-31 22:15:00
-3 002A   Sabi        12275 2015-03-31 22:30:44 2.57e6 1.21e6 2015-03-31 22:30:00
-4 002A   Sabi        12275 2015-03-31 22:46:04 2.57e6 1.21e6 2015-03-31 22:45:00
-5 002A   Sabi        12275 2015-03-31 23:00:17 2.57e6 1.21e6 2015-03-31 23:00:00
-6 002A   Sabi        12275 2015-03-31 23:15:12 2.57e6 1.21e6 2015-03-31 23:15:00</code></pre>
+1 002A   Sabi        12275 2015-04-01 00:00:11 2.57e6 1.21e6 2015-04-01 00:00:00
+2 002A   Sabi        12275 2015-04-01 00:15:22 2.57e6 1.21e6 2015-04-01 00:15:00
+3 002A   Sabi        12275 2015-04-01 00:30:11 2.57e6 1.21e6 2015-04-01 00:30:00
+4 002A   Sabi        12275 2015-04-01 00:45:16 2.57e6 1.21e6 2015-04-01 00:45:00
+5 002A   Sabi        12275 2015-04-01 01:00:44 2.57e6 1.21e6 2015-04-01 01:00:00
+6 002A   Sabi        12275 2015-04-01 01:15:17 2.57e6 1.21e6 2015-04-01 01:15:00</code></pre>
 </div>
 </div>
 </section>
@@ -483,7 +526,7 @@ div.csl-indent {
 </ul>
 <div class="cell" data-file="solutions/week4/task_5.R">
 <div class="cell-output-display">
-<p><img src="W4_4_tasks_and_inputs_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+<p><img src="W4_4_tasks_and_inputs_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -496,6 +539,9 @@ div.csl-indent {
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-hagerstraand1970" class="csl-entry" role="listitem">
 Hägerstraand, Torsten. 1970. <span>“What about People in Regional Science?”</span> <em>Papers in Regional Science</em> 24 (1): 7–24.
+</div>
+<div id="ref-rodrigues2023" class="csl-entry" role="listitem">
+Rodrigues, Bruno. 2023. <em>Building Reproducible Analytical Pipelines with r</em>. leanpub.
 </div>
 <div id="ref-wickham2017" class="csl-entry" role="listitem">
 Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st ed. O’Reilly Media, Inc.
