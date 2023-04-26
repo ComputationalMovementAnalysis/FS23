@@ -51,6 +51,33 @@ testfun <- function(sometext) {
 testfun(sometext = "this function does slightly more, but still not much")
 ```
 
+
+
+:::{.callout-note collapse="true"}
+
+```{r}
+testfun <- function(sometext) {
+    print(sometext)
+}
+```
+
+Note that since R Version 4.1, the above syntax can also be written as follows:
+
+```{r}
+testfun <- \(sometext){
+    print(sometext)
+}
+```
+
+or even more compact:
+
+```{r}
+testfun <- \(sometext) print(sometext)
+```
+
+:::
+
+
 Let's take a more practical example. Say we want a function that calculates our age if provided with the date of our birthday. We can use `Sys.time()` to provide today's date and `difftime()` to calculate the time difference between today and our birthday.
 
 ```{r}
@@ -85,7 +112,11 @@ my_age("1997-04-23")
 my_age("1997-04-23", "hours")
 ```
 
-All you need to do now is run execute the function deceleration (`myage <- function...` etc.) at the beginning of your script, and you can use the function for your entire R session. Tip: Always try to make your function self sufficient: Don't call variables that were created outside the function call.
+All you need to do now is run execute the function deceleration (`myage <- function...` etc.) at the beginning of your script, and you can use the function for your entire R session. 
+
+:::{.callout-important}
+Always try to make your function self sufficient: Only use objects within your function that are either passed as function arguments or created within the funtion. See more on this topic [here](https://raps-with-r.dev/fprog.html#referentially-transparent-and-pure-functions), in the online version of the book by @rodrigues2023.
+:::
 
 ### Task 1: Write your own functions
 
