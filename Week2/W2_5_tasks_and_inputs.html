@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Computational Movement Analysis: Patterns and Trends in Environmental Data - 7&nbsp; Tasks and Inputs</title>
+<title>Computational Movement Analysis: Patterns and Trends in Environmental Data - Tasks and Inputs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,9 +17,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -46,48 +47,19 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -101,8 +73,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -112,8 +83,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../Week3/W3_1_exercise.html" rel="next">
-<link href="../Week2/W2_3_preparation.html" rel="prev">
+<link href="../Week3/W3_3_preparation.html" rel="next">
+<link href="../Week2/W2_4_demo_tidyverse.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -133,18 +104,19 @@ div.csl-indent {
   "type": "textbox",
   "limit": 20,
   "language": {
-    "search-no-results-text": "Keine Treffer",
-    "search-matching-documents-text": "Treffer",
-    "search-copy-link-title": "Link in die Suche kopieren",
-    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
-    "search-more-match-text": "weitere Treffer in diesem Dokument",
-    "search-more-matches-text": "weitere Treffer in diesem Dokument",
-    "search-clear-button-title": "Zurücksetzen",
-    "search-detached-cancel-button-title": "Abbrechen",
-    "search-submit-button-title": "Abschicken"
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../custom.css">
@@ -155,11 +127,16 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-title">Tasks and Inputs</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Week2/W2_3_preparation.html">Exercise 2</a></li><li class="breadcrumb-item"><a href="../Week2/W2_5_tasks_and_inputs.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tasks and Inputs</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -167,7 +144,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../02_Images/zhaw_sw_neg.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -175,8 +152,8 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Computational Movement Analysis: Patterns and Trends in Environmental Data</a> 
         <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-  <a href="" class="quarto-reader-toggle sidebar-tool" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
@@ -184,16 +161,17 @@ div.csl-indent {
 </div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">Welcome to the course!</a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome to the course!</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -208,12 +186,13 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Week1/W1_1_exercise.html" class="sidebar-item-text sidebar-link">Exercise 1</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Exercise 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Week1/W1_4_preparation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preparation</span></a>
@@ -228,20 +207,21 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Week2/W2_1_exercise.html" class="sidebar-item-text sidebar-link">Exercise 2</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Exercise 2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Week2/W2_4_demo_tidyverse.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Demo Tidyverse</span></a>
+  <a href="../Week2/W2_3_preparation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preparation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Week2/W2_3_preparation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preparation</span></a>
+  <a href="../Week2/W2_4_demo_tidyverse.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Demo Tidyverse</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -253,12 +233,13 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Week3/W3_1_exercise.html" class="sidebar-item-text sidebar-link">Exercise 3</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Exercise 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Week3/W3_3_preparation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preparation</span></a>
@@ -273,12 +254,13 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Week4/W4_1_exercise.html" class="sidebar-item-text sidebar-link">Exercise 4</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Exercise 4</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Week4/W4_3_preparation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preparation</span></a>
@@ -293,12 +275,13 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Week5/W5_1_exercise.html" class="sidebar-item-text sidebar-link">Exercise 5</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Exercise 5</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Week5/W5_2_preparation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preparation</span></a>
@@ -319,10 +302,11 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
   <li><a href="#task-1-import-your-data" id="toc-task-1-import-your-data" class="nav-link active" data-scroll-target="#task-1-import-your-data">Task 1: Import your data</a></li>
@@ -339,7 +323,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-title">Tasks and Inputs</span></h1>
+<h1 class="title"><span class="chapter-title">Tasks and Inputs</span></h1>
 </div>
 
 
@@ -355,24 +339,25 @@ div.csl-indent {
 </header>
 
 <ul>
-<li>Open the RStudio Project you created for week 2 in <a href="W2_3_preparation.html">the preparation</a></li>
+<li>Open the RStudio Project you created <a href="W2_3_preparation.html">in preparation</a> to this exercise</li>
 <li>Download the new wildboar movement data, and save it to your new project’s directory <a href="https://moodle.zhaw.ch/pluginfile.php/1168373/mod_folder/content/0/wildschwein_BE_2056.csv?forcedownload=1">wildschwein_BE_2056.csv</a></li>
-<li>Now, commit your changes to your repo like we did <a href="../Week1/W1_5_tasks_and_inputs.html">last week</a> (see below):</li>
 </ul>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<section id="sec-commit2" class="level6">
+<h6 class="anchored" data-anchor-id="sec-commit2">Once you have set everything up, commit your file to your git repo in the following manner:</h6>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
-Tipp
+<div class="callout-title-container flex-fill">
+Committing files with git
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Save your (R/RMarkdown/Quarto) file</li>
 <li>Switch to the “Git”-Tab in the pane in the top right corner</li>
-<li>Click “commit” to open the “commit-Window”</li>
+<li>Click “commit” to open the “Commit Window”</li>
 <li>Click in the checkbox next to the file(s) you want to commit</li>
 <li>Add a commit message to explain what you are committing (e.g.&nbsp;“<code>initial commit</code>”)</li>
 <li>Click on “commit” to commit your changes</li>
@@ -381,6 +366,7 @@ Tipp
 </div>
 <p>To push your changes from our local repo on your computer to the remote repo on Github, simply click the green button “Push” in the Git tab in RStudio. Now take a look at your repository on github.com. Do you see the new files there? Contact us if this does not work.</p>
 <p><strong>Note</strong>: You do not need to push your changes to your remote repo after every commit. It’s enough if you do this every few commits.</p>
+</section>
 <section id="task-1-import-your-data" class="level3">
 <h3 class="anchored" data-anchor-id="task-1-import-your-data">Task 1: Import your data</h3>
 <p>Create a new R- (or RMarkdown/Quarto-) file and begin with the following lines of code (adjust the path to your csv file accordingly).</p>
@@ -400,7 +386,7 @@ Tipp
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>wildschwein_BE <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">"datasets/wildschwein_BE_2056.csv"</span>, <span class="st">","</span>) <span class="co"># adjust path</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>wildschwein_BE <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(wildschwein_BE, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"E"</span>, <span class="st">"N"</span>), <span class="at">crs =</span> <span class="dv">2056</span>, <span class="at">remove =</span> <span class="cn">FALSE</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>wildschwein_BE <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(wildschwein_BE, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"E"</span>, <span class="st">"N"</span>), <span class="at">crs =</span> <span class="dv">2056</span>, <span class="at">remove =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Note:</p>
 <ul>
@@ -453,11 +439,11 @@ Tipp
 </section>
 <section id="task-4-cross-scale-movement-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="task-4-cross-scale-movement-analysis">Task 4: Cross-scale movement analysis</h3>
-<p><span class="citation" data-cites="laube2011">Laube und Purves (<a href="../90_references.html#ref-laube2011" role="doc-biblioref">2011</a>)</span> analyse animal movement across different scales (see below). In their paper, the authors suggest reducing the granularity of the data by subsetting the data to every n<sup>th</sup> element. We will do the same on a dataset that includes 200 locations of a single wild boar with a constant sampling interval of 60 seconds.</p>
+<p><span class="citation" data-cites="laube2011">Laube and Purves (<a href="../90_references.html#ref-laube2011" role="doc-biblioref">2011</a>)</span> analyse animal movement across different scales (see below). In their paper, the authors suggest reducing the granularity of the data by subsetting the data to every n<sup>th</sup> element. We will do the same on a dataset that includes 200 locations of a single wild boar with a constant sampling interval of 60 seconds.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../02_Images/laube_2011_2.jpg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Black points are used in calculation of movement parameters (e.g.&nbsp;speed) at a given termporal scale (Laube and Purves, 2011)</figcaption><p></p>
+<figcaption class="figure-caption">Black points are used in calculation of movement parameters (e.g.&nbsp;speed) at a given termporal scale (Laube and Purves, 2011)</figcaption>
 </figure>
 </div>
 <p>Download this dataset here: <a href="https://moodle.zhaw.ch/pluginfile.php/1168373/mod_folder/content/0/caro60.csv?forcedownload=1">caro60.csv</a>. Import it just like you imported the other wild boar data and save it to a new variable named <code>caro</code> (note that the locations are stored in EPSG 2056).</p>
@@ -472,7 +458,7 @@ Tipp
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(caro_6)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 34</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(caro_9)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 23</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 23</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now calculate <code>timelag</code>, <code>steplength</code> and <code>speed</code> for these data sets, just as you did in the <a href="#w2-task2">last task</a>. To finish the task, compare the speeds visually in a line plot and also visualize the trajectories in a map (see examples below). Interpret the line plot, what do the different lines for the different temporal granularities tell you?</p>
 <p>After completing the task, commit your changes to git using a good commit message.</p>
@@ -491,7 +477,8 @@ Tipp
  8 010C   Caro        13973 2015-09-15 08:28:00 2570496. 1205094.
  9 010C   Caro        13973 2015-09-15 08:31:00 2570497. 1205091.
 10 010C   Caro        13973 2015-09-15 08:34:00 2570499. 1205091.
-# … with 57 more rows</code></pre>
+# … with 57 more rows
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="W2_5_tasks_and_inputs_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
@@ -511,18 +498,18 @@ Tipp
 <h3 class="anchored" data-anchor-id="task-5-deriving-movement-parameters-ii-rolling-window-functions">Task 5: Deriving movement parameters II: Rolling window functions</h3>
 <p>A different approach would be to <em>smoothen</em> the derived parameters using a <a href="https://docs.wavefront.com/images/5sec_moving_window.png">moving window function</a>. The <code>zoo</code> package offers a variate of moving window functions (<code>roll_*</code>). Install this package, load it into the session and use the function <code>roll_mean()</code> to smooth the calculated speed. Familiarise yourself with this function by working on some dummy data, for example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(zoo)</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"zoo"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rollmean</span>(example, <span class="at">k =</span> <span class="dv">3</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> <span class="st">"left"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rollmean</span>(example, <span class="at">k =</span> <span class="dv">3</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> <span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]  0.2689028 -0.1104872  0.5094440 -0.3405220 -0.3149122 -0.9269667
- [7] -0.3261759 -1.0088333         NA         NA</code></pre>
+<pre><code> [1] 0.48657932 0.24830081 0.16878593 0.33569852 0.32713083 0.42545483
+ [7] 0.07313273 0.64291287         NA         NA</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rollmean</span>(example, <span class="at">k =</span> <span class="dv">4</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> <span class="st">"left"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rollmean</span>(example, <span class="at">k =</span> <span class="dv">4</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> <span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]  0.10765954  0.07479481  0.06304880 -0.33020170 -0.53756476 -0.56366609
- [7] -0.83143519          NA          NA          NA</code></pre>
+<pre><code> [1] 0.3183658 0.2956098 0.3155478 0.1987794 0.4284753 0.2438079 0.4291902
+ [8]        NA        NA        NA</code></pre>
 </div>
 </div>
 <p>Now run <code>rollmean</code>on the <code>speed</code> variable of the subset (<code>caro</code>). Visualize the output from your moving windows and compare different window sizes (<code>k =</code>). After completing the task, commit your changes to git using a good commit message. <strong>Additionally</strong>, push all your commits to your remote repository on Github by clicking the green upwards pointing arrow in the Git pane in RStudio.</p>
@@ -536,9 +523,9 @@ Tipp
 <!-- ``` -->
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-laube2011" class="csl-entry" role="doc-biblioentry">
-Laube, Patrick, und Ross S. Purves. 2011. <span>„How fast is a cow? Cross - Scale Analysis of Movement Data“</span>. <em>Transactions in GIS</em> 15 (3): 401–18. <a href="https://doi.org/10.1111/j.1467-9671.2011.01256.x">https://doi.org/10.1111/j.1467-9671.2011.01256.x</a>.
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-laube2011" class="csl-entry" role="listitem">
+Laube, Patrick, and Ross S. Purves. 2011. <span>“How Fast Is a Cow? Cross - Scale Analysis of Movement Data.”</span> <em>Transactions in GIS</em> 15 (3): 401–18. <a href="https://doi.org/10.1111/j.1467-9671.2011.01256.x">https://doi.org/10.1111/j.1467-9671.2011.01256.x</a>.
 </div>
 </div>
 </section>
@@ -688,9 +675,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -701,12 +702,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Kopiert");
+    button.setAttribute("title", "Copied!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Kopiert");
+      button.setAttribute("data-bs-title", "Copied!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -806,6 +807,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -847,13 +934,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../Week2/W2_3_preparation.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Preparation</span></span>
+      <a href="../Week2/W2_4_demo_tidyverse.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Demo Tidyverse</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Week3/W3_1_exercise.html" class="pagination-link">
-        <span class="nav-page-text">Exercise 3</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../Week3/W3_3_preparation.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Preparation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
