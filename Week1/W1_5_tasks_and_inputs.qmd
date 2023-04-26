@@ -12,7 +12,7 @@ Before starting with the task:
 2. In RStudio, open the RStudio Project you created for this week. You can see that you are in an RStudio Project if the project's name is visible next to the little RStudio logo in the top right corner of RStudio (otherwise it will read `Project: (None)`).
 3. Download the wildboar movement data here: [wildschwein_BE.csv](https://moodle.zhaw.ch/pluginfile.php/1168373/mod_folder/content/0/wildschwein_BE.csv?forcedownload=1)
 
-Once you have set everything up, commit your file to your git repo in the following manner:
+###### Once you have set everything up, commit your file to your git repo in the following manner: {#sec-commit}
 
 :::{.callout-note}
 
@@ -20,10 +20,11 @@ Once you have set everything up, commit your file to your git repo in the follow
 
 1. Save your (R/RMarkdown/Quarto) file
 2. Switch to the "Git"-Tab in the pane in the top right corner
-3. Click "commit" to open the "commit-Window"
+3. Click "commit" to open the "Commit Window"
 4. Click in the checkbox next to the file(s) you want to commit
 5. Add a commit message to explain what you are committing (e.g. "`initial commit`")
 6. Click on "commit" to commit your changes
+
 :::
 
 ### Task 1: Import data
@@ -39,7 +40,7 @@ library("dplyr") # to manipulate (tabular) data
 library("ggplot2") # to visualize data
 ```
 
-Move the file `wildschwein_BE.csv` into your project directory and import it into `r` as a `data.frame`.  Assign correct column types as necessary and make sure the time zone is set correctly for the date/time column.
+Move the file `wildschwein_BE.csv` into your project directory and import it into `r` as a `data.frame`. Assign correct column types as necessary and make sure the time zone is set correctly for the date/time column.
 
 Note: We recommend using the `readr` package to import data[^readr]. These functions have an underscore in their name, e.g. `read_csv` in oppose to the base `R` functions, which have a period (e.g. `read.csv`). Specifically for the wild boar data, we recommend `read_delim()`.
 
@@ -51,7 +52,7 @@ Note: We recommend using the `readr` package to import data[^readr]. These funct
     3. `readr` makes safer assumptins about your data (e.g. the default timezone for datetime columns is UTC)
     4. `data.frames` created by `readr` are prettier when printed to the console and contain more information using less characters
 
-    HOWEVER: Using external libraries (such as `readr`) creates additional dependencies which has it's own downsides. 
+    HOWEVER: Using external libraries (such as `readr`) creates additional dependencies which has it's own downsides (which is one of the reasons we don't do `library("tidyverse")`). 
 
 
 
@@ -63,18 +64,16 @@ Note: We recommend using the `readr` package to import data[^readr]. These funct
 
 ```
 
-Commit your changes as described [in the beginning](#w1-tasks-and-inputs). Write a meaningful commit message (e.g. "`completed task 1`").
+Commit your changes as described [in the beginning](#sec-commit). Write a meaningful commit message (e.g. "`completed task 1`").
 
 ### Task 2: Explore Data
 
 We will use a range of different visualization tools (i.e. R-packages) in this course. Several packages techniques have emerged in recent years, each with their specific strengths and weaknesses. While `base::plot() `is quick and simple, it not very scalable with growing complexity. `ggplot2` offers solutions for most use cases and has an elegant, consistent syntax that is easy to get accustomed to. We will get to know other techniques later in the course.
 
 Get an overview of your data by creating a first "map-like" plot of your data producing a simple scatter plot with `ggplot2`. 
-Setting up a `ggplot` with our data is done using the command `ggplot(wildschwein_BE, aes(Long, Lat, colour = TierID))`. Creating a map is done via the basic scatter plot command `geom_point()`.
+Setting up a `ggplot` with our data is done using the command `ggplot(wildschwein_BE, aes(Long, Lat, colour = TierID))`. Creating a map is done via the basic scatter plot command `geom_point()`. 
 
-Assigning every individual its own colour is done using the `ggplot` argument `colour =`.
-
-Commit your changes as described [in the beginning](#w1-tasks-and-inputs). Have a look at your commit history by clicking on "History" in the "Git"-Pane.
+Commit your changes as described [in the beginning](#sec-commit). Have a look at your commit history by clicking on "History" in the "Git"-Pane.
 
 ```{r}
 #| file: "solutions/week1/task_2.R"
@@ -114,7 +113,7 @@ wildschwein_BE
 wildschwein_BE_sf
 ```
 
-As you can see, `st_as_sf()` has added some metadata to our dataframe (`geometry type`, `dimension`, `bbox`, `epsg` and `proj4string`) and replaced the columns `Lat` and `Long` with a column named `geometry`. Other than that, the new `sf` object is very similar to our original dataframe. In fact, `sf` objects *are* essentially `dataframes`, as you can verify with the function `is.data.frame()`:
+As you can see, `st_as_sf()` has added some metadata to our dataframe (`Geometry type`, `Dimension`, `Bounding box`, `Geodetic CRS`) and replaced the columns `Lat` and `Long` with a column named `geometry`. Other than that, the new `sf` object is very similar to our original dataframe. In fact, `sf` objects *are* essentially `dataframes`, as you can verify with the function `is.data.frame()`:
 
 ```{r}
 #| echo: true
@@ -153,7 +152,7 @@ rm(wildschwein_BE_sf)
 
 So what can we do with our new `sf` object that we couldn't before? One example is projecting the WGS84 (`Lat`/`Long`) coordinates into the new Swiss CRS `CH1903+ LV95`[^50]. Do this by using the function `st_transform`. By the way, do you notice a pattern here? The package `sf` names most functions for spatial operations with the prefix `st_*`, just as in PostGIS.
 
-[^50]: As we've mentioned in the first Input, you can look up the EPSG codes under http://epsg.io. For information specific to Switzerland, check the [swisstopo website](https://www.swisstopo.admin.ch/en/knowledge-facts/surveying-geodesy/reference-systems.html) 
+[^50]: As we've mentioned in the first Input, you can look up the EPSG codes under [epsg.io](http://epsg.io). For information specific to Switzerland, check the [swisstopo website](https://www.swisstopo.admin.ch/en/knowledge-facts/surveying-geodesy/reference-systems.html) 
 
 ```{r}
 #| file: "solutions/week1/task_3.R"
@@ -169,11 +168,11 @@ Here's the resulting `sf` object from the operation:
 wildschwein_BE
 ```
 
-Commit your changes as described [in the beginning](#w1-tasks-and-inputs).
+Commit your changes as described [in the beginning](#sec-commit).
 
 ### Input: Calculate Convex Hull
 
-Transforming from one Coordinate Reference System to another was one operation where we needed an object with a spatial nature. In this way, we were able to use an off the shelf function to project the coordinates from one CRS to another. In our next example, we again rely on a spatial function: We want to calculate a [convex hull](https://en.wikipedia.org/wiki/Convex_hull) per Wild boar. And guess what the function for calculating a convex hull is called in `sf`? If you guessed `st_convex_hull()`, you were right! 
+Transforming from one Coordinate Reference System to another was one operation where we needed an object with a spatial nature. In this way, we were able to use an off-the-shelf function to project the coordinates from one CRS to another. In our next example, we again rely on a spatial function: We want to calculate a [convex hull](https://en.wikipedia.org/wiki/Convex_hull) per Wild boar. And guess what the function for calculating a convex hull is called in `sf`? If you guessed `st_convex_hull()`, you were right! 
 
 By default `st_convex_hull()` calculates the convex hull *per feature*, i.e. *per point* in our dataset. This of course makes little sense. In order to calculate the convex hull per animal, we need to convert our point- to multipoint-features where each feature contains all positions of one animal. This is achieved in two steps:
 
@@ -225,7 +224,7 @@ Note: `ggplot` refuses to use our specified CRS, so we need to force this by spe
 
 ```
 
-Commit your changes as described [in the beginning](#w1-tasks-and-inputs). Have a look at your commit history by clicking on "History" in the "Git"-Pane.
+Commit your changes as described [in the beginning](#sec-commit). Have a look at your commit history by clicking on "History" in the "Git"-Pane.
 
 ### Input: Importing raster data {#w1-importing-raster}
 
@@ -271,7 +270,7 @@ tm_shape(pk100_BE) +
 
 As you can see, plotting layers in `tmap` is combined with the `+` sign, just as in `ggplot2`. In `tmap` however, each layer consists of two objects: a `tm_shape()` in which the data is called, and a `tm_*` object in which we define how the data is visualized (`tm_rgb()` states that it is plotted as an RGB Raster Layer). Add the object `mcp` to the plot in this manner. Read [the vignette](https://cran.r-project.org/web/packages/tmap/vignettes/tmap-getstarted.html) if you are having trouble.
 
-Commit your changes as described [in the beginning](#w1-tasks-and-inputs). Remember to add a meaningful commit message (e.g. `completed task 5`).
+Commit your changes as described [in the beginning](#sec-commit). Remember to add a meaningful commit message (e.g. `completed task 5`).
 
 ```{r}
 #| file: "solutions/week1/task_5.R"
@@ -283,7 +282,7 @@ Commit your changes as described [in the beginning](#w1-tasks-and-inputs). Remem
 
 Rerun the `tmap()...` command from the previous task, but switch the plotting mode to "view"" (`tmap_mode("view")`) beforehand. Omit the raster layer (`pk100_BE`), you won't be needing it.
 
-Commit your changes as described [in the beginning](#w1-tasks-and-inputs). Have a look at your commit history by clicking on "History" in the "Git"-Pane.
+Commit your changes as described [in the beginning](#sec-commit). Have a look at your commit history by clicking on "History" in the "Git"-Pane.
 
 ```{r}
 #| file: "solutions/week1/task_6.R"

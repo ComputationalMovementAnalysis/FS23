@@ -54,7 +54,7 @@ Now you can create a repository on Github that you can afterwards connect to you
 
 Click on `Create repository`, then on the green button "Code". Select HTTPS (it might already be selected) and then copy the URL by clicking on the clipboard symbol. The URL should look something list this `https://github.com/YOUR-GITHUB-USERNAME/cma-week2.git`. 
 
-:::{.callout-warning}
+:::{.callout-important}
 Report this URL back to us via Moodle (under *L2 Data Issues > R Exercises E2 > Exercise 2 (Github URL)*)
 :::
 
@@ -65,7 +65,7 @@ Report this URL back to us via Moodle (under *L2 Data Issues > R Exercises E2 > 
 You will now create a new RStudio Project for week 2. Unlike last week, we will create the project in such a way that it is immediately connected to our Git*hub* repo. In RStudio, start a new project. Choose: File > New Project > **Version Control** > Git. 
 
 - In the repository URL, paste the URL you copied in the last step
-- Change "Project directory name" to `week2-rexercise` (if you are following [the convention we proposed last week](#folder-structure))
+- Change "Project directory name" to `cma-week2-rexercise` (if you are following [the convention we proposed last week](#folder-structure))
 - Change the parent directory (`Create project as a subdirectory of`) to your equivalent of `C:/Users/yourname/semester2/Modul_CMA/week2`
 
 Click on "Create Project". You are now all set and can start with this week's tasks!

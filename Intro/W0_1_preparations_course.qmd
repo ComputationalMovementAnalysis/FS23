@@ -13,16 +13,19 @@ source("01_R_Files/helperfunctions.R")
 #| include: false
 
 library("rversions")
+library("lubridate")
 
-rversion_current <- rversions::r_release()
-rversion_current
+rv <- rversions::r_release()
+rv
 
-rversion_current_sep <- strsplit(as.character(base::getRversion()), "\\.")[[1]]
+rve <- strsplit(as.character(base::getRversion()), "\\.")[[1]]
 
 rversion_minimal <- function(version_string){
   version_int <- as.integer(strsplit(version_string, "\\.")[[1]])
   paste(version_int[1], ifelse(version_int[2] == 0, version_int[2], version_int[2]-1), 0,sep = ".")
 }
+
+heute <- paste(month(Sys.Date(), TRUE, FALSE, "C"), year(Sys.Date()), sep = ", ")
 ```
 
 ## Install or update R
@@ -33,20 +36,18 @@ If you haven't installed R yet, do so now by getting the newest version from [CR
 R.version.string
 ```
 
-This returns the version number of your R installation, whereas the first digit (``r rversion_current_sep[1]``) indicates the number of the *major release*, the second digit  (``r rversion_current_sep[2]``) indicates the *minor release* and the last digit (``r rversion_current_sep[3]``) refers to the *patch release*. As a general rule of thumb, you will want to update R if you
+This returns the version number of your R installation, whereas the first digit (``r rve[1]``) indicates the number of the *major release*, the second digit  (``r rve[2]``) indicates the *minor release* and the last digit (``r rve[3]``) refers to the *patch release*. As a general rule of thumb, you will want to update R if you
 
 - don't have the current *major* version or
 - are lagging two (or more) versions behind the current *minor release*
 
-In the time of writing (`r strftime(Sys.Date(), "%B, %Y")`), the current `R` Version is `r rversion_current$version` (released on `r rversion_current$date`, see [cran.r-project.org](https://cran.r-project.org/)). Your installation should therefore not be older than `r rversion_minimal(rversion_current$version)`. If it is, make sure that you have updated R before the course. Check [these instructions on how to update R](https://www.linkedin.com/pulse/3-methods-update-r-rstudio-windows-mac-woratana-ngarmtrakulchol/)
+In the time of writing (`r heute`), the current `R` Version is `r rv$version` (released on `r strftime(rv$date, "%d.%m.%Y")`, see [cran.r-project.org](https://cran.r-project.org/)). Your installation should therefore not be older than `r rversion_minimal(rv$version)`. If it is, make sure that you have updated R before the course. Check [these instructions on how to update R](https://www.linkedin.com/pulse/3-methods-update-r-rstudio-windows-mac-woratana-ngarmtrakulchol/)
 
 ## Install or update RStudio
 
 RStudio is the IDE (integrated development environment) we use in our course to interact with R. There are good alternatives you can use, RStudio simply seems to be [the most popular choice](https://twitter.com/mdancho84/status/1502237075550392323). If you want to use your own IDE, please feel free to do so. However, we don't recommend this if you are a beginner.
 
 We recommend updating RStudio to the newest version before the course: check if this is the case by clicking on *help > check for updates*. 
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hey <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> community. I’m doing research - what is your favorite way to code in <a href="https://twitter.com/hashtag/R?src=hash&amp;ref_src=twsrc%5Etfw">#R</a>?</p>&mdash; Matt Dancho (Business Science) (@mdancho84) <a href="https://twitter.com/mdancho84/status/1502237075550392323?ref_src=twsrc%5Etfw">March 11, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
 ## Install the necessary packages
 
@@ -55,13 +56,14 @@ In the course, we will be needing the following packages (amongst others). Save 
 ```{r}
 #| eval: false 
 
-install.packages("quarto")
 install.packages("dplyr")
 install.packages("ggplot2")
 install.packages("readr")
 install.packages("tidyr")
 install.packages("sf")
 install.packages("terra")
+install.packages("tmap")
+
 ```
 
 ## Install Git{#install-git}
@@ -93,6 +95,10 @@ Now we will set some RStudio Global options. But first, **close all instances of
 - **R General**
   - Deactivate the option "Restore .RData into workspace at startup"[^restore]
   - Set "Save workspace to .RData on exit " to "Never"[^saveworkspace]
+- **Code**
+  - Activate the option "Use native pipe operator, |> (requires R 4.1+)"
+- **R Markdown**
+  - Deactivate the option "Show output inline for all R Markdown documents"
 - **Git / SVN**
   - Activate the option "Enable version control interface for RStudio projects"
   - If the Field "Git executable:" shows `(Not Found)`, browse to your git installation (previous step). This path should look something like this:
@@ -121,9 +127,12 @@ Now use the terminal in RStudio to introduce yourself:
   git config --global user.email "nussmar@email.com"
 ```
 
-Of course, replace the name and address with your credentials. Use the email address that you will use to create your Git*hub* account (which we will do next week).
+Of course, replace the name and address with your credentials. **Use the email address that you will use to create your Git*Hub* account** (which we will do in the second week). We propose using your student mail address, you can always change this later.
 
-**Note to users who already have a Github account:**
+
+:::{.callout-note}
+
+## Note to users who already have a Github account
 
 If you already have a Github account and don't want to associate the work you do in this course with said account, we recommend the following approach:
 
@@ -131,3 +140,5 @@ If you already have a Github account and don't want to associate the work you do
 2. Override your `user.name` and `user.email` on a per project basis (by omitting the `--global` flag)
 
 Please feel free to contact us if you have questions about this.
+
+:::

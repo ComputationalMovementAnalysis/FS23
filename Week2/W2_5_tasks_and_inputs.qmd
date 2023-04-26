@@ -6,17 +6,22 @@
 source("01_R_Files/helperfunctions.R")
 ```
 
-- Open the RStudio Project you created for week 2 in [the preparation](#w2-preparation)
+- Open the RStudio Project you created [in preparation](#w2-preparation) to this exercise
 - Download the new wildboar movement data, and save it to your new project's directory [wildschwein_BE_2056.csv](https://moodle.zhaw.ch/pluginfile.php/1168373/mod_folder/content/0/wildschwein_BE_2056.csv?forcedownload=1)
-- Now, commit your changes to your repo like we did [last week](#w1-tasks-and-inputs) (see below):
 
-:::{.callout-tip}
+###### Once you have set everything up, commit your file to your git repo in the following manner: {#sec-commit2}
+
+:::{.callout-note}
+
+## Committing files with git
+
 1. Save your (R/RMarkdown/Quarto) file
 2. Switch to the "Git"-Tab in the pane in the top right corner
-3. Click "commit" to open the "commit-Window"
+3. Click "commit" to open the "Commit Window"
 4. Click in the checkbox next to the file(s) you want to commit
 5. Add a commit message to explain what you are committing (e.g. "`initial commit`")
 6. Click on "commit" to commit your changes
+
 :::
 
 To push your changes from our local repo on your computer to the remote repo on Github, simply click the green button "Push" in the Git tab in RStudio. Now take a look at your repository on github.com. Do you see the new files there? Contact us if this does not work.

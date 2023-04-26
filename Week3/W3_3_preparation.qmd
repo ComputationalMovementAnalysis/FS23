@@ -36,7 +36,7 @@ To see the "Git" Pane in RStudio, reload RStudio either by restarting it or clic
 Now create a Github Repository following the instructions from [last week](#create-github-repo). This time however, don't check `Add a README file`.
 Copy the https URL to your Github repo, which should look something like this: `https://github.com/YOUR-GITHUB-USERNAME/cma-week3.git`
 
-:::{.callout-warning}
+:::{.callout-important}
 Report the URL of your new repo back to us via Moodle!
 :::
 
