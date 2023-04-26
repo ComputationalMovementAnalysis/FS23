@@ -226,3 +226,10 @@ Commit your changes with a meaningful commit message. Now push all your changes 
 ### Submission
 
 To submit your exercise, provide us with the URL of your Github repo as described [in the preperation](#create-github-repo-2).
+
+You can give other GitHub users write access to your repository throught the repository settings. You will be needing this for your semester project. To practice this, add Dominik ([\@DLND8](https://github.com/DLND8/)) and Nils ([\@ratnanil](https://github.com/ratnanil/)) to your GitHub repo: 
+
+1. Go to your GitHub repository on GitHub.com
+2. Go to the repository settings by clicking on the *Settings* tab
+3. In the left panel, click on *Collaborators and teams* and then *Add people*
+4. Add the mentioned Persons via their GitHub Usernames, give them *Write* privilages. 
