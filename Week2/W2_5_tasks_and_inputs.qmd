@@ -204,9 +204,9 @@ Now, import your data in the same way you imported the the wild boar data in [ta
 
 To submit your exercise, provide us with the URL of your Github repo as described [in the preperation](#create-github-repo).
 
-<!-- ### Task 5 (optional): Calculate turning angles -->
+You can give other GitHub users write access to your repository throught the repository settings. You will be needing this for your semester project. To practice this, add Dominik ([\@DLND8](https://github.com/DLND8/)) and Nils ([\@ratnanil](https://github.com/ratnanil/)) to your GitHub repo: 
 
-<!-- Just like we did with `speed` in tasks 2 - 4, we could do the same with turning angles of the trajectory. If you like a challenge, try to calculate these with the same approach! Warning: this task is pretty complex. Note, as this task is optional, you don't have to include it in your mandatory submission of Exercise 2! -->
-
-<!-- ```{r, code =  mydecrypt("12_Week2/task_5.R",".passphrase"), opts.label="solution_hideOutput"} -->
-<!-- ``` -->
+1. Go to your GitHub repository on GitHub.com
+2. Go to the repository settings by clicking on the *Settings* tab
+3. In the left panel, click on *Collaborators and teams* and then *Add people*
+4. Add the mentioned Persons via their GitHub Usernames, give them *Write* privilages. 

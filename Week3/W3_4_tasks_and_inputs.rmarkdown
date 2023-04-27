@@ -1,10 +1,12 @@
 ## Tasks and Inputs
 
+
 ```{r}
 #| include: false
 
 # source("01_R_Files/helperfunctions.R")
 ```
+
 
 You've read @laube2011 about segmenting trajectories. In the paper, the authors define "*static*" fixes as "*those whose average Euclidean distance to other fixes inside a temporal window v is less than some threshold d*", as illustrated in the following figure:
 
@@ -16,6 +18,7 @@ You've read @laube2011 about segmenting trajectories. In the paper, the authors 
 (d) Now remove short subtrajectories: These are trajectories with a short duration (whereas "short" is tbd)
 
 We will **demonstrate** implementing this method on the wild boar "Sabi", restricting ourselves to a couple of tracking days. Your task will be to understand this implementation and apply it on Caro, with a different sampling interval.
+
 
 ```{r}
 #| echo: false
@@ -44,6 +47,7 @@ ggplot(sabi, aes(E, N, color = DatetimeUTC)) +
     geom_point(y = 1205120, x = 2570470, size = 20, pch = 21, color = "black", stroke = 4)
 ```
 
+
 #### Step a): Specify a temporal window $v$
 
 In the above dataset, the sampling interval is 15 minutes. If we take a temporal window of 60 minutes, that would mean including 4 fixes. We need to calculate the following Euclidean distances (pos representing single location):
@@ -57,6 +61,7 @@ In the above dataset, the sampling interval is 15 minutes. If we take a temporal
 
 Just like last week, we use the formula for calculating the Euclidean distance in in combination with `lead()` and `lag()`. For example, to create the necessary offset of n-2, we use `lag(x, 2)`. For each offset, we create one individual column.
 
+
 ```{r}
 #| echo: true
 
@@ -69,9 +74,11 @@ sabi <- sabi |>
     )
 ```
 
+
 Now we want to calculate the mean distance of `nMinus2`, `nMinus1`, `nPlus1`, `nPlus2` for each row. Since we want the mean value *per Row*, we have to explicitly specify this before `mutate()` with the function `rowwise()`. To remove this rowwise-grouping, we end the operation with `ungroup()`. 
 
 Note that for the first two positions, we cannot calculate a `stepMean` since there is no Position `n-2` for these positions. This is also true for the last to positions (lacking a position `n+2`).
+
 
 ```{r}
 #| echo: true
@@ -86,9 +93,11 @@ sabi <- sabi |>
 sabi
 ```
 
+
 #### Step c): Remove "static points"
 
 We can now determine if an animal is moving or not by specifying a threshold distance on `stepMean`. In our example, we use the mean value as a threshold: Positions with distances below this value are considered static.
+
 
 ```{r}
 #| echo: true
@@ -109,6 +118,7 @@ sabi_filter |>
     theme(legend.position = "bottom")
 ```
 
+
 ### Task 1: Segmentation
 
 If you haven't already done so open the RStudio Project [you have prepared](#w3-preparation) for this week.
@@ -119,12 +129,14 @@ The sampling interval for this dataset is 1 minute. Use a temporal window $v$ of
 
 Once you have completed the task, commit your changes with a meaningful commit message and test your connection to Github by pushing your changes to your remote repository.
 
+
 ```{r}
 #| file: "solutions/week3/task_1.R"
 #| echo: false
 #| include: false
 
 ```
+
 
 ### Task 2: Specify and apply threshold *d*
 
@@ -134,6 +146,7 @@ Store the new information (boolean to differentiate between stops (`TRUE`) and m
 
 Commit your changes with a meaningful commit message. 
 
+
 ```{r}
 #| file: "solutions/week3/task_2.R"
 #| echo: false
@@ -141,11 +154,13 @@ Commit your changes with a meaningful commit message.
 
 ```
 
+
 ### Task 3: Visualize segmented trajectories
 
 Now visualize the segmented trajectory spatially. Just like last week, you can use ggplot with `geom_path()`, `geom_point()` and `coord_equal()`. Assign `colour = static` within `aes()` to distinguish between segments *with* "movement" and *without*.
 
 Commit your changes with a meaningful commit message. 
+
 
 ```{r}
 #| file: "solutions/week3/task_3.R"
@@ -153,9 +168,11 @@ Commit your changes with a meaningful commit message.
 
 ```
 
+
 ### Task 4: Segment-based analysis
 
 In applying @laube2011, we've come as far as steps b in figure \@ref(fig:laubeimg). In order to complete the last steps (c and d), we need a *unique* ID for each segment that we can use as a grouping variable. The following function does just that (it assigns unique IDs based on the column `static` which you created in Task 2). You will learn about functions next week. For now, just copy the following code chunk into your script and run it.
+
 
 ```{r}
 rle_id <- function(vec) {
@@ -164,10 +181,12 @@ rle_id <- function(vec) {
 }
 ```
 
+
 You can use the newly created function `rle_id` to assign unique IDs to subtrajectories (as shown below). Visualize the *moving* segments by colourizing them by `segment_ID`. 
 Then use `segment_ID` as a grouping variable to determine the segments duration and remove short segments (e.g. segments with a duration < 5 Minutes) 
 
 Commit your changes with a meaningful commit message. 
+
 
 ```{r}
 caro60 <- caro60 |>
@@ -190,6 +209,7 @@ library("patchwork")
 p1 + p2 + patchwork::plot_annotation(title = "Moving segments coloured by segment ID")
 ```
 
+
 ### Task 5: Similarity measures 
 
 We will now leave the wild boar data and turn our attentian to human movement. You will use the dataset  [pedestrian.csv](https://moodle.zhaw.ch/pluginfile.php/1168373/mod_folder/content/0/pedestrian.csv?forcedownload=1) for this (and the following) task. Download an import this dataset as a `data.frame` or `tibble`. It it a set of six different but similar trajectories from pedestrians walking on a path. 
@@ -198,11 +218,13 @@ For this task, explore the trajectories first and get an idea on how the pedestr
 
 Commit your changes with a meaningful commit message. 
 
+
 ```{r}
 #| file: "solutions/week3/task_5.R"
 #| echo: false
 
 ```
+
 
 ### Task 6: Calculate similarity
 
@@ -217,13 +239,16 @@ Note:
 
 Commit your changes with a meaningful commit message. Now push all your changes to Github.
 
+
 ```{r}
 #| file: "solutions/week3/task_6.R"
 #| echo: false
 
 ```
 
+
 ### Submission
 
 To submit your exercise, provide us with the URL of your Github repo as described [in the preperation](#create-github-repo-2).
+
 
