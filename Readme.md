@@ -17,7 +17,7 @@ We used to have the html-output in its own repo (`computationalmovementanalysis.
 To publish the html files to the `gh-pages` branch, run the following line:
 
 ```
-quarto publish gh-pages -y
+quarto publish --no-prompt gh-pages
 ```
 
 
@@ -32,8 +32,11 @@ quarto publish gh-pages -y
   - submit the solution to week 2 without github
   - get a github account before week 3
   - work with github in week 3
-  - 
 - consider moving `sf` and `terra` into later weeks...
 - if we use utterances, everyone needs to subscribe to the repo
+- In Week 2
+  - Task 4 is very repetitive and time consuming. Skip the calulation and visualisation of speed?
+  - Since we added tasks 6 and 7, I made Task 5 Optional. Remove altogether?
+- rather than using the euclidean distance function, we could use sf to calculate distances (this used to be complicated, but [is now simple](https://stackoverflow.com/questions/49853696/distances-of-points-between-rows-with-sf#comment134254584_49862289))
 
 

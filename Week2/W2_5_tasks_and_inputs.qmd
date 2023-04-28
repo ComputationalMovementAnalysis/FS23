@@ -60,13 +60,14 @@ Now inspect your data in more detail. Try to answer the following questions:
 - Were all individuals tracked concurrently or sequentially? 
 - What is the temporal sampling interval between the locations?
 
-Here are some exemplary visualisation you could produce to answer these questions. Can you now answer the above questions?
-
 After completing the task, commit your changes to git using a good commit message (e.g. `completed task 1`).
+
+<!-- Here are some exemplary visualisation you could produce to answer these questions. Can you now answer the above questions? -->
 
 ```{r}
 #| file: "solutions/week2/task_2.R"
 #| echo: false
+#| output: false
 
 ```
 
@@ -139,7 +140,7 @@ After completing the task, commit your changes to git using a good commit messag
 
 ```
 
-### Task 5: Deriving movement parameters II: Rolling window functions {#sec-w2-task5}
+### Task 5 (optional): Deriving movement parameters II: Rolling window functions {#sec-w2-task5}
 
 A different approach would be to *smoothen* the derived parameters using a [moving window function](https://docs.wavefront.com/images/5sec_moving_window.png). The `zoo` package offers a variate of moving window functions (`roll_*`). Install this package, load it into the session and use the function `roll_mean()` to smooth the calculated speed. Familiarise yourself with this function by working on some dummy data, for example:
 
