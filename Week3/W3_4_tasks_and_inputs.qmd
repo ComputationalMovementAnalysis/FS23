@@ -8,14 +8,14 @@
 
 You've read @laube2011 about segmenting trajectories. In the paper, the authors define "*static*" fixes as "*those whose average Euclidean distance to other fixes inside a temporal window v is less than some threshold d*", as illustrated in the following figure:
 
-![The figure from @laube2011 visualizes steps a) zu d), which will be explained below](../02_Images/laube_2011.jpg){}
+![The figure from @laube2011 visualizes steps a) zu d), which will be explained below](../02_Images/laube_2011.jpg){#fig-laubeimg}
 
 (a) Specify a temporal windows $v$ for in which to measure Euclidean distances
-(b) Measure the distance from every point to every other point within this temporal window ($v$)
+(b) Measure the distance from every point to every other point within this temporal window $v$
 (c) Remove "static points": These are points  where the average distance is less than a given threshold. This segments the trajectory into subtrajectories
 (d) Now remove short subtrajectories: These are trajectories with a short duration (whereas "short" is tbd)
 
-We will **demonstrate** implementing this method on the wild boar "Sabi", restricting ourselves to a couple of tracking days. Your task will be to understand this implementation and apply it on Caro, with a different sampling interval.
+We will **demonstrate** implementing this method on the wild boar "Sabi", restricting ourselves to a couple of tracking days. Your task will be to understand this implementation and apply it to your own movement data.
 
 ```{r}
 #| echo: false
@@ -109,15 +109,64 @@ sabi_filter |>
     theme(legend.position = "bottom")
 ```
 
-### Task 1: Segmentation
+
+### Preperation
 
 If you haven't already done so open the RStudio Project [you have prepared](#w3-preparation) for this week.
 
-With the skills from the input above you can now implement the segmentation algorithm described in @laube2011 on the dataset [caro60.csv](https://moodle.zhaw.ch/pluginfile.php/1168373/mod_folder/content/0/caro60.csv?forcedownload=1). Download this dataset (right click > save target as...) and import it as a simple `data.frame` or `tibble` (you don't need an `sf`-object for today's task).
+With the skills from the input above you can now implement the segmentation algorithm described in @laube2011 to your own movement data. Grab your data from last week (or get the most current data from your posmo interface or tracker device) and import it as `data.frame`. Add this data to the .gitignore file to prevent it from being uploaded to GitHub.
 
-The sampling interval for this dataset is 1 minute. Use a temporal window $v$ of 6 minutes, i.e. a window size of 6 positions (`n±3`). 
+```{r}
+#| echo: true
+#| message: false
 
-Once you have completed the task, commit your changes with a meaningful commit message and test your connection to Github by pushing your changes to your remote repository.
+library("readr")
+library("sf")
+
+posmo <- read_delim("datasets/posmo_2022-05-01T00 00 00+02 00-2023-04-18T23 59 59+02 00.csv")
+
+# Keep only the necessary columns
+posmo <- select(posmo, datetime, lon_x, lat_y)
+
+```
+
+As before, we will calculate the euclidean distance "by hand". This means we need the coordinates of our locations stored in a **Projected CRS**. Our data is stored in a geodetic coordinate reference system (WGS84, i.e. EPSG 4326). We can transform the data to EPSG 2056 with the function `st_transform`, as we explained in [the first week](#sec-week1-task3-reproject).
+
+
+```{r}
+#| echo: true
+
+posmo <- st_as_sf(posmo, coords = c("lon_x","lat_y"), crs = 4326) |>
+  st_transform(2056)
+
+head(posmo)
+```
+
+To be able to compute euclidean distances by hand, we need the coordinates stored in separate columns. The function `st_coordinates` extracts the coordinates from our `sf` object. We can bind these coordinates back to our `sf` object using `cbind`
+
+```{r}
+#| echo: true
+
+posmo_coordinates <- st_coordinates(posmo)
+
+posmo <- cbind(posmo, posmo_coordinates)
+
+```
+
+Explore your data and choose a single day for the next steps.
+
+```{r}
+
+posmo_filter <- posmo |>
+    filter(as.Date(datetime) == "2023-03-23")
+
+```
+
+Once you have completed the task, commit your changes with a meaningful commit message. Before committing, make sure your location data is ignored. Then, test your connection to Github by pushing your changes to your remote repository.
+
+### Task 1: Segmentation
+
+Now, you can implement steps a) b) and c), which you had used with sabi, on on your own movement data. Once you have completed the task, commit your changes with a meaningful commit message and test your connection to Github by pushing your changes to your remote repository.
 
 ```{r}
 #| file: "solutions/week3/task_1.R"
@@ -153,9 +202,11 @@ Commit your changes with a meaningful commit message.
 
 ```
 
+
+
 ### Task 4: Segment-based analysis
 
-In applying @laube2011, we've come as far as steps b in figure \@ref(fig:laubeimg). In order to complete the last steps (c and d), we need a *unique* ID for each segment that we can use as a grouping variable. The following function does just that (it assigns unique IDs based on the column `static` which you created in Task 2). You will learn about functions next week. For now, just copy the following code chunk into your script and run it.
+In applying @laube2011, we've come as far as step b) in @fig-laubeimg. In order to complete the last steps (c and d), we need a *unique* ID for each segment that we can use as a grouping variable. The following function does just that (it assigns unique IDs based on the column `static` which you created in Task 2). You will learn about functions next week. For now, just copy the following code chunk into your script and run it.
 
 ```{r}
 rle_id <- function(vec) {
@@ -170,10 +221,10 @@ Then use `segment_ID` as a grouping variable to determine the segments duration 
 Commit your changes with a meaningful commit message. 
 
 ```{r}
-caro60 <- caro60 |>
+posmo_filter <- posmo_filter |>
     mutate(segment_id = rle_id(static))
 
-caro60
+head(posmo_filter)
 ```
 
 ```{r}
@@ -187,14 +238,17 @@ caro60
 #| echo: false
 
 library("patchwork")
-p1 + p2 + patchwork::plot_annotation(title = "Moving segments coloured by segment ID")
+p1 / p2 + patchwork::plot_annotation(title = "Moving segments coloured by segment ID")
 ```
+
+
 
 ### Task 5: Similarity measures 
 
-We will now leave the wild boar data and turn our attentian to human movement. You will use the dataset  [pedestrian.csv](https://moodle.zhaw.ch/pluginfile.php/1168373/mod_folder/content/0/pedestrian.csv?forcedownload=1) for this (and the following) task. Download an import this dataset as a `data.frame` or `tibble`. It it a set of six different but similar trajectories from pedestrians walking on a path. 
 
-For this task, explore the trajectories first and get an idea on how the pedestrians moved. We step away from using the wild boar data for this task because our animals don't express the type of similarity we want to illustrate here. Also, using the constructed pedestrian data allows us illustrating very typical similarity issues, that are picked-up in different ways by the different similarity measures. In later exercises we will get back to our wild boar!
+We will now calculate similarties between trajectories using a new dataset [pedestrian.csv](https://moodle.zhaw.ch/pluginfile.php/1168373/mod_folder/content/0/pedestrian.csv?forcedownload=1). Download an import this dataset as a `data.frame` or `tibble`. It it a set of six different but similar trajectories from pedestrians walking on a path. 
+
+For this task, explore the trajectories first and get an idea on how the pedestrians moved. 
 
 Commit your changes with a meaningful commit message. 
 
@@ -208,11 +262,11 @@ Commit your changes with a meaningful commit message.
 
 Install the package `SimilarityMeasures` (`install.packages("SimilarityMeasures")`). Familiarize yourself with this package by skimming through the function descriptions `help(package = "SimilarityMeasures")`. Now compare trajectory 1 to trajectories 2-6 using different similarity measures from the package. Your options are. `DTW`, `EditDist`, `Frechet` and `LCSS`.
 
-Visualize your results and try to understand the different results with respect to your reading of @both2018. Can you see connections between the properties of the trajectories and the similarity values computed by the different measures?
+Before visualizing your results think about the following: Which two trajectories to you percieve to be most similar, which are most dissimilar? Now visualize the results from the computed similarity measures. Which measure reflects your own intuition the closest? 
 
 Note: 
 
-- All functions in the package need matrices as input, with one trajectory per matrix. 
+- **All functions in the package need matrices as input, with one trajectory per matrix.**
 - `LCSS`takes very long to compute. The accuracy of the algorithm (`pointSpacing =` ,`pointDistance =` and `errorMarg =`) can be varied to provide faster calculations. Please see @vlachos2002 for more information.
 
 Commit your changes with a meaningful commit message. Now push all your changes to Github.
@@ -222,6 +276,9 @@ Commit your changes with a meaningful commit message. Now push all your changes 
 #| echo: false
 
 ```
+
+
+
 
 ### Submission
 

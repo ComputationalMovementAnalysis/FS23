@@ -148,7 +148,7 @@ rm(wildschwein_BE_sf)
 # we can remove this sf object, since it just eats up our memory
 ```
 
-### Task 3: Project data from WGS84
+### Task 3: Project data from WGS84 {#sec-week1-task3-reproject}
 
 So what can we do with our new `sf` object that we couldn't before? One example is projecting the WGS84 (`Lat`/`Long`) coordinates into the new Swiss CRS `CH1903+ LV95`[^50]. Do this by using the function `st_transform`. By the way, do you notice a pattern here? The package `sf` names most functions for spatial operations with the prefix `st_*`, just as in PostGIS.
 
