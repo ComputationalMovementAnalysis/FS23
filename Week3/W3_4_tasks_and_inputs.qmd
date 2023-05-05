@@ -15,14 +15,19 @@ You've read @laube2011 about segmenting trajectories. In the paper, the authors 
 (c) Remove "static points": These are points  where the average distance is less than a given threshold. This segments the trajectory into subtrajectories
 (d) Now remove short subtrajectories: These are trajectories with a short duration (whereas "short" is tbd)
 
-We will **demonstrate** implementing this method on the wild boar "Sabi", restricting ourselves to a couple of tracking days. Your task will be to understand this implementation and apply it to your own movement data.
+We will **demonstrate** implementing this method on the wild boar "Sabi", restricting ourselves to a couple of tracking days. Your task will be to understand this implementation and apply it to your own movement data. 
+
+
+Open the RStudio Project [you have prepared](#w3-preparation) for this week. Next, copy the wildboar data you downloaded last week (wildschwein_BE_2056.csv) to your project folder. If you cannot find this dataset on your computer, you can re-download it [here](https://moodle.zhaw.ch/pluginfile.php/1168373/mod_folder/content/0/wildschwein_BE_2056.csv?forcedownload=1)
+
+
 
 ```{r}
-#| echo: false
+#| echo: true
+#| code-fold: true
 
 library("readr")
 library("dplyr")
-library("ggplot2")
 
 wildschwein <- read_delim("datasets/wildschwein_BE_2056.csv", ",")
 
@@ -33,6 +38,8 @@ sabi <- wildschwein |>
 ```{r}
 #| echo: false
 #| fig.cap: "Movement of the wildboar 'Sabi' in the timespan 01 - 02.07.2015. The circle highlingts possible 'static points'"
+
+library("ggplot2")
 
 ggplot(sabi, aes(E, N, color = DatetimeUTC)) +
     geom_point() +
@@ -111,8 +118,6 @@ sabi_filter |>
 
 
 ### Preperation
-
-If you haven't already done so open the RStudio Project [you have prepared](#w3-preparation) for this week.
 
 With the skills from the input above you can now implement the segmentation algorithm described in @laube2011 to your own movement data. Grab your data from last week (or get the most current data from your posmo interface or tracker device) and import it as `data.frame`. Add this data to the .gitignore file to prevent it from being uploaded to GitHub.
 
