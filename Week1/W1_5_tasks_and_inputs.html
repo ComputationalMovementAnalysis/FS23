@@ -96,7 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script src="../site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="../site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <script src="../site_libs/jquery-1.12.4/jquery.min.js"></script>
 <link href="../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
 <script src="../site_libs/leaflet-1.3.1/leaflet.js"></script>
@@ -104,9 +104,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
-<script src="../site_libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="../site_libs/leaflet-binding-2.1.2/leaflet.js"></script>
 <script src="../site_libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="../site_libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="../site_libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
 
 
 <link rel="stylesheet" href="../custom.css">
@@ -223,6 +223,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Week2/W2_5_tasks_and_inputs.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tasks and Inputs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Week2/W2_6_solutions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Solutions</span></a>
   </div>
 </li>
       </ul>
@@ -425,8 +430,7 @@ Let’s compare our original <code>data.frame</code> with this new <code>sf</cod
  8 002A   Sabi        12275 2014-08-22 22:45:11  47.0  7.05
  9 002A   Sabi        12275 2014-08-22 23:00:27  47.0  7.05
 10 002A   Sabi        12275 2014-08-22 23:15:41  47.0  7.05
-# … with 51,236 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# ℹ 51,236 more rows</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>wildschwein_BE_sf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -448,8 +452,7 @@ Geodetic CRS:  WGS 84
  8 002A   Sabi        12275 2014-08-22 22:45:11 (7.049237 46.99395)
  9 002A   Sabi        12275 2014-08-22 23:00:27 (7.048383 46.99481)
 10 002A   Sabi        12275 2014-08-22 23:15:41 (7.049396 46.99373)
-# … with 51,236 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# ℹ 51,236 more rows</code></pre>
 </div>
 </div>
 <p>As you can see, <code>st_as_sf()</code> has added some metadata to our dataframe (<code>Geometry type</code>, <code>Dimension</code>, <code>Bounding box</code>, <code>Geodetic CRS</code>) and replaced the columns <code>Lat</code> and <code>Long</code> with a column named <code>geometry</code>. Other than that, the new <code>sf</code> object is very similar to our original dataframe. In fact, <code>sf</code> objects <em>are</em> essentially <code>dataframes</code>, as you can verify with the function <code>is.data.frame()</code>:</p>
@@ -504,8 +507,7 @@ Projected CRS: CH1903+ / LV95
  8 002A   Sabi        12275 2014-08-22 22:45:11 (2570381 1204840)
  9 002A   Sabi        12275 2014-08-22 23:00:27 (2570316 1204935)
 10 002A   Sabi        12275 2014-08-22 23:15:41 (2570393 1204815)
-# … with 51,236 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# ℹ 51,236 more rows</code></pre>
 </div>
 </div>
 <p>Commit your changes as described <a href="#sec-commit">in the beginning</a>.</p>
@@ -539,8 +541,7 @@ Projected CRS: CH1903+ / LV95
  8 002A   Sabi        12275 2014-08-22 22:45:11 (2570381 1204840)
  9 002A   Sabi        12275 2014-08-22 23:00:27 (2570316 1204935)
 10 002A   Sabi        12275 2014-08-22 23:15:41 (2570393 1204815)
-# … with 51,236 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+# ℹ 51,236 more rows</code></pre>
 </div>
 </div>
 <p>Second: use <code>summarise()</code> to “dissolve” all points into a mulipoint object.</p>
