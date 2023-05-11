@@ -9,10 +9,6 @@ Hover over the code and copy the content by clicking on the clipboard icon on th
 #| warning: false
 #| class-output: "sourceCode r"
 
-#| echo: false
-#| warning: false
-#| class-output: "sourceCode r"
-
 source("01_R_Files/helperfunctions.R")
 paste_solutions(list.files("solutions/week1/", full.names = TRUE))
 ```
