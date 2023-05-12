@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Computational Movement Analysis: Patterns and Trends in Environmental Data - Tasks and inputs</title>
+<title>Computational Movement Analysis: Patterns and Trends in Environmental Data - 13&nbsp; Tasks and inputs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,10 +17,9 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -47,19 +46,48 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
+    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging-indent div.csl-entry {
+.hanging div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -73,7 +101,8 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}</style>
+}
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -133,16 +162,11 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Week4/W4_3_preparation.html">Exercise 4</a></li><li class="breadcrumb-item"><a href="../Week4/W4_4_tasks_and_inputs.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Tasks and inputs</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-title">Tasks and inputs</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
       </button>
     </div>
   </nav>
@@ -150,7 +174,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../02_Images/zhaw_sw_neg.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -158,9 +182,9 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Computational Movement Analysis: Patterns and Trends in Environmental Data</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/ComputationalMovementAnalysis/FS23/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+    <a href="https://github.com/ComputationalMovementAnalysis/FS23/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle sidebar-tool" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
@@ -168,17 +192,16 @@ div.csl-indent {
 </div>
     </div>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
+      <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-        </div>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Welcome to the course!</span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Welcome to the course!</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -193,9 +216,8 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
- <span class="menu-text">Exercise 1</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">Exercise 1</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -219,9 +241,8 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">Exercise 2</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Exercise 2</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -250,9 +271,8 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
- <span class="menu-text">Exercise 3</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Exercise 3</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -271,9 +291,8 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
- <span class="menu-text">Exercise 4</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Exercise 4</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -292,9 +311,8 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
- <span class="menu-text">Exercise 5</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">Exercise 5</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -319,7 +337,6 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -332,6 +349,7 @@ div.csl-indent {
   <li><a href="#task-4-measuring-distance-at-concurrent-locations" id="toc-task-4-measuring-distance-at-concurrent-locations" class="nav-link" data-scroll-target="#task-4-measuring-distance-at-concurrent-locations">Task 4: Measuring distance at concurrent locations</a></li>
   <li><a href="#task-5-visualize-data" id="toc-task-5-visualize-data" class="nav-link" data-scroll-target="#task-5-visualize-data">Task 5: Visualize data</a></li>
   <li><a href="#task-6-optional-visualize-data-as-timecube-with-plotly" id="toc-task-6-optional-visualize-data-as-timecube-with-plotly" class="nav-link" data-scroll-target="#task-6-optional-visualize-data-as-timecube-with-plotly">Task 6 (optional): Visualize data as timecube with <code>plotly</code></a></li>
+  <li><a href="#task-7-find-meet-patterns-in-your-own-tracking-data" id="toc-task-7-find-meet-patterns-in-your-own-tracking-data" class="nav-link" data-scroll-target="#task-7-find-meet-patterns-in-your-own-tracking-data">Task 7: Find “Meet Patterns” in your own tracking data</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ComputationalMovementAnalysis/FS23/edit/main/Week4/W4_4_tasks_and_inputs.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -340,7 +358,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Tasks and inputs</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-title">Tasks and inputs</span></h1>
 </div>
 
 
@@ -394,12 +412,12 @@ div.csl-indent {
 <pre><code>[1] "this function does slightly more, but still not much"</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
+<div class="callout-caption-container flex-fill">
 Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -432,14 +450,14 @@ Note
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">my_age</span>(<span class="at">birthday =</span> <span class="st">"1997-04-23"</span>, <span class="at">units =</span> <span class="st">"days"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 9499.425 days</code></pre>
+<pre><code>Time difference of 9515.312 days</code></pre>
 </div>
 </div>
 <p>As we already know from using other functions, if we declare our variables in the order that we initially listed them, we do not need to specify the parameters (no need of <code>birthday =</code> and <code>units =</code>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">my_age</span>(<span class="st">"1997-04-23"</span>, <span class="st">"days"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 9499.425 days</code></pre>
+<pre><code>Time difference of 9515.312 days</code></pre>
 </div>
 </div>
 <p>If we want any of our parameters to have default value, we can assign an initial value to the parameter when declaring the variables within the round brackets.</p>
@@ -451,21 +469,21 @@ Note
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># if not stated otherwise, our function uses the unit "days"</span></span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">my_age</span>(<span class="st">"1997-04-23"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 9499.425 days</code></pre>
+<pre><code>Time difference of 9515.312 days</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can still overwrite units</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">my_age</span>(<span class="st">"1997-04-23"</span>, <span class="st">"hours"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 227986.2 hours</code></pre>
+<pre><code>Time difference of 228367.5 hours</code></pre>
 </div>
 </div>
 <p>All you need to do now is run execute the function deceleration (<code>myage &lt;- function...</code> etc.) at the beginning of your script, and you can use the function for your entire R session.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
+<div class="callout-caption-container flex-fill">
 Important
 </div>
 </div>
@@ -476,7 +494,7 @@ Important
 <section id="task-1-write-your-own-functions" class="level3">
 <h3 class="anchored" data-anchor-id="task-1-write-your-own-functions">Task 1: Write your own functions</h3>
 <p>Create a function for our Euclidean distance calculation.</p>
-<p>Note: if you treat your input variables as vectors, they will work in <code>dplyr</code>s <code>mutate()</code> and <code>summarise()</code> operations.</p>
+<p>Note: If your function can handle vectors (i.e.&nbsp;inputs with length &gt; 1) and the output is of the same length as your input, it will work in <code>dplyr</code>s <code>mutate()</code> and <code>summarise()</code> operations (respecting groups etc).</p>
 </section>
 <section id="task-2-prepare-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="task-2-prepare-analysis">Task 2: Prepare Analysis</h3>
@@ -488,12 +506,15 @@ Important
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"lubridate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="cell" data-file="solutions/week4/task_2.R">
+
+</div>
 </section>
 <section id="task-3-create-join-key" class="level3">
 <h3 class="anchored" data-anchor-id="task-3-create-join-key">Task 3: Create Join Key</h3>
-<p>Have a look at your dataset. You will notice that samples are taken at every full hour, quarter past, half past and quarter to. The sampling time is usually off by a couple of seconds.</p>
-<p>To compare Rosa and Sabi’s locations, we first need to match the two animals <em>temporally</em>. For that we can use a <code>join</code>, but need <em>identical</em> time stamps to serve as a join key. We therefore need to slightly adjust our time stamps to a common, concurrent interval.</p>
-<p>The task is therfore to round the minutes of <code>DatetimeUTC</code> to a multiple of 15 (00, 15, 30,45) and store the values in a new column<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. You can use the <code>lubridate</code> function <code>round_date()</code> for this. See the examples <a href="https://lubridate.tidyverse.org/reference/round_date.html">here</a> to see how this goes.</p>
+<p>To compare Rosa and Sabi’s locations, we first need to match the two animals <em>temporally</em>. To simplify the problem, we will use a “classic” join operation<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, for which we need <em>identical</em> time stamps to serve as a join key.</p>
+<p>Have a look at your dataset. You will notice that samples are taken at every full hour, quarter past, half past and quarter to. The sampling time is usually off by a couple of seconds. We therefore need to slightly adjust our time stamps to a common, concurrent interval.</p>
+<p>The task is therfore to round the minutes of <code>DatetimeUTC</code> to a multiple of 15 (00, 15, 30,45) and store the values in a new column<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. You can use the <code>lubridate</code> function <code>round_date()</code> for this. See the examples <a href="https://lubridate.tidyverse.org/reference/round_date.html">here</a> to see how this goes.</p>
 <p>Your new dataset should look something like this (note the additional column):</p>
 <div class="cell" data-file="solutions/week4/task_3.R">
 <div class="cell-output cell-output-stdout">
@@ -512,14 +533,16 @@ Important
 </section>
 <section id="task-4-measuring-distance-at-concurrent-locations" class="level3">
 <h3 class="anchored" data-anchor-id="task-4-measuring-distance-at-concurrent-locations">Task 4: Measuring distance at concurrent locations</h3>
-<p>To measure the distance between concurrent locations, we need to follow the following steps.</p>
+<p>Now that we have prepared our Dataset, we can start measuring distances at concurrent locatinos. To do this, we need to follow the following steps.</p>
 <ol type="1">
 <li>Split the <code>wildschwein_filter</code> object into one <code>data.frame</code> per animal</li>
-<li>Join* these datasets by the new <code>Datetime</code> column created in the last task. The joined observations are <em>temporally close</em>.</li>
+<li>Join<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> these datasets by the new <code>Datetime</code> column created in the last task. The joined observations are <em>temporally close</em>.</li>
 <li>In the joined dataset, calculate Euclidean distances between concurrent observations and store the values in a new column</li>
 <li>Use a reasonable threshold on <code>distance</code> to determine if the animals are also <em>spatially close</em> enough to constitute a <em>meet</em> (we use 100 meters). Store this Boolean information (<code>TRUE</code>/<code>FALSE</code>) in a new column</li>
 </ol>
-<p>* We recommend using one <code>dplyr</code>s join methods (<code>inner_join()</code>, <code>left_join()</code>, <code>right_join()</code> or <code>full_join()</code>), which one is appropriate? Tip: specify <code>suffix</code> to prevent column names ending in <code>.x</code> or <code>.y</code>.</p>
+<div class="cell" data-file="solutions/week4/task_4.R">
+
+</div>
 </section>
 <section id="task-5-visualize-data" class="level3">
 <h3 class="anchored" data-anchor-id="task-5-visualize-data">Task 5: Visualize data</h3>
@@ -527,7 +550,6 @@ Important
 <ul>
 <li>Used the individual dataframes from <code>rosa</code> and <code>sabi</code> (from the previous task)</li>
 <li>Used the joined dataset (also from the previous task), filtered to only the meets</li>
-<li>Manually changed the x and y axis limits</li>
 </ul>
 <div class="cell" data-file="solutions/week4/task_5.R">
 <div class="cell-output-display">
@@ -538,17 +560,35 @@ Important
 <section id="task-6-optional-visualize-data-as-timecube-with-plotly" class="level3">
 <h3 class="anchored" data-anchor-id="task-6-optional-visualize-data-as-timecube-with-plotly">Task 6 (optional): Visualize data as timecube with <code>plotly</code></h3>
 <p>Finally, you can nicely visualize the meeting patterns and trajectories in a Space-Time-Cube <span class="citation" data-cites="hagerstraand1970">(<a href="../90_references.html#ref-hagerstraand1970" role="doc-biblioref">Hägerstraand 1970</a>)</span> with the package <code>plotly</code>. There are some <a href="https://plot.ly/r/3d-line-plots/">nice ressources</a> available online.</p>
-<p><img src="../02_Images/space_time_cube.jpg" class="img-fluid"></p>
+<!-- ![](../02_Images/space_time_cube.jpg) -->
+<div class="cell" data-file="solutions/week4/task_6.R">
+<div class="cell-output-display">
+<div id="htmlwidget-e4784af7d2148c38edad" style="width:100%;height:464px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e4784af7d2148c38edad">{"x":{"visdat":{"74bc7c417767":["function () ","plotlyVisDat"],"74bc505862fd":["function () ","data"]},"cur_data":"74bc505862fd","attrs":{"74bc7c417767":{"x":{},"y":{},"z":{},"mode":"lines","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d"},"74bc7c417767.1":{"x":{},"y":{},"z":{},"mode":"lines","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","inherit":true},"74bc505862fd":{"x":{},"y":{},"z":{},"mode":"markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"E"},"yaxis":{"title":"N"},"zaxis":{"title":"Time"}},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[2570823.28370195,2570830.69931676,2570842.13602534,2570820.2077964,2570829.18552533,2570831.22221771,2570825.48390662,2570831.65271017,2570844.14933077,2570825.21458121,2570836.79844021,2570841.64107083,2570845.00631404,2570837.550672,2570847.43793853,2570844.03163817,2570766.97436908,2570664.64903907,2570665.23002904,2570667.97493899,2570670.80335115,2570717.52638305,2570490.12643549,2570471.58547526,2570494.87876451,2570474.29740396,2570476.19157641,2570472.45126046,2570477.01943261,2570479.24706069,2570489.04731753,2570474.80619973,2570468.46438346,2570470.84438488,2570476.40495618,2570474.53781877,2570475.52362089,2570471.95122873,2570476.51875577,2570469.88701576,2570473.83003796,2570467.52344388,2570466.76453859,2570475.43945893,2570473.31920881,2570470.22515732,2570478.40817388,2570474.5446055,2570474.9132118,2570477.51332343,2570477.15486761,2570485.92755424,2570470.84775108,2570468.25101174,2570488.12036096,2570470.85453867,2570479.28817499,2570479.91500989,2570480.02335665,2570484.61811698,2570471.9648034,2570455.03082696,2570472.81174534,2570465.7511792,2570465.67458572,2570469.26645515,2570472.10448059,2570469.61271783,2570470.96630269,2570471.58547526,2570465.75454599,2570467.61350702,2570473.29941681,2570472.93906209,2570467.53748243,2570478.34002487,2570501.98991069,2570572.90832861,2570688.67714129,2570697.27223936,2570694.49678997,2570686.8059913,2570668.05148029,2570663.02569845,2570760.81762869,2570686.86963633,2570671.07671421,2570654.57853336,2570599.26981777,2570599.8957729,2570603.47168651,2570597.40741539,2570599.64568076,2570594.16938359,2570598.6560291,2570580.58797301,2570373.61784353,2570410.90706713,2570457.4207085,2570455.82478927,2570448.00035131,2570463.54453428,2570491.18236424,2570716.85267024,2570690.07413738,2570671.13681509,2570670.68321575,2570674.56723238,2570694.19615204,2570706.97839076,2570700.56850842,2570708.93121054,2570709.31605963,2570700.29248965,2570533.48080821,2570398.64235433,2570394.79242185,2570398.15525841,2570396.92908118,2570390.51795738,2570390.97652013,2570388.49246506,2570379.22807665,2570396.43523697,2570391.83352553,2570393.8433839,2570395.17312815,2570388.76538178,2570395.30859602,2570391.83070882,2570397.02861669,2570393.672585,2570398.7642118,2570391.57670188,2570398.62874541,2570398.07068801,2570400.02092675,2570396.05931906,2570398.63076373,2570393.98036744,2570396.18460662,2570398.76365688,2570392.92675195,2570408.55867383,2570407.41106698,2570397.89107437,2570395.90686645,2570392.33473316,2570398.01500539,2570389.73814816,2570394.28502212,2570390.44133555,2570393.80467851,2570404.11462663,2570391.18097773,2570403.10118697,2570390.58896088,2570410.51045896,2570393.16321404,2570396.16369054,2570392.5746251,2570393.59145064,2570396.41432118,2570401.05051625,2570393.81828966,2570387.76755752,2570393.71340992,2570401.85998853,2570395.90832783,2570398.73710471,2570350.16142158,2570367.17635941,2570428.35629041,2570382.12141061,2570440.53508809,2570662.15243568,2570566.80755348,2570511.49333799,2570499.28531698,2570526.55438422,2570516.91459047,2570494.66183599,2570544.40058097,2570652.64453028,2570660.68680817,2570724.67197466,2570754.11039248,2570761.73313228,2570764.85319371,2570734.39611877,2570731.46868182,2570693.14195689,2570713.85710737,2570817.43333002,2570907.06040511,2570968.92254257,2570891.4073369,2570847.54454118,2570842.85324703,2570831.2922696,2570847.53761012,2570798.63808306,2570713.18875143,2570582.84554359,2570560.25295355,2570530.87054885,2570534.64354847,2570410.43366593,2570394.27821666,2570394.54713583,2570411.94375709,2570395.54505951,2570405.83330066,2570397.83704217,2570433.99014037,2570392.70470179,2570387.02589857,2570391.83070882,2570391.68106851,2570389.88329617,2570388.75332132,2570390.58023658,2570390.33303535,2570391.20960503,2570394.54184612,2570393.68957134,2570396.160872,2570389.47597499,2570395.68340088,2570394.94830592,2570399.03801929,2570405.1971317,2570669.89827722,2570668.16618682,2570664.20935933,2570674.09267121,2570677.06830028,2570676.20599844,2570674.1145032,2570630.70014489,2570652.15754072,2570650.93706591,2570674.9137047,2570666.16549479,2570664.94211039,2570671.81408249,2570660.98774338,2570670.89583868,2570669.00030329,2570684.94291739,2570668.39531876,2570668.9040254,2570671.61605448,2570682.89303862,2570691.80692726,2570672.42025679,2570668.75853765,2570664.06795234,2570672.47114178,2570676.58610935,2570674.20991899,2570672.84618147,2570674.44326402,2570677.68162728,2570668.89393966,2570684.52376949,2570693.5075126,2570731.50247888,2570808.61330879,2570802.48396329,2570801.65466362,2570793.69309256,2570787.7961165,2570832.92917974,2570851.33860987,2570958.20777943,2570958.29855219,2570962.17890178,2570936.83502243,2570936.70549947,2570934.10851687,2570947.2637265,2570952.16964815,2570962.17890178,2570973.38018113,2570976.04231191,2570995.62423616,2571001.40111846],"y":[1204800.05147582,1204793.66713472,1204796.01240417,1204802.57907126,1204787.44887207,1204766.89412424,1204763.2090864,1204781.77807145,1204770.67733851,1204788.94694527,1204791.82511305,1204800.56180393,1204866.38193704,1204894.06719873,1204884.50233129,1204872.37893684,1204893.4908602,1205013.37213489,1205003.16358765,1205009.13116047,1204995.00936035,1205006.73028496,1205103.51837561,1205119.47477312,1205109.33138769,1205115.70366338,1205123.40967182,1205122.27203645,1205113.96697153,1205110.69854634,1205106.78109899,1205118.60275463,1205117.4335649,1205120.34560154,1205117.36079904,1205115.10213568,1205112.96272048,1205119.60636528,1205114.23627165,1205129.74447653,1205119.61927434,1205127.07693939,1205125.89115536,1205123.5912815,1205117.84304104,1205121.24917704,1205119.45202809,1205116.46953047,1205114.11083241,1205112.33027667,1205116.73450825,1205106.5408784,1205121.02374042,1205123.48243797,1205122.31657197,1205122.39113522,1205122.04911036,1205121.14549806,1205118.45457266,1205112.43954648,1205122.34115489,1205140.22403964,1205116.74494668,1205119.41479758,1205130.03220407,1205128.84705535,1205124.43051488,1205123.5201474,1205120.38946558,1205119.47477312,1205120.09293647,1205119.1720885,1205116.92040299,1205116.34409176,1205132.96904136,1205102.6541191,1205122.99264081,1205150.21231624,1205161.46956635,1205139.87077002,1205124.59815074,1205129.0496128,1205154.23381226,1205199.35038122,1205241.05906915,1205237.66535949,1205227.87103715,1205164.55041464,1205072.92788362,1205073.3805994,1205067.41517065,1205073.15943453,1205075.10501734,1205067.46114618,1205073.3978439,1205080.46883734,1204904.30840941,1204834.36176407,1204866.3596529,1204865.12244072,1204865.67269931,1204877.19084787,1204902.36778537,1205044.47683738,1205140.8845544,1205150.58324149,1205160.40205701,1205170.6441799,1205148.49071609,1205149.26155642,1205158.96517803,1205141.13630918,1205112.70747108,1205121.45675694,1205242.97017351,1205393.25636566,1205392.98647493,1205396.24934615,1205398.97918924,1205409.80600665,1205399.55356344,1205398.64319157,1205400.0900974,1205400.61589157,1205396.0028756,1205405.55375946,1205397.65385073,1205409.15880917,1205400.42138692,1205398.49316724,1205396.05484118,1205394.15936595,1205393.2891112,1205396.35990786,1205390.52157496,1205403.70948254,1205396.69587205,1205398.43876946,1205389.39871655,1205404.04112341,1205399.16077115,1205390.12068044,1205392.53995068,1205383.72396228,1205382.37335935,1205392.070552,1205392.25830341,1205398.90199904,1205390.99155615,1205401.36073194,1205391.89950377,1205389.82858044,1205396.24876293,1205397.04237448,1205393.26014785,1205390.55490734,1205399.6221964,1205372.43018344,1205388.09184951,1205391.90127134,1205395.143154,1205402.30875857,1205393.35639174,1205378.91416937,1205398.98355364,1205404.28327678,1205396.24921717,1205394.85236491,1205387.96701424,1205387.8417639,1205396.13261729,1205467.9990743,1205536.59971923,1205635.95172454,1205477.3172632,1205165.71372536,1205108.58596019,1204735.40753493,1204749.37579854,1204719.99103045,1204696.55906538,1204689.84336718,1204624.88311727,1204465.63770425,1204462.87430205,1204365.87203819,1204345.44932037,1204328.48022512,1204364.30702755,1204378.67578182,1204360.39112633,1204390.96334993,1204514.75242269,1204640.15789663,1204660.99741298,1204653.89142338,1204624.05340045,1204719.98807223,1204856.98725661,1204880.46807574,1204911.04994845,1204934.8584552,1204993.96674284,1205229.36284866,1205236.5563402,1205242.69405399,1205224.34292584,1205364.63733107,1205390.53210843,1205397.19003915,1205396.04733859,1205395.97328579,1205390.87483373,1205405.66729195,1205383.17504864,1205398.35540939,1205401.97456817,1205398.49316724,1205389.82240968,1205403.01648876,1205396.04044232,1205393.28537267,1205392.5195087,1205394.42732299,1205391.54247163,1205397.5722958,1205394.39156296,1205396.0590797,1205396.26164738,1205399.85619716,1205396.34500912,1205388.36548654,1205056.73707889,1205054.08858401,1205061.48998384,1205051.23557037,1205048.46381122,1205046.35577449,1205051.03535131,1205065.43520846,1205054.63446667,1205050.84948797,1205037.25707496,1205054.04286273,1205054.2934761,1205041.10782464,1205032.8899373,1205050.79552142,1205048.93716057,1205067.40223446,1205049.65165084,1205052.55075833,1205048.76862171,1205049.65800568,1205041.78750215,1205031.37719747,1205047.72656675,1205012.76354888,1205044.78441209,1205057.11544876,1205048.78918601,1205049.88540458,1205043.66295968,1205043.26900822,1205050.50522454,1205050.26142081,1205036.49840592,1205015.09953602,1204915.34310867,1204897.05188233,1204907.86196599,1204936.25015874,1204951.34305298,1204888.53120745,1204868.67442123,1204950.60872066,1204942.71499658,1204952.27916405,1205002.27512855,1205002.23129216,1205004.68978636,1204974.30865152,1204961.7999685,1204952.27916405,1204931.39068284,1204914.21258793,1204878.8974868,1204865.57303817],"z":["2015-04-01 00:00:00.000000","2015-04-01 00:15:00.000000","2015-04-01 00:30:00.000000","2015-04-01 00:45:00.000000","2015-04-01 01:00:00.000000","2015-04-01 01:15:00.000000","2015-04-01 01:30:00.000000","2015-04-01 01:45:00.000000","2015-04-01 02:00:00.000000","2015-04-01 02:15:00.000000","2015-04-01 02:30:00.000000","2015-04-01 02:45:00.000000","2015-04-01 03:00:00.000000","2015-04-01 03:15:00.000000","2015-04-01 03:30:00.000000","2015-04-01 03:45:00.000000","2015-04-01 04:00:00.000000","2015-04-01 04:15:00.000000","2015-04-01 04:30:00.000000","2015-04-01 04:45:00.000000","2015-04-01 05:00:00.000000","2015-04-01 05:15:00.000000","2015-04-01 05:30:00.000000","2015-04-01 05:45:00.000000","2015-04-01 06:00:00.000000","2015-04-01 06:15:00.000000","2015-04-01 06:30:00.000000","2015-04-01 06:45:00.000000","2015-04-01 07:00:00.000000","2015-04-01 07:15:00.000000","2015-04-01 07:30:00.000000","2015-04-01 07:45:00.000000","2015-04-01 08:00:00.000000","2015-04-01 08:15:00.000000","2015-04-01 08:30:00.000000","2015-04-01 08:45:00.000000","2015-04-01 09:00:00.000000","2015-04-01 09:15:00.000000","2015-04-01 09:30:00.000000","2015-04-01 09:45:00.000000","2015-04-01 10:00:00.000000","2015-04-01 10:15:00.000000","2015-04-01 10:30:00.000000","2015-04-01 10:45:00.000000","2015-04-01 11:00:00.000000","2015-04-01 11:15:00.000000","2015-04-01 11:30:00.000000","2015-04-01 11:45:00.000000","2015-04-01 12:00:00.000000","2015-04-01 12:15:00.000000","2015-04-01 12:30:00.000000","2015-04-01 12:45:00.000000","2015-04-01 13:00:00.000000","2015-04-01 13:15:00.000000","2015-04-01 13:30:00.000000","2015-04-01 13:45:00.000000","2015-04-01 14:00:00.000000","2015-04-01 14:15:00.000000","2015-04-01 14:30:00.000000","2015-04-01 14:45:00.000000","2015-04-01 15:00:00.000000","2015-04-01 15:15:00.000000","2015-04-01 15:30:00.000000","2015-04-01 15:45:00.000000","2015-04-01 16:00:00.000000","2015-04-01 16:15:00.000000","2015-04-01 16:30:00.000000","2015-04-01 16:45:00.000000","2015-04-01 17:00:00.000000","2015-04-01 17:15:00.000000","2015-04-01 17:30:00.000000","2015-04-01 17:45:00.000000","2015-04-01 18:00:00.000000","2015-04-01 18:15:00.000000","2015-04-01 18:30:00.000000","2015-04-01 18:45:00.000000","2015-04-01 19:00:00.000000","2015-04-01 19:15:00.000000","2015-04-01 19:30:00.000000","2015-04-01 19:45:00.000000","2015-04-01 20:00:00.000000","2015-04-01 20:15:00.000000","2015-04-01 20:30:00.000000","2015-04-01 20:45:00.000000","2015-04-01 21:00:00.000000","2015-04-01 21:15:00.000000","2015-04-01 21:30:00.000000","2015-04-01 21:45:00.000000","2015-04-01 22:00:00.000000","2015-04-01 22:15:00.000000","2015-04-01 22:30:00.000000","2015-04-01 22:45:00.000000","2015-04-01 23:00:00.000000","2015-04-01 23:15:00.000000","2015-04-01 23:30:00.000000","2015-04-01 23:45:00.000000","2015-04-02 00:00:00.000000","2015-04-02 00:15:00.000000","2015-04-02 00:30:00.000000","2015-04-02 00:45:00.000000","2015-04-02 01:00:00.000000","2015-04-02 01:15:00.000000","2015-04-02 01:30:00.000000","2015-04-02 01:45:00.000000","2015-04-02 02:00:00.000000","2015-04-02 02:15:00.000000","2015-04-02 02:30:00.000000","2015-04-02 02:45:00.000000","2015-04-02 03:00:00.000000","2015-04-02 03:15:00.000000","2015-04-02 03:30:00.000000","2015-04-02 03:45:00.000000","2015-04-02 04:00:00.000000","2015-04-02 04:15:00.000000","2015-04-02 04:30:00.000000","2015-04-02 04:45:00.000000","2015-04-02 05:00:00.000000","2015-04-02 05:15:00.000000","2015-04-02 05:30:00.000000","2015-04-02 05:45:00.000000","2015-04-02 06:00:00.000000","2015-04-02 06:15:00.000000","2015-04-02 06:30:00.000000","2015-04-02 06:45:00.000000","2015-04-02 07:00:00.000000","2015-04-02 07:15:00.000000","2015-04-02 07:30:00.000000","2015-04-02 07:45:00.000000","2015-04-02 08:00:00.000000","2015-04-02 08:15:00.000000","2015-04-02 08:30:00.000000","2015-04-02 08:45:00.000000","2015-04-02 09:00:00.000000","2015-04-02 09:15:00.000000","2015-04-02 09:30:00.000000","2015-04-02 09:45:00.000000","2015-04-02 10:00:00.000000","2015-04-02 10:15:00.000000","2015-04-02 10:30:00.000000","2015-04-02 10:45:00.000000","2015-04-02 11:00:00.000000","2015-04-02 11:15:00.000000","2015-04-02 11:30:00.000000","2015-04-02 11:45:00.000000","2015-04-02 12:00:00.000000","2015-04-02 12:15:00.000000","2015-04-02 12:30:00.000000","2015-04-02 12:45:00.000000","2015-04-02 13:00:00.000000","2015-04-02 13:15:00.000000","2015-04-02 13:30:00.000000","2015-04-02 13:45:00.000000","2015-04-02 14:00:00.000000","2015-04-02 14:15:00.000000","2015-04-02 14:30:00.000000","2015-04-02 14:45:00.000000","2015-04-02 15:00:00.000000","2015-04-02 15:15:00.000000","2015-04-02 15:30:00.000000","2015-04-02 15:45:00.000000","2015-04-02 16:00:00.000000","2015-04-02 16:15:00.000000","2015-04-02 16:30:00.000000","2015-04-02 16:45:00.000000","2015-04-02 17:00:00.000000","2015-04-02 17:15:00.000000","2015-04-02 17:30:00.000000","2015-04-02 17:45:00.000000","2015-04-02 18:00:00.000000","2015-04-02 18:15:00.000000","2015-04-02 18:30:00.000000","2015-04-02 18:45:00.000000","2015-04-02 19:00:00.000000","2015-04-02 19:15:00.000000","2015-04-02 19:30:00.000000","2015-04-02 19:45:00.000000","2015-04-02 20:00:00.000000","2015-04-02 20:15:00.000000","2015-04-02 20:30:00.000000","2015-04-02 20:45:00.000000","2015-04-02 21:00:00.000000","2015-04-02 21:15:00.000000","2015-04-02 21:30:00.000000","2015-04-02 21:45:00.000000","2015-04-02 22:00:00.000000","2015-04-02 22:15:00.000000","2015-04-02 22:30:00.000000","2015-04-02 22:45:00.000000","2015-04-02 23:00:00.000000","2015-04-02 23:15:00.000000","2015-04-02 23:30:00.000000","2015-04-02 23:45:00.000000","2015-04-03 00:00:00.000000","2015-04-03 00:15:00.000000","2015-04-03 00:30:00.000000","2015-04-03 00:45:00.000000","2015-04-03 01:00:00.000000","2015-04-03 01:15:00.000000","2015-04-03 01:30:00.000000","2015-04-03 01:45:00.000000","2015-04-03 02:00:00.000000","2015-04-03 02:15:00.000000","2015-04-03 02:30:00.000000","2015-04-03 02:45:00.000000","2015-04-03 03:00:00.000000","2015-04-03 03:15:00.000000","2015-04-03 03:30:00.000000","2015-04-03 03:45:00.000000","2015-04-03 04:00:00.000000","2015-04-03 04:15:00.000000","2015-04-03 04:30:00.000000","2015-04-03 04:45:00.000000","2015-04-03 05:00:00.000000","2015-04-03 05:15:00.000000","2015-04-03 05:30:00.000000","2015-04-03 05:45:00.000000","2015-04-03 06:00:00.000000","2015-04-03 06:15:00.000000","2015-04-03 06:30:00.000000","2015-04-03 06:45:00.000000","2015-04-03 07:00:00.000000","2015-04-03 07:15:00.000000","2015-04-03 07:30:00.000000","2015-04-03 07:45:00.000000","2015-04-03 08:00:00.000000","2015-04-03 08:15:00.000000","2015-04-03 08:30:00.000000","2015-04-03 08:45:00.000000","2015-04-03 09:00:00.000000","2015-04-03 09:15:00.000000","2015-04-03 09:30:00.000000","2015-04-03 09:45:00.000000","2015-04-03 10:00:00.000000","2015-04-03 10:15:00.000000","2015-04-03 10:30:00.000000","2015-04-03 10:45:00.000000","2015-04-03 11:00:00.000000","2015-04-03 11:15:00.000000","2015-04-03 11:30:00.000000","2015-04-03 11:45:00.000000","2015-04-03 12:00:00.000000","2015-04-03 12:15:00.000000","2015-04-03 12:30:00.000000","2015-04-03 12:45:00.000000","2015-04-03 13:00:00.000000","2015-04-03 13:15:00.000000","2015-04-03 13:30:00.000000","2015-04-03 13:45:00.000000","2015-04-03 14:00:00.000000","2015-04-03 14:15:00.000000","2015-04-03 14:30:00.000000","2015-04-03 14:45:00.000000","2015-04-03 15:00:00.000000","2015-04-03 15:15:00.000000","2015-04-03 15:30:00.000000","2015-04-03 15:45:00.000000","2015-04-03 16:00:00.000000","2015-04-03 16:15:00.000000","2015-04-03 16:30:00.000000","2015-04-03 16:45:00.000000","2015-04-03 17:00:00.000000","2015-04-03 17:15:00.000000","2015-04-03 17:30:00.000000","2015-04-03 17:45:00.000000","2015-04-03 18:00:00.000000","2015-04-03 18:15:00.000000","2015-04-03 18:30:00.000000","2015-04-03 18:45:00.000000","2015-04-03 19:00:00.000000","2015-04-03 19:15:00.000000","2015-04-03 19:30:00.000000","2015-04-03 19:45:00.000000","2015-04-03 20:00:00.000000","2015-04-03 20:15:00.000000","2015-04-03 20:30:00.000000","2015-04-03 20:45:00.000000","2015-04-03 21:00:00.000000","2015-04-03 21:15:00.000000","2015-04-03 21:30:00.000000","2015-04-03 21:45:00.000000","2015-04-03 22:00:00.000000","2015-04-03 22:15:00.000000","2015-04-03 22:30:00.000000","2015-04-03 22:45:00.000000","2015-04-03 23:00:00.000000","2015-04-03 23:15:00.000000","2015-04-03 23:30:00.000000","2015-04-03 23:45:00.000000"],"mode":"lines","type":"scatter3d","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"frame":null},{"x":[2570372.14531555,2570308.93602313,2570326.12457351,2570315.18641816,2570323.46872647,2570319.82455474,2570324.46804108,2570307.27808103,2570291.81550469,2570353.5982104,2570361.28166218,2570367.14984399,2570370.63580632,2570303.39542772,2570273.26334027,2570236.31177766,2570220.98836353,2570205.52333032,2570209.7459828,2570197.72893122,2569927.89988525,2569823.72148591,2569779.31190819,2569781.30393522,2569779.43382967,2569778.80776786,2569777.68302534,2569778.68590284,2569780.80329658,2569781.04281256,2569784.26436372,2569786.00067263,2569783.89953612,2569775.0985379,2569789.2089126,2569790.04415481,2569785.48424012,2569782.89820124,2569772.62754122,2569775.86035848,2569781.41202155,2569780.55256434,2569783.40666655,2569779.5512305,2569790.35536158,2569782.29297629,2569781.67231867,2569778.69279274,2569779.31279119,2569777.57998542,2569780.54217364,2569777.93725998,2569780.05793262,2569781.41896731,2569780.55256434,2569780.92783697,2569782.64484954,2569778.3175204,2569776.82356857,2569779.92151558,2569779.55230629,2569774.20131361,2569774.45971015,2569776.45085715,2569776.94893522,2569775.34428213,2569900.94062438,2569922.37419078,2569922.37419078,2569919.15274463,2569919.77184289,2569919.89376677,2569921.50888281,2569922.62259039,2569955.23877733,2570018.04795843,2570111.44363092,2570162.50140436,2570235.07501056,2570292.17525715,2570385.67797837,2570408.02447953,2570424.4700769,2570337.15358679,2570340.08622278,2570339.98185192,2570348.84887937,2570227.41745916,2570221.2236475,2570220.01697418,2570199.53922493,2570204.06236078,2570217.15234785,2570224.22895872,2570384.63612811,2570394.82493077,2570415.59501687,2570415.76969263,2570390.59565934,2570365.48551363,2570326.94678516,2570325.3182994,2570341.18764648,2570347.22153308,2570347.87950981,2570348.233058,2570348.38556303,2570346.76847078,2570402.47224855,2570403.07462344,2570411.64680789,2570405.84820505,2570380.92955257,2570402.98607762,2570394.44356655,2570422.20603374,2570387.05137343,2570284.86508876,2570208.24875719,2570170.14926981,2570178.34889975,2570179.67827779,2570169.51301321,2570179.93316292,2570177.57905694,2570183.30965144,2570172.82932972,2570172.31436149,2570177.27370181,2570175.41360055,2570184.07479781,2570177.39906973,2570175.79022136,2570175.20870109,2570176.50533497,2570171.58294296,2570171.84790207,2570177.03055029,2570177.32430435,2570175.97849118,2570176.93260407,2570173.72516694,2570178.78392986,2570178.64755691,2570175.8175326,2570177.18403413,2570184.56584675,2570176.19982816,2570176.70243481,2570181.7885603,2570178.67634426,2570177.93256192,2570185.98213153,2570183.45910694,2570169.47538263,2570174.93478316,2570178.54417733,2570175.68684423,2570174.84296435,2570169.72606457,2570173.19161112,2570168.32130458,2570175.1621236,2570176.79358106,2570166.55966042,2570185.21365997,2570187.26076062,2570177.62295939,2570368.27562499,2570417.10843079,2570408.61174126,2570333.56234841,2570331.30171766,2570355.51899728,2570400.01474832,2570385.56680873,2570229.2093537,2570227.07050475,2570221.81076157,2570222.81064965,2570230.36129289,2570228.02780637,2570341.58788285,2570379.74425142,2570399.91171627,2570402.03619379,2570425.77821543,2570425.93739435,2570402.70752601,2570319.3088574,2570318.71633006,2570321.20604149,2570341.83939781,2570284.50866958,2570259.70529323,2570258.48059876,2570297.44135559,2570371.7830046,2570387.81523562,2570396.9261801,2570407.81521908,2570292.18810254,2570289.84359978,2570349.31009558,2570332.50689034,2570301.75077931,2570301.12139277,2570297.29815189,2570298.40691939,2570301.87269298,2570297.18506169,2570325.0571104,2570304.09390145,2570299.13035796,2570296.53241446,2570301.7099303,2570294.04895166,2570298.40975263,2570304.48767085,2570181.23506674,2570179.12910214,2570179.27288391,2570171.99378441,2570182.88635102,2570173.46836093,2570175.82371434,2570179.64004383,2570176.58397824,2570182.25015468,2570175.36750662,2570179.92488556,2570187.64360169,2570154.23231323,2570191.19555217,2570187.47043138,2570178.80098375,2570177.17575533,2570176.08872394,2570190.55858683,2570222.29130982,2570179.54203974,2570180.14814592,2570178.32086239,2570173.53670016,2570181.76663104,2570188.60527854,2570170.55771003,2570179.28523324,2570177.52778166,2570180.94325566,2570180.28649541,2570169.50701732,2570161.05064854,2570189.71480467,2570175.06009552,2570178.05170538,2570176.41679414,2570173.62440626,2570180.24077406,2570176.36840873,2570182.28646237,2570175.8510813,2570177.04080552,2570178.5290442,2570355.51483941,2570387.99421254,2570312.10955408,2570304.33330213,2570297.22408081,2570341.12307007,2570356.35082414,2570352.54781917,2570370.71684019,2570366.07948882,2570368.55231634,2570459.31624513,2570502.22158886,2570389.8740729,2570390.70936454,2570325.67581655,2570323.63315129,2570341.72027755,2570341.53231085,2570347.84073457,2570371.18830724,2570371.61428228,2570381.31140116,2570433.79332685],"y":[1205312.70996002,1205261.75208376,1205247.79191659,1205241.57632693,1205236.85461639,1205247.35641908,1205237.43884854,1205249.59802311,1205261.90426333,1205296.71561783,1205296.98861547,1205303.88546431,1205266.19154057,1205238.22216293,1205238.88405654,1205212.82085581,1205167.8279746,1205143.20275166,1205144.96037367,1205119.30623107,1205070.25821284,1205164.30455107,1205193.35717214,1205197.6939224,1205193.40102204,1205192.93727527,1205191.63114617,1205192.90454241,1205197.96328096,1205194.20441263,1205189.02961623,1205189.44325551,1205192.07761285,1205197.93667538,1205187.63707511,1205181.36266944,1205188.10068357,1205192.60521254,1205201.12878154,1205201.16794292,1205195.01410102,1205196.51930395,1205196.87167796,1205197.04690421,1205196.21381851,1205196.24364792,1205195.34629821,1205194.26081955,1205196.52560176,1205196.80122002,1205194.47377121,1205193.76437864,1205194.9765101,1205196.38149519,1205196.51930395,1205195.52795686,1205193.64040947,1205195.25216677,1205193.13634964,1205193.57642167,1205192.76673338,1205189.01403183,1205190.46908693,1205191.63740594,1205193.85833805,1205196.90151676,1205093.82983796,1205027.44004007,1205027.44004007,1205025.15504507,1205024.24029548,1205024.28414824,1205023.28654171,1205023.91459756,1205023.91654763,1205190.58165281,1205282.83005,1205273.40195827,1205242.31014735,1205253.21984835,1205311.49749179,1205326.79487598,1205278.13044956,1205217.31995607,1205201.39646623,1205207.92284618,1205192.31441222,1205251.78706274,1205316.6319834,1205292.85809661,1205290.88170817,1205308.61339627,1205319.25381609,1205327.45631798,1205334.44880524,1205332.27468266,1205351.78228406,1205367.02324715,1205329.14953384,1205320.95882525,1205238.7939127,1205226.43958919,1205201.10192477,1205192.38922763,1205200.79063225,1205193.89613939,1205200.07660214,1205202.20806846,1205296.24989872,1205322.53933746,1205325.64289193,1205395.39950499,1205402.69419325,1205391.87844002,1205402.36010414,1205393.37261767,1205381.11836642,1205473.85716439,1205511.21657078,1205504.70376327,1205512.41141925,1205504.50034401,1205502.19444074,1205505.2772783,1205506.01170534,1205511.25258564,1205491.61636223,1205496.61061868,1205493.65078224,1205498.86301128,1205486.36820027,1205494.38389648,1205493.58039854,1205501.98800405,1205489.06318352,1205496.358588,1205503.69468716,1205496.73149743,1205500.71002337,1205508.37660057,1205501.46796455,1205501.90650383,1205496.02231634,1205494.61110105,1205499.02774581,1205501.55564253,1205487.22177223,1205505.49610632,1205504.10392211,1205503.67820149,1205501.87056322,1205505.22060375,1205498.16522849,1205487.96106229,1205494.69044197,1205498.93211586,1205499.78117063,1205498.75046817,1205501.85643,1205496.1455531,1205491.05867997,1205482.95634526,1205488.14718083,1205498.01117666,1205504.76623418,1205487.48534084,1205501.3717241,1205482.90970546,1205369.56092306,1205256.92187892,1205317.94257649,1205243.01884629,1205210.66763659,1205186.11106392,1205178.39643053,1205316.66759404,1205299.79375672,1205294.92396182,1205313.88306862,1205311.5434282,1205306.55843398,1205250.63892521,1205301.21129216,1205320.45423418,1205335.00646163,1205340.07650116,1205356.13410284,1205333.07601161,1205320.60675212,1205233.94040074,1205231.04173965,1205226.97150028,1205211.30436377,1205203.04125709,1205233.52657633,1205238.06856123,1205270.51431957,1205313.26763002,1205320.65863237,1205335.73282609,1205330.59803676,1205388.2951038,1205394.00999373,1205388.61044106,1205379.11109798,1205385.65702125,1205384.5150804,1205386.54640278,1205390.77656225,1205385.70088185,1205392.83936579,1205376.86920815,1205384.23342522,1205383.33546878,1205390.08553137,1205377.47488405,1205386.25134288,1205388.29738764,1205388.45603783,1205485.81545145,1205492.05170463,1205491.90645875,1205508.51887032,1205496.60208658,1205502.26354554,1205497.22670983,1205493.83903089,1205504.74932025,1205494.10387975,1205506.35631256,1205502.10888509,1205504.9162288,1205564.20565409,1205497.33865461,1205494.64469796,1205499.42412913,1205498.38724933,1205504.57392622,1205485.57972785,1205461.54080342,1205498.56438091,1205498.09441528,1205503.78452347,1205515.893031,1205497.78613462,1205497.99643952,1205492.1169148,1205498.92142237,1205495.78403284,1205504.98316462,1205498.38277192,1205510.09888171,1205508.82945106,1205494.7779753,1205499.65411302,1205497.12660131,1205486.57334898,1205463.60786082,1205493.81378481,1205490.57582479,1205505.89916864,1205502.68517416,1205498.77703191,1205495.24538211,1205369.95802124,1205335.22141688,1205248.39547443,1205258.49545227,1205245.27911298,1205182.04718193,1205175.97905206,1205182.1014057,1205170.98251475,1205163.83495109,1205156.36292058,1205183.73812654,1205214.19786577,1205341.57116045,1205332.12840683,1205229.49506552,1205208.82706239,1205208.7702115,1205200.05517948,1205191.48563926,1205166.37760158,1205151.11141821,1205155.53228623,1205158.40629369],"z":["2015-04-01 00:00:00.000000","2015-04-01 00:15:00.000000","2015-04-01 00:30:00.000000","2015-04-01 00:45:00.000000","2015-04-01 01:00:00.000000","2015-04-01 01:15:00.000000","2015-04-01 01:30:00.000000","2015-04-01 01:45:00.000000","2015-04-01 02:00:00.000000","2015-04-01 02:15:00.000000","2015-04-01 02:30:00.000000","2015-04-01 02:45:00.000000","2015-04-01 03:00:00.000000","2015-04-01 03:15:00.000000","2015-04-01 03:30:00.000000","2015-04-01 03:45:00.000000","2015-04-01 04:00:00.000000","2015-04-01 04:15:00.000000","2015-04-01 04:30:00.000000","2015-04-01 04:45:00.000000","2015-04-01 05:00:00.000000","2015-04-01 05:15:00.000000","2015-04-01 05:30:00.000000","2015-04-01 05:45:00.000000","2015-04-01 06:00:00.000000","2015-04-01 06:15:00.000000","2015-04-01 06:30:00.000000","2015-04-01 06:45:00.000000","2015-04-01 07:00:00.000000","2015-04-01 07:15:00.000000","2015-04-01 07:30:00.000000","2015-04-01 07:45:00.000000","2015-04-01 08:00:00.000000","2015-04-01 08:15:00.000000","2015-04-01 08:30:00.000000","2015-04-01 08:45:00.000000","2015-04-01 09:00:00.000000","2015-04-01 09:15:00.000000","2015-04-01 09:30:00.000000","2015-04-01 09:45:00.000000","2015-04-01 10:00:00.000000","2015-04-01 10:15:00.000000","2015-04-01 10:30:00.000000","2015-04-01 10:45:00.000000","2015-04-01 11:00:00.000000","2015-04-01 11:15:00.000000","2015-04-01 11:30:00.000000","2015-04-01 11:45:00.000000","2015-04-01 12:00:00.000000","2015-04-01 12:15:00.000000","2015-04-01 12:30:00.000000","2015-04-01 12:45:00.000000","2015-04-01 13:00:00.000000","2015-04-01 13:15:00.000000","2015-04-01 13:30:00.000000","2015-04-01 13:45:00.000000","2015-04-01 14:00:00.000000","2015-04-01 14:15:00.000000","2015-04-01 14:30:00.000000","2015-04-01 14:45:00.000000","2015-04-01 15:00:00.000000","2015-04-01 15:15:00.000000","2015-04-01 15:30:00.000000","2015-04-01 15:45:00.000000","2015-04-01 16:00:00.000000","2015-04-01 16:15:00.000000","2015-04-01 16:30:00.000000","2015-04-01 16:45:00.000000","2015-04-01 17:00:00.000000","2015-04-01 17:15:00.000000","2015-04-01 17:30:00.000000","2015-04-01 17:45:00.000000","2015-04-01 18:00:00.000000","2015-04-01 18:15:00.000000","2015-04-01 18:30:00.000000","2015-04-01 18:45:00.000000","2015-04-01 19:00:00.000000","2015-04-01 19:15:00.000000","2015-04-01 19:30:00.000000","2015-04-01 19:45:00.000000","2015-04-01 20:00:00.000000","2015-04-01 20:15:00.000000","2015-04-01 20:30:00.000000","2015-04-01 20:45:00.000000","2015-04-01 21:00:00.000000","2015-04-01 21:15:00.000000","2015-04-01 21:30:00.000000","2015-04-01 21:45:00.000000","2015-04-01 22:00:00.000000","2015-04-01 22:15:00.000000","2015-04-01 22:30:00.000000","2015-04-01 22:45:00.000000","2015-04-01 23:00:00.000000","2015-04-01 23:15:00.000000","2015-04-01 23:30:00.000000","2015-04-01 23:45:00.000000","2015-04-02 00:00:00.000000","2015-04-02 00:15:00.000000","2015-04-02 00:30:00.000000","2015-04-02 00:45:00.000000","2015-04-02 01:00:00.000000","2015-04-02 01:15:00.000000","2015-04-02 01:30:00.000000","2015-04-02 01:45:00.000000","2015-04-02 02:00:00.000000","2015-04-02 02:15:00.000000","2015-04-02 02:30:00.000000","2015-04-02 02:45:00.000000","2015-04-02 03:00:00.000000","2015-04-02 03:15:00.000000","2015-04-02 03:30:00.000000","2015-04-02 03:45:00.000000","2015-04-02 04:00:00.000000","2015-04-02 04:15:00.000000","2015-04-02 04:30:00.000000","2015-04-02 04:45:00.000000","2015-04-02 05:00:00.000000","2015-04-02 05:15:00.000000","2015-04-02 05:30:00.000000","2015-04-02 05:45:00.000000","2015-04-02 06:00:00.000000","2015-04-02 06:15:00.000000","2015-04-02 06:30:00.000000","2015-04-02 06:45:00.000000","2015-04-02 07:00:00.000000","2015-04-02 07:15:00.000000","2015-04-02 07:30:00.000000","2015-04-02 07:45:00.000000","2015-04-02 08:00:00.000000","2015-04-02 08:15:00.000000","2015-04-02 08:30:00.000000","2015-04-02 08:45:00.000000","2015-04-02 09:00:00.000000","2015-04-02 09:15:00.000000","2015-04-02 09:30:00.000000","2015-04-02 09:45:00.000000","2015-04-02 10:00:00.000000","2015-04-02 10:15:00.000000","2015-04-02 10:30:00.000000","2015-04-02 10:45:00.000000","2015-04-02 11:00:00.000000","2015-04-02 11:15:00.000000","2015-04-02 11:30:00.000000","2015-04-02 11:45:00.000000","2015-04-02 12:00:00.000000","2015-04-02 12:15:00.000000","2015-04-02 12:30:00.000000","2015-04-02 12:45:00.000000","2015-04-02 13:00:00.000000","2015-04-02 13:15:00.000000","2015-04-02 13:30:00.000000","2015-04-02 13:45:00.000000","2015-04-02 14:00:00.000000","2015-04-02 14:15:00.000000","2015-04-02 14:30:00.000000","2015-04-02 14:45:00.000000","2015-04-02 15:00:00.000000","2015-04-02 15:15:00.000000","2015-04-02 15:30:00.000000","2015-04-02 15:45:00.000000","2015-04-02 16:00:00.000000","2015-04-02 16:15:00.000000","2015-04-02 16:30:00.000000","2015-04-02 16:45:00.000000","2015-04-02 17:00:00.000000","2015-04-02 17:15:00.000000","2015-04-02 17:30:00.000000","2015-04-02 17:45:00.000000","2015-04-02 18:00:00.000000","2015-04-02 18:15:00.000000","2015-04-02 18:30:00.000000","2015-04-02 18:45:00.000000","2015-04-02 19:00:00.000000","2015-04-02 19:15:00.000000","2015-04-02 19:30:00.000000","2015-04-02 19:45:00.000000","2015-04-02 20:00:00.000000","2015-04-02 20:15:00.000000","2015-04-02 20:30:00.000000","2015-04-02 20:45:00.000000","2015-04-02 21:00:00.000000","2015-04-02 21:15:00.000000","2015-04-02 21:30:00.000000","2015-04-02 21:45:00.000000","2015-04-02 22:00:00.000000","2015-04-02 22:15:00.000000","2015-04-02 22:30:00.000000","2015-04-02 22:45:00.000000","2015-04-02 23:00:00.000000","2015-04-02 23:15:00.000000","2015-04-02 23:30:00.000000","2015-04-02 23:45:00.000000","2015-04-03 00:00:00.000000","2015-04-03 00:15:00.000000","2015-04-03 00:30:00.000000","2015-04-03 00:45:00.000000","2015-04-03 01:00:00.000000","2015-04-03 01:15:00.000000","2015-04-03 01:30:00.000000","2015-04-03 01:45:00.000000","2015-04-03 02:00:00.000000","2015-04-03 02:15:00.000000","2015-04-03 02:30:00.000000","2015-04-03 02:45:00.000000","2015-04-03 03:00:00.000000","2015-04-03 03:15:00.000000","2015-04-03 03:30:00.000000","2015-04-03 03:45:00.000000","2015-04-03 04:00:00.000000","2015-04-03 04:15:00.000000","2015-04-03 04:30:00.000000","2015-04-03 04:45:00.000000","2015-04-03 05:00:00.000000","2015-04-03 05:15:00.000000","2015-04-03 05:30:00.000000","2015-04-03 05:45:00.000000","2015-04-03 06:00:00.000000","2015-04-03 06:15:00.000000","2015-04-03 06:30:00.000000","2015-04-03 06:45:00.000000","2015-04-03 07:00:00.000000","2015-04-03 07:15:00.000000","2015-04-03 07:30:00.000000","2015-04-03 07:45:00.000000","2015-04-03 08:00:00.000000","2015-04-03 08:15:00.000000","2015-04-03 08:30:00.000000","2015-04-03 08:45:00.000000","2015-04-03 09:00:00.000000","2015-04-03 09:15:00.000000","2015-04-03 09:30:00.000000","2015-04-03 09:45:00.000000","2015-04-03 10:00:00.000000","2015-04-03 10:15:00.000000","2015-04-03 10:30:00.000000","2015-04-03 10:45:00.000000","2015-04-03 11:00:00.000000","2015-04-03 11:15:00.000000","2015-04-03 11:30:00.000000","2015-04-03 11:45:00.000000","2015-04-03 12:00:00.000000","2015-04-03 12:15:00.000000","2015-04-03 12:30:00.000000","2015-04-03 12:45:00.000000","2015-04-03 13:00:00.000000","2015-04-03 13:15:00.000000","2015-04-03 13:30:00.000000","2015-04-03 13:45:00.000000","2015-04-03 14:00:00.000000","2015-04-03 14:15:00.000000","2015-04-03 14:30:00.000000","2015-04-03 14:45:00.000000","2015-04-03 15:00:00.000000","2015-04-03 15:15:00.000000","2015-04-03 15:30:00.000000","2015-04-03 15:45:00.000000","2015-04-03 16:00:00.000000","2015-04-03 16:15:00.000000","2015-04-03 16:30:00.000000","2015-04-03 16:45:00.000000","2015-04-03 17:00:00.000000","2015-04-03 17:15:00.000000","2015-04-03 17:30:00.000000","2015-04-03 17:45:00.000000","2015-04-03 18:00:00.000000","2015-04-03 18:15:00.000000","2015-04-03 18:30:00.000000","2015-04-03 18:45:00.000000","2015-04-03 19:00:00.000000","2015-04-03 19:15:00.000000","2015-04-03 19:30:00.000000","2015-04-03 19:45:00.000000","2015-04-03 20:00:00.000000","2015-04-03 20:15:00.000000","2015-04-03 20:30:00.000000","2015-04-03 20:45:00.000000","2015-04-03 21:00:00.000000","2015-04-03 21:15:00.000000","2015-04-03 21:30:00.000000","2015-04-03 21:45:00.000000","2015-04-03 22:00:00.000000","2015-04-03 22:15:00.000000","2015-04-03 22:30:00.000000","2015-04-03 22:45:00.000000","2015-04-03 23:00:00.000000","2015-04-03 23:15:00.000000","2015-04-03 23:30:00.000000","2015-04-03 23:45:00.000000"],"mode":"lines","type":"scatter3d","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"line":{"color":"rgba(255,127,14,1)"},"frame":null},{"x":[2570410.42419403,2570390.92189764,2570382.09197641,2570379.38658142,2570346.34256802,2570348.2099144,2570360.30108496,2570347.20731604,2570340.53742511,2570345.12023073,2570348.08436968],"y":[1205393.31449166,1205387.05242068,1205378.76396865,1205357.03759689,1205390.65433534,1205391.4454605,1205386.42124697,1205387.91514672,1205394.11295552,1205393.39527744,1205389.13922376],"z":["2015-04-02 04:45:00.000000","2015-04-02 05:00:00.000000","2015-04-02 18:00:00.000000","2015-04-02 18:30:00.000000","2015-04-03 04:00:00.000000","2015-04-03 04:15:00.000000","2015-04-03 04:45:00.000000","2015-04-03 05:45:00.000000","2015-04-03 06:00:00.000000","2015-04-03 06:15:00.000000","2015-04-03 06:30:00.000000"],"mode":"markers","type":"scatter3d","marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"line":{"color":"rgba(44,160,44,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="task-7-find-meet-patterns-in-your-own-tracking-data" class="level3">
+<h3 class="anchored" data-anchor-id="task-7-find-meet-patterns-in-your-own-tracking-data">Task 7: Find “Meet Patterns” in your own tracking data</h3>
+<p>You can apply what we did with the wild boar data to your own data. Of couse, it does not make sense to look for meeting patterns with yourself. Instead, you can try to find a situation where you were in the same location at the same <em>time of day</em>.</p>
+<ol type="1">
+<li>First you import your tracking data and prepare it as we discribed <a href="../Week3/W3_4_tasks_and_inputs.html#sec-week3-task-preperation">last week</a></li>
+<li>Create a new column <code>hour</code> as a decimal hour (<code>hour = hour(datetime) + minute(datetime)/60 + second(datetime)/3600</code>).</li>
+<li>Then you round this value to a multiple that seems appriate (e.g., to round to 15 Minutes you can do: <code>hour_round = round(hour/0.25)*0.25</code>).</li>
+<li>Create two <code>data.frames</code> each containing the tracking data of only one day</li>
+<li>Join the two <code>data.frames</code> by <code>hour_round</code></li>
+<li>Calculate distances at “concurrent” locations and filter you data to locations that are spatially close</li>
+</ol>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-hagerstraand1970" class="csl-entry" role="listitem">
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-hagerstraand1970" class="csl-entry" role="doc-biblioentry">
 Hägerstraand, Torsten. 1970. <span>“What about People in Regional Science?”</span> <em>Papers in Regional Science</em> 24 (1): 7–24.
 </div>
-<div id="ref-rodrigues2023" class="csl-entry" role="listitem">
+<div id="ref-rodrigues2023" class="csl-entry" role="doc-biblioentry">
 Rodrigues, Bruno. 2023. <em>Building Reproducible Analytical Pipelines with r</em>. leanpub.
 </div>
-<div id="ref-wickham2017" class="csl-entry" role="listitem">
+<div id="ref-wickham2017" class="csl-entry" role="doc-biblioentry">
 Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st ed. O’Reilly Media, Inc.
 </div>
 </div>
@@ -556,7 +596,9 @@ Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Ti
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p><em>Please note:</em> We are manipulating our time stamps without adjusting the x,y-coordinates. This is fine for our simple example, but we would advice against this in a more serious research endeavour, e.g.&nbsp;in your semester projects. One simple approach would be to linearly interpolate the positions to the new timestamps. If you choose Option A the wild boar projects as your semester projects, you should aim for a linear interpolation. Get in touch if you need help with this.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Instead of a “classic” join, we could do a rolling join. This is a bit more complicated, and until recently was only implemented in the <a href="https://rdatatable.gitlab.io/data.table/">data.table</a> package (e.g.&nbsp;<a href="https://r-norberg.blogspot.com/2016/06/understanding-datatable-rolling-joins.html">this blogpost</a>). While learning <code>data.table</code> is certanily very worthwile, it’s beyond the scope of this course. Meanwhile, <code>dplyr</code> has also <a href="https://www.tidyverse.org/blog/2023/01/dplyr-1-1-0-joins/#rolling-joins">implemented rolling joins</a>, but these are not as straightforward as classic joins.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><em>Please note:</em> We are manipulating our time stamps without adjusting the x,y-coordinates. This is fine for our simple example, but we would advice against this in a more serious research endeavour, e.g.&nbsp;in your semester projects. One simple approach would be to linearly interpolate the positions to the new timestamps. If you choose Option A the wild boar projects as your semester projects, you should aim for a linear interpolation. Get in touch if you need help with this.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>We recommend using one <code>dplyr</code>s join methods (<code>inner_join()</code>, <code>left_join()</code>, <code>right_join()</code> or <code>full_join()</code>), which one is appropriate? Tip: specify <code>suffix</code> to prevent column names ending in <code>.x</code> or <code>.y</code>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -705,23 +747,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -837,92 +865,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
