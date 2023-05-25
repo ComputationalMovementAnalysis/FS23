@@ -65,7 +65,6 @@ Think of ways you could visually explore the spatio-temporal patterns of wild bo
 ```{r}
 #| file: "solutions/week5/task_3.R"
 #| echo: false
-#| include: false
 
 ```
 
